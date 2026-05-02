@@ -17,7 +17,7 @@ import {
   SiGit,
   SiPostgresql,
   SiMongodb,
-  SiAmazon,
+  SiGooglecloud,
   SiVercel,
   SiFigma,
   SiGraphql,
@@ -185,7 +185,7 @@ const CircularOrbits = () => {
         { Icon: SiGit, startAngle: 60, color: "#F05032" },
         { Icon: SiPostgresql, startAngle: 120, color: "#4169E1" },
         { Icon: SiMongodb, startAngle: 180, color: "#47A248" },
-        { Icon: SiAmazon, startAngle: 240, color: "#FF9900" },
+        { Icon: SiGooglecloud, startAngle: 240, color: "#FF9900" },
         { Icon: SiVercel, startAngle: 300, color: "#000000" },
       ]
     },
