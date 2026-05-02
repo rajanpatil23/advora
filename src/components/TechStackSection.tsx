@@ -1,5 +1,5 @@
 import { Boxes } from "lucide-react";
-import { SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiPython, SiPostgresql, SiMongodb, SiAmazonwebservices, SiDocker, SiGraphql, SiTailwindcss, SiGo, SiRedis, SiKubernetes, SiFlutter, SiFigma, SiGit } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiTypescript, SiNodedotjs, SiPython, SiPostgresql, SiMongodb, SiGooglecloud, SiDocker, SiGraphql, SiTailwindcss, SiGo, SiRedis, SiKubernetes, SiFlutter, SiFigma, SiGit } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 
 const techStackRow1 = [
@@ -16,7 +16,7 @@ const techStackRow1 = [
 
 const techStackRow2 = [
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-  { name: "AWS", icon: SiAmazonwebservices, color: "#FF9900" },
+  { name: "AWS", icon: SiGooglecloud, color: "#FF9900" },
   { name: "Docker", icon: SiDocker, color: "#2496ED" },
   { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
   { name: "React Native", icon: TbBrandReactNative, color: "#61DAFB" },

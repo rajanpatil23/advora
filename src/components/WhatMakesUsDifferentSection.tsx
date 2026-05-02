@@ -794,8 +794,8 @@ const WhatMakesUsDifferentSection = () => {
   const [hasStarted, setHasStarted] = useState(false); // Track if animation has ever started
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const autoRunTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const resumeTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const autoRunTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isMobile = useIsMobile();
 
   // Start auto-run when section comes into view for the first time
