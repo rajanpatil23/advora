@@ -184,7 +184,7 @@ export default function Products() {
                     <Link to="/contact" className="w-full sm:w-auto">
                       <Button
                         variant="outline"
-                        className="w-full sm:w-auto rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium"
+                        className="w-full sm:w-auto rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
                       >
                         Talk to Us
                       </Button>
