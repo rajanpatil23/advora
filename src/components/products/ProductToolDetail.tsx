@@ -90,7 +90,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   <Button
                     asChild
                     variant="outline"
-                    className="rounded-full px-7 py-6 font-medium"
+                    className="rounded-full px-7 py-6 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
                   >
                     <a href="#virtual-demo">View Virtual Demo</a>
                   </Button>
