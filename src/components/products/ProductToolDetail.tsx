@@ -115,7 +115,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   <Sparkles className="h-3.5 w-3.5" />
                   Virtual Demo Flow
                 </span>
-                <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+                <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
                   <span className="block font-serif italic font-normal">
                     See how {tool.name} works
                   </span>
@@ -157,7 +157,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                 <Sparkles className="h-3.5 w-3.5" />
                 Core Capabilities
               </span>
-              <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+              <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
                 <span className="block font-serif italic font-normal">
                   What This Tool
                 </span>
@@ -202,7 +202,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   <Sparkles className="h-3.5 w-3.5" />
                   Interactive Demo
                 </span>
-                <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1]">
+                <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15]">
                   <span className="block font-serif italic font-normal">
                     Try the Virtual Walkthrough
                   </span>
@@ -250,7 +250,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                 <Sparkles className="h-3.5 w-3.5" />
                 Startup and Agency Fit
               </span>
-              <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+              <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
                 <span className="block font-serif italic font-normal">
                   How {tool.name} Helps
                 </span>
@@ -297,7 +297,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   <Sparkles className="h-3.5 w-3.5" />
                   Implementation
                 </span>
-                <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1]">
+                <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15]">
                   <span className="block font-serif italic font-normal">
                     Built from a Foundation.
                   </span>

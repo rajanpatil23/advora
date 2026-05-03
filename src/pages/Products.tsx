@@ -227,7 +227,7 @@ export default function Products() {
               <Sparkles className="h-3.5 w-3.5" />
               Productized Tools
             </span>
-            <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+            <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
               <span className="block font-serif italic font-normal">
                 Four Tool Previews
               </span>
@@ -307,7 +307,7 @@ export default function Products() {
                 <Sparkles className="h-3.5 w-3.5" />
                 How It Works
               </span>
-              <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+              <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
                 <span className="block font-serif italic font-normal">
                   Automation That Cuts Manual Load
                 </span>

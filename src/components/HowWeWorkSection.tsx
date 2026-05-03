@@ -52,7 +52,7 @@ export default function HowWeWorkSection() {
         {/* Background Container */}
         <div className="bg-primary/15 dark:bg-primary/20 rounded-[3rem] p-8 sm:p-12 lg:p-16">
           <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+            <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
               <span className="block font-serif italic font-normal">From Vision to Reality</span>
               <span className="block font-bold text-primary">Our Proven Process</span>
             </h2>
