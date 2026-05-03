@@ -262,7 +262,7 @@ export default function ServicesShowcaseSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4"
+            className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4"
           >
             <span className="block font-serif italic font-normal">
               Explore What We

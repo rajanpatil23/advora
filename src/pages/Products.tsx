@@ -148,8 +148,8 @@ export default function Products() {
 
       <main>
         <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div className="rounded-[2rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-3 sm:p-8 md:p-12">
               <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                 <HeroProductShowcase />
 
@@ -168,7 +168,7 @@ export default function Products() {
                     </span>
                   </h1>
 
-                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
+                  <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed">
                     Premium software tools created from Advora&apos;s agency
                     workflows, packaged for businesses that need faster launch,
                     smarter operations, and room to customise.
@@ -227,7 +227,7 @@ export default function Products() {
               <Sparkles className="h-3.5 w-3.5" />
               Productized Tools
             </span>
-            <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+            <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
               <span className="block font-serif italic font-normal">
                 Four Tool Previews
               </span>
@@ -292,7 +292,7 @@ export default function Products() {
           </div>
         </section>
 
-        <section className="section-divider relative overflow-hidden bg-[#02070d] py-20 pt-24 text-white">
+        <section className="section-divider relative overflow-hidden bg-[#02070d] py-14 sm:py-20 sm:pt-24 text-white">
           <div
             aria-hidden="true"
             className="absolute inset-0"
@@ -307,7 +307,7 @@ export default function Products() {
                 <Sparkles className="h-3.5 w-3.5" />
                 How It Works
               </span>
-              <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+              <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
                 <span className="block font-serif italic font-normal">
                   Automation That Cuts Manual Load
                 </span>

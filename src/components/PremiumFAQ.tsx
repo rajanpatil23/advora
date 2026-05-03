@@ -207,7 +207,7 @@ export default function PremiumFAQ({
             <HelpCircle className="h-4 w-4" />
             {eyebrow}
           </span>
-          <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+          <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
             <span className="block font-serif italic font-normal">{title}</span>
             <span className="block font-bold text-primary">{highlightedTitle}</span>
           </h2>

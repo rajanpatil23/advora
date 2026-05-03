@@ -47,9 +47,9 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
       <main>
         <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
 
-            <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
+            <div className="rounded-[2rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-3 sm:p-8 md:p-12">
               <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                 <div className="rounded-xl sm:rounded-2xl overflow-hidden bg-white">
                   <img
@@ -67,7 +67,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     {tool.eyebrow}
                   </span>
 
-                  <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">
                       {tool.headlineSerif}
                     </span>
@@ -76,7 +76,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     </span>
                   </h1>
 
-                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
+                  <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed">
                     {tool.description}
                   </p>
 
@@ -106,16 +106,16 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
         <section
           id="virtual-demo"
-          className="scroll-mt-24 bg-[#02070d] py-16 text-white sm:py-24"
+          className="scroll-mt-24 bg-[#02070d] py-12 text-white sm:py-24"
         >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
               <div>
                 <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary">
                   <Sparkles className="h-3.5 w-3.5" />
                   Virtual Demo Flow
                 </span>
-                <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+                <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
                   <span className="block font-serif italic font-normal">
                     See how {tool.name} works
                   </span>
@@ -151,13 +151,13 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
         </section>
 
         <section className="section-divider py-16 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                 <Sparkles className="h-3.5 w-3.5" />
                 Core Capabilities
               </span>
-              <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+              <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
                 <span className="block font-serif italic font-normal">
                   What This Tool
                 </span>
@@ -195,14 +195,14 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
         </section>
 
         <section className="section-divider bg-muted/25 py-16 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div className="space-y-6">
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                   <Sparkles className="h-3.5 w-3.5" />
                   Interactive Demo
                 </span>
-                <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1]">
+                <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15]">
                   <span className="block font-serif italic font-normal">
                     Try the Virtual Walkthrough
                   </span>
@@ -244,13 +244,13 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
         </section>
 
         <section className="section-divider py-16 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                 <Sparkles className="h-3.5 w-3.5" />
                 Startup and Agency Fit
               </span>
-              <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+              <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
                 <span className="block font-serif italic font-normal">
                   How {tool.name} Helps
                 </span>
@@ -289,15 +289,15 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           </div>
         </section>
 
-        <section className="section-divider bg-[#02070d] py-16 text-white sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="section-divider bg-[#02070d] py-12 text-white sm:py-24">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
                 <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary">
                   <Sparkles className="h-3.5 w-3.5" />
                   Implementation
                 </span>
-                <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1]">
+                <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15]">
                   <span className="block font-serif italic font-normal">
                     Built from a Foundation.
                   </span>
