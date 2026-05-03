@@ -221,21 +221,19 @@ export default function Products() {
           className="section-divider max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-20"
         >
           <div className="mb-12 text-center">
-            <Badge
-              variant="outline"
-              className="mb-4 text-sm px-4 py-1 font-semibold tracking-wider"
-            >
-              PRODUCTIZED TOOLS
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4">
-              <span className="block font-serif italic font-normal mb-1">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+              <Sparkles className="h-3.5 w-3.5" />
+              Productized Tools
+            </span>
+            <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+              <span className="block font-serif italic font-normal">
                 Four Tool Previews
               </span>
-              <span className="block font-bold">
-                Built for <span className="text-primary">Real Operations</span>
+              <span className="block font-bold text-primary">
+                Built for Real Operations
               </span>
             </h2>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
               A quick look at the four products currently being built and
               packaged by Advora.
             </p>
@@ -281,16 +279,19 @@ export default function Products() {
           />
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <Badge className="mb-7 rounded-full border border-primary/35 bg-transparent px-5 py-1.5 text-sm font-semibold text-primary hover:bg-primary/10">
+              <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 backdrop-blur px-4 py-1.5 text-sm font-semibold text-primary">
+                <Sparkles className="h-3.5 w-3.5" />
                 How It Works
-              </Badge>
-              <h2 className="mx-auto mb-5 max-w-5xl text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
-                <span className="block">Automation That Cuts Manual Load</span>
-                <span className="block">
-                  and Fuels <span className="text-primary">Growth</span>
+              </span>
+              <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+                <span className="block font-serif italic font-normal">
+                  Automation That Cuts Manual Load
+                </span>
+                <span className="block font-bold text-primary">
+                  and Fuels Growth
                 </span>
               </h2>
-              <p className="mx-auto max-w-3xl text-base leading-7 text-background/65 sm:text-xl">
+              <p className="mx-auto max-w-2xl text-lg text-background/70">
                 Less manual work. More output. Sustainable growth.
               </p>
             </div>
