@@ -203,15 +203,15 @@ export default function PremiumFAQ({
           viewport={{ once: true }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             <HelpCircle className="h-4 w-4" />
             {eyebrow}
           </span>
-          <h2 className="text-3xl font-bold md:text-4xl">
-            <span className="block">{title}</span>
-            <span className="block text-primary">{highlightedTitle}</span>
+          <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+            <span className="block font-serif italic font-normal">{title}</span>
+            <span className="block font-bold text-primary">{highlightedTitle}</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 sm:text-[1.14rem]">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             {description}
           </p>
         </motion.div>
