@@ -321,11 +321,17 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
-                <Badge className="mb-5 rounded-full border border-primary/35 bg-transparent px-4 py-1.5 text-sm font-semibold text-primary hover:bg-primary/10">
+                <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary">
+                  <Sparkles className="h-3.5 w-3.5" />
                   Implementation
-                </Badge>
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-                  Built from a foundation. Customized for your business.
+                </span>
+                <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1]">
+                  <span className="block font-serif italic font-normal">
+                    Built from a Foundation.
+                  </span>
+                  <span className="block font-bold text-primary">
+                    Customized for Your Business.
+                  </span>
                 </h2>
                 <div className="mt-8 space-y-5">
                   {tool.implementation.map((item) => (
