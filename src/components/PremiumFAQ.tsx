@@ -266,7 +266,7 @@ export default function PremiumFAQ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.22 }}
-              className="border-t border-slate-200/80"
+              className="border-t border-slate-200/80 dark:border-white/10"
             >
               {activeFaqs.map((faq, index) => (
                 <FAQItem
