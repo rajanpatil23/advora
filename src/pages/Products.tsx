@@ -13,6 +13,7 @@ import {
   Lock,
   Plug,
   Shield,
+  Sparkles,
   TrendingUp,
   Users,
   Workflow,
