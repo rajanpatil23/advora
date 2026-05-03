@@ -292,7 +292,7 @@ export default function Products() {
           </div>
         </section>
 
-        <section className="section-divider relative overflow-hidden bg-[#02070d] py-20 pt-24 text-white">
+        <section className="section-divider relative overflow-hidden bg-[#02070d] py-14 sm:py-20 sm:pt-24 text-white">
           <div
             aria-hidden="true"
             className="absolute inset-0"
