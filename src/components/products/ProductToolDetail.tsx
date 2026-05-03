@@ -46,28 +46,28 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
       <Header />
 
       <main>
-        <section className="pt-20 sm:pt-24 pb-6 sm:pb-10">
+        <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div className="rounded-[2rem] sm:rounded-[2.5rem] bg-primary/10 dark:bg-card p-4 sm:p-6 md:p-8">
-              <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-10 items-center">
+            <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
+              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                 <div className="rounded-xl sm:rounded-2xl overflow-hidden bg-white">
                   <img
                     src={tool.screenshot}
                     alt={tool.screenshotAlt}
                     fetchPriority="high"
                     decoding="async"
-                    className="block w-full h-auto object-cover"
+                    className="w-full h-auto object-cover aspect-[4/3]"
                   />
                 </div>
 
-                <div className="space-y-3 sm:space-y-4">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-3 py-1 text-xs font-medium text-primary">
-                    <Sparkles className="h-3.5 w-3.5" />
+                <div className="space-y-4 sm:space-y-6">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary border border-primary/20">
+                    <Sparkles className="w-3.5 h-3.5" />
                     {tool.eyebrow}
                   </span>
 
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
+                  <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">
                       {tool.headlineSerif}
                     </span>
