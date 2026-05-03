@@ -120,7 +120,7 @@ const toneStyles: Record<
   blue: {
     accentHex: "#2563EB",
     iconWrap:
-      "border-primary/20 bg-gradient-to-br from-primary/15 to-primary/5 text-primary shadow-[inset_0_1px_0_0_rgba(255,255,255,0.6),0_8px_18px_-10px_rgba(37,99,235,0.45)]",
+      "border-primary/20 bg-gradient-to-br from-primary/15 to-primary/5 text-primary shadow-[inset_0_1px_0_0_rgba(255,255,255,0.6),0_8px_18px_-10px_rgba(37,99,235,0.45)] dark:border-primary/30 dark:from-primary/20 dark:to-primary/10 dark:text-primary",
     label: "text-primary",
     glow: "before:from-primary/25 before:via-primary/0",
     accentBar: "from-primary via-primary/60 to-transparent",
@@ -130,8 +130,8 @@ const toneStyles: Record<
   green: {
     accentHex: "#059669",
     iconWrap:
-      "border-emerald-200 bg-gradient-to-br from-emerald-100 to-emerald-50 text-emerald-600 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),0_8px_18px_-10px_rgba(5,150,105,0.45)]",
-    label: "text-emerald-600",
+      "border-emerald-200 bg-gradient-to-br from-emerald-100 to-emerald-50 text-emerald-600 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),0_8px_18px_-10px_rgba(5,150,105,0.45)] dark:border-emerald-500/30 dark:from-emerald-500/20 dark:to-emerald-500/10 dark:text-emerald-400",
+    label: "text-emerald-600 dark:text-emerald-400",
     glow: "before:from-emerald-400/25 before:via-emerald-400/0",
     accentBar: "from-emerald-500 via-emerald-400/60 to-transparent",
     arrowHover:
@@ -169,8 +169,11 @@ function ServiceCardItem({ service }: { service: ServiceCard }) {
       aria-label={`Learn more about ${service.title}`}
       className={cn(
         "group relative isolate flex min-h-[250px] overflow-hidden rounded-[1.5rem] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] px-5 py-5",
+        "dark:border-white/10 dark:bg-gradient-to-b dark:from-card dark:to-card/60",
         "shadow-[0_1px_0_0_rgba(255,255,255,0.9)_inset,0_20px_50px_-32px_rgba(15,23,42,0.22)]",
+        "dark:shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset,0_20px_50px_-20px_rgba(0,0,0,0.6)]",
         "transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-30px_rgba(15,23,42,0.28)]",
+        "dark:hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)]",
         "before:pointer-events-none before:absolute before:-inset-px before:rounded-[1.5rem] before:bg-gradient-to-br before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 group-hover:before:opacity-100 hover:before:opacity-100",
         tone.glow,
       )}
@@ -189,7 +192,7 @@ function ServiceCardItem({ service }: { service: ServiceCard }) {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-[1px] rounded-[calc(1.5rem-1px)] ring-1 ring-inset ring-white/60"
+        className="pointer-events-none absolute inset-[1px] rounded-[calc(1.5rem-1px)] ring-1 ring-inset ring-white/60 dark:ring-white/5"
       />
 
       <div className="relative z-10 flex h-full w-full flex-col">
@@ -211,21 +214,22 @@ function ServiceCardItem({ service }: { service: ServiceCard }) {
           >
             {service.pillar}
           </p>
-          <h3 className="mt-2.5 text-[1.05rem] font-semibold leading-snug tracking-tight text-[#0A1220]">
+          <h3 className="mt-2.5 text-[1.05rem] font-semibold leading-snug tracking-tight text-[#0A1220] dark:text-foreground">
             {service.title}
           </h3>
-          <p className="mt-2 text-[0.82rem] leading-[1.55rem] text-[#5A6679]">
+          <p className="mt-2 text-[0.82rem] leading-[1.55rem] text-[#5A6679] dark:text-muted-foreground">
             {service.description}
           </p>
         </div>
 
         <div className="mt-auto flex items-center justify-between pt-4">
-          <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#94A0B4] transition-colors duration-300 group-hover:text-[#0A1220]">
+          <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#94A0B4] transition-colors duration-300 group-hover:text-[#0A1220] dark:group-hover:text-foreground">
             Learn more
           </span>
           <span
             className={cn(
               "flex h-9 w-9 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-[#0A1220] transition-all duration-300 group-hover:translate-x-0.5",
+              "dark:border-white/10 dark:bg-white/5 dark:text-foreground",
               tone.arrowHover,
             )}
           >
