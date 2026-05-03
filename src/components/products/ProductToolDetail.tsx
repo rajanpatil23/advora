@@ -106,7 +106,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
         <section
           id="virtual-demo"
-          className="scroll-mt-24 bg-[#02070d] py-16 text-background sm:py-24"
+          className="scroll-mt-24 bg-[#02070d] py-16 text-white sm:py-24"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
@@ -123,7 +123,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     Before you build it.
                   </span>
                 </h2>
-                <p className="text-lg text-background/70">
+                <p className="text-lg text-white/70">
                   The walkthrough is designed to help founders, agencies, and
                   operations teams understand the main workflow, user roles, and
                   customization points quickly.
@@ -134,13 +134,13 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                 {tool.demoSteps.map((step, index) => (
                   <div
                     key={step.title}
-                    className="rounded-2xl border border-background/10 bg-background/[0.03] p-5"
+                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-5"
                   >
                     <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-full border border-primary/50 text-sm font-bold text-primary">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <h3 className="text-lg font-semibold">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-background/62">
+                    <p className="mt-3 text-sm leading-7 text-white/65">
                       {step.description}
                     </p>
                   </div>
@@ -289,7 +289,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           </div>
         </section>
 
-        <section className="section-divider bg-[#02070d] py-16 text-background sm:py-24">
+        <section className="section-divider bg-[#02070d] py-16 text-white sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
@@ -312,7 +312,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                       className="border-l border-primary/60 pl-5"
                     >
                       <h3 className="text-lg font-semibold">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-background/62">
+                      <p className="mt-2 text-sm leading-7 text-white/65">
                         {item.description}
                       </p>
                     </div>
@@ -320,14 +320,14 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                 </div>
               </div>
 
-              <div className="rounded-[1.75rem] border border-background/10 bg-background/[0.03] p-6 sm:p-8">
+              <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8">
                 <div className="mb-7 flex items-center gap-3">
                   <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/50 text-primary">
                     <Plug className="h-5 w-5" />
                   </span>
                   <div>
                     <h3 className="text-xl font-semibold">Common integrations</h3>
-                    <p className="mt-1 text-sm text-background/55">
+                    <p className="mt-1 text-sm text-white/55">
                       Connect the tool to your current stack.
                     </p>
                   </div>
@@ -337,7 +337,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   {tool.integrations.map((integration) => (
                     <div
                       key={integration}
-                      className="flex items-center gap-3 rounded-full border border-background/10 bg-background/[0.025] px-4 py-3 text-sm font-medium"
+                      className="flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-medium"
                     >
                       <ClipboardCheck className="h-4 w-4 shrink-0 text-primary" />
                       {integration}
