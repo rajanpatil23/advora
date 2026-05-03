@@ -46,18 +46,18 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
       <Header />
 
       <main>
-        <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
+        <section className="pt-20 sm:pt-24 pb-6 sm:pb-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               to="/products"
-              className="mb-6 inline-flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="mb-3 inline-flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Products
             </Link>
 
-            <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
-              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+            <div className="rounded-[2rem] sm:rounded-[2.5rem] bg-primary/10 dark:bg-card p-4 sm:p-6 md:p-8">
+              <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-10 items-center">
                 <div className="rounded-xl sm:rounded-2xl overflow-hidden bg-white">
                   <div className="aspect-[4/3]">
                     <img
@@ -68,13 +68,13 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   </div>
                 </div>
 
-                <div className="space-y-4 sm:space-y-6">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary">
+                <div className="space-y-3 sm:space-y-4">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-3 py-1 text-xs font-medium text-primary">
                     <Sparkles className="h-3.5 w-3.5" />
                     {tool.eyebrow}
                   </span>
 
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">
                       {tool.headlineSerif}
                     </span>
@@ -83,14 +83,14 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     </span>
                   </h1>
 
-                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
+                  <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                     {tool.description}
                   </p>
 
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-1">
                     <Button
                       asChild
-                      className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto"
+                      className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 font-medium w-full sm:w-auto"
                     >
                       <Link to="/contact">
                         Get Custom Demo
@@ -100,26 +100,10 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     <Button
                       asChild
                       variant="outline"
-                      className="w-full sm:w-auto rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
+                      className="w-full sm:w-auto rounded-full px-6 py-5 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
                     >
                       <a href="#virtual-demo">View Virtual Demo</a>
                     </Button>
-                  </div>
-
-                  <div className="grid max-w-xl grid-cols-2 gap-3 pt-2 sm:grid-cols-3">
-                    {tool.metrics.map((metric) => (
-                      <div
-                        key={metric.label}
-                        className="rounded-2xl border border-border bg-card/80 backdrop-blur px-4 py-4"
-                      >
-                        <span className="block text-xl sm:text-2xl font-bold text-primary break-words">
-                          {metric.value}
-                        </span>
-                        <span className="mt-1 block text-xs font-medium leading-5 text-muted-foreground">
-                          {metric.label}
-                        </span>
-                      </div>
-                    ))}
                   </div>
                 </div>
               </div>
