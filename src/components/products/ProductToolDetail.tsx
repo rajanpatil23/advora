@@ -188,15 +188,18 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
         <section className="section-divider py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 max-w-3xl">
-              <Badge
-                variant="outline"
-                className="mb-4 rounded-full px-4 py-1.5 text-sm font-semibold"
-              >
+            <div className="mb-12 text-center">
+              <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+                <Sparkles className="h-3.5 w-3.5" />
                 Core Capabilities
-              </Badge>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-                What this tool gives your team
+              </span>
+              <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+                <span className="block font-serif italic font-normal">
+                  What This Tool
+                </span>
+                <span className="block font-bold text-primary">
+                  Gives Your Team
+                </span>
               </h2>
             </div>
 
@@ -227,16 +230,19 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div className="space-y-6">
-                <Badge
-                  variant="outline"
-                  className="rounded-full px-4 py-1.5 text-sm font-semibold"
-                >
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+                  <Sparkles className="h-3.5 w-3.5" />
                   Interactive Demo
-                </Badge>
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-                  Try the virtual walkthrough inside the page.
+                </span>
+                <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1]">
+                  <span className="block font-serif italic font-normal">
+                    Try the Virtual Walkthrough
+                  </span>
+                  <span className="block font-bold text-primary">
+                    Inside the Page.
+                  </span>
                 </h2>
-                <p className="text-base leading-8 text-muted-foreground sm:text-lg">
+                <p className="text-lg text-muted-foreground">
                   This Arcade demo gives visitors a hands-on walkthrough of the
                   product experience, then the tool can be customized around
                   your workflow, branding, permissions, reports, and
@@ -272,14 +278,17 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
         <section className="section-divider py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
-              <Badge
-                variant="outline"
-                className="mb-4 rounded-full px-4 py-1.5 text-sm font-semibold"
-              >
+              <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+                <Sparkles className="h-3.5 w-3.5" />
                 Startup and Agency Fit
-              </Badge>
-              <h2 className="mx-auto max-w-4xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-                How {tool.name} helps lean teams operate better
+              </span>
+              <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+                <span className="block font-serif italic font-normal">
+                  How {tool.name} Helps
+                </span>
+                <span className="block font-bold text-primary">
+                  Lean Teams Operate Better
+                </span>
               </h2>
             </div>
 
