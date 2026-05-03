@@ -207,52 +207,6 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           </div>
         </section>
 
-        <section className="section-divider py-16 sm:py-24">
-          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
-            <div className="mb-12 text-center">
-              <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-                <Sparkles className="h-3.5 w-3.5" />
-                Startup and Agency Fit
-              </span>
-              <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
-                <span className="block font-serif italic font-normal">
-                  How {tool.name} Helps
-                </span>
-                <span className="block font-bold text-primary">
-                  Lean Teams Operate Better
-                </span>
-              </h2>
-            </div>
-
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-              {tool.startupBenefits.map((benefit, index) => {
-                const Icon = benefitIcons[index % benefitIcons.length];
-
-                return (
-                  <div
-                    key={benefit.title}
-                    className="group relative isolate overflow-hidden rounded-[1.75rem] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] dark:border-border dark:bg-card dark:from-card dark:to-card"
-                  >
-                    <span
-                      aria-hidden
-                      className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/15 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    />
-                    <span className="relative mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-primary transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground dark:border-border dark:bg-card">
-                      <Icon className="h-5 w-5" strokeWidth={1.8} />
-                    </span>
-                    <h3 className="relative text-base font-semibold text-foreground">
-                      {benefit.title}
-                    </h3>
-                    <p className="relative mt-3 text-sm leading-7 text-muted-foreground">
-                      {benefit.description}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         <section className="section-divider bg-[#02070d] py-12 text-white sm:py-24">
           <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
@@ -309,6 +263,52 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-divider py-16 sm:py-24">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+                <Sparkles className="h-3.5 w-3.5" />
+                Startup and Agency Fit
+              </span>
+              <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
+                <span className="block font-serif italic font-normal">
+                  How {tool.name} Helps
+                </span>
+                <span className="block font-bold text-primary">
+                  Lean Teams Operate Better
+                </span>
+              </h2>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {tool.startupBenefits.map((benefit, index) => {
+                const Icon = benefitIcons[index % benefitIcons.length];
+
+                return (
+                  <div
+                    key={benefit.title}
+                    className="group relative isolate overflow-hidden rounded-[1.75rem] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] dark:border-border dark:bg-card dark:from-card dark:to-card"
+                  >
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/15 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    />
+                    <span className="relative mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-primary transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground dark:border-border dark:bg-card">
+                      <Icon className="h-5 w-5" strokeWidth={1.8} />
+                    </span>
+                    <h3 className="relative text-base font-semibold text-foreground">
+                      {benefit.title}
+                    </h3>
+                    <p className="relative mt-3 text-sm leading-7 text-muted-foreground">
+                      {benefit.description}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
