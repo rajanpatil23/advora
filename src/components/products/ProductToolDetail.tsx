@@ -106,9 +106,9 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
         <section
           id="virtual-demo"
-          className="scroll-mt-24 bg-[#02070d] py-16 text-white sm:py-24"
+          className="scroll-mt-24 bg-[#02070d] py-12 text-white sm:py-24"
         >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
               <div>
                 <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary">
@@ -151,7 +151,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
         </section>
 
         <section className="section-divider py-16 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                 <Sparkles className="h-3.5 w-3.5" />
@@ -195,7 +195,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
         </section>
 
         <section className="section-divider bg-muted/25 py-16 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div className="space-y-6">
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
@@ -244,7 +244,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
         </section>
 
         <section className="section-divider py-16 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                 <Sparkles className="h-3.5 w-3.5" />
@@ -289,8 +289,8 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           </div>
         </section>
 
-        <section className="section-divider bg-[#02070d] py-16 text-white sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="section-divider bg-[#02070d] py-12 text-white sm:py-24">
+          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
                 <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary">
