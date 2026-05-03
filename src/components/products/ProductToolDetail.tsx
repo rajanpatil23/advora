@@ -67,7 +67,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     {tool.eyebrow}
                   </span>
 
-                  <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">
                       {tool.headlineSerif}
                     </span>
@@ -76,7 +76,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     </span>
                   </h1>
 
-                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
+                  <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed">
                     {tool.description}
                   </p>
 
