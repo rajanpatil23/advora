@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import productHeroIllustration from "@/assets/product-hero-illustration.png";
+import productHeroIllustration from "@/assets/product-hero-illustration.webp";
 import { productTools } from "@/data/productTools";
 
 const productPreviews = productTools.map((tool) => ({
