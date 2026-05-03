@@ -67,15 +67,6 @@ const buildServices: ServiceCard[] = [
     pillar: "BUILD",
     tone: "blue",
   },
-  {
-    title: "Branding",
-    description:
-      "Strategic brand identity systems that help your business stand out clearly.",
-    to: "/services/branding",
-    icon: Paintbrush,
-    pillar: "BUILD",
-    tone: "blue",
-  },
 ];
 
 const growthServices: ServiceCard[] = [
@@ -85,15 +76,6 @@ const growthServices: ServiceCard[] = [
       "Build a stronger online footprint across search, content, and visibility channels.",
     to: "/services/digital-presence",
     icon: Monitor,
-    pillar: "GROW & SCALE",
-    tone: "green",
-  },
-  {
-    title: "SEO & Content",
-    description:
-      "Search-focused content strategies that improve discovery and attract qualified traffic.",
-    to: "/contact?service=seo-content",
-    icon: Search,
     pillar: "GROW & SCALE",
     tone: "green",
   },
