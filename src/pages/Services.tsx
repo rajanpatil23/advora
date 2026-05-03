@@ -124,15 +124,21 @@ const Services = () => {
 
         <ServicesShowcaseSection />
 
-        <section className="section-divider overflow-hidden bg-foreground py-20 pt-24 text-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="section-divider relative overflow-hidden bg-foreground py-20 pt-24 text-background">
+          {/* Premium decorative gradient backdrop */}
+          <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_50%_50%,_white_1px,_transparent_1px)] bg-[length:24px_24px]" />
+          <div className="pointer-events-none absolute -top-32 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-32 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-20 text-center">
               <motion.span
-                className="mb-4 inline-block rounded-full bg-primary/20 px-4 py-1.5 text-sm font-semibold text-primary"
+                className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 backdrop-blur px-4 py-1.5 text-sm font-semibold text-primary"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
+                <Sparkles className="h-3.5 w-3.5" />
                 How We Work
               </motion.span>
               <motion.h2
