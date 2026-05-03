@@ -262,12 +262,14 @@ export default function Products() {
                   />
 
                   {/* image frame */}
-                  <div className="relative overflow-hidden rounded-[1.35rem] bg-[#F2F4F8] dark:bg-muted/40">
-                    <img
-                      src={preview.image}
-                      alt={preview.alt}
-                      className="block h-auto w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                    />
+                  <div className="relative overflow-hidden rounded-[1.35rem] bg-muted/30 p-3 sm:p-4">
+                    <div className="flex aspect-[16/10] items-center justify-center overflow-hidden rounded-[1.05rem] bg-background">
+                      <img
+                        src={preview.image}
+                        alt={preview.alt}
+                        className="block max-h-full w-full object-contain"
+                      />
+                    </div>
                   </div>
 
                   {/* meta footer */}
