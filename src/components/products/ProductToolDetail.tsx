@@ -265,15 +265,19 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                 return (
                   <div
                     key={benefit.title}
-                    className="rounded-2xl border border-border bg-card p-6"
+                    className="group relative isolate overflow-hidden rounded-[1.75rem] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] p-6 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] dark:border-border dark:bg-card dark:from-card dark:to-card"
                   >
-                    <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/15 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    />
+                    <span className="relative mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-primary transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground dark:border-border dark:bg-card">
                       <Icon className="h-5 w-5" strokeWidth={1.8} />
                     </span>
-                    <h3 className="text-base font-semibold">
+                    <h3 className="relative text-base font-semibold text-foreground">
                       {benefit.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                    <p className="relative mt-3 text-sm leading-7 text-muted-foreground">
                       {benefit.description}
                     </p>
                   </div>
