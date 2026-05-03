@@ -96,13 +96,13 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   </Button>
                 </div>
 
-                <div className="grid max-w-xl grid-cols-3 gap-3 pt-2">
+                <div className="grid max-w-xl grid-cols-2 gap-3 pt-2 sm:grid-cols-3">
                   {tool.metrics.map((metric) => (
                     <div
                       key={metric.label}
                       className="rounded-2xl border border-border bg-card px-4 py-4"
                     >
-                      <span className="block text-2xl font-bold text-primary">
+                      <span className="block text-xl sm:text-2xl font-bold text-primary break-words">
                         {metric.value}
                       </span>
                       <span className="mt-1 block text-xs font-medium leading-5 text-muted-foreground">
