@@ -52,13 +52,11 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
             <div className="rounded-[2rem] sm:rounded-[2.5rem] bg-primary/10 dark:bg-card p-4 sm:p-6 md:p-8">
               <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-10 items-center">
                 <div className="rounded-xl sm:rounded-2xl overflow-hidden bg-white">
-                  <div className="aspect-[4/3]">
-                    <img
-                      src={tool.screenshot}
-                      alt={tool.screenshotAlt}
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
+                  <img
+                    src={tool.screenshot}
+                    alt={tool.screenshotAlt}
+                    className="block w-full h-auto object-cover"
+                  />
                 </div>
 
                 <div className="space-y-3 sm:space-y-4">
