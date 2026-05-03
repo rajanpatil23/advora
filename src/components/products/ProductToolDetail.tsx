@@ -194,18 +194,16 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           </div>
         </section>
 
-        <section className="section-divider bg-muted/25 py-16 sm:py-24">
-          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
-            <div className="relative aspect-video w-full overflow-hidden rounded-[1.75rem] border border-border bg-black shadow-[0_24px_70px_-35px_rgba(15,23,42,0.45)]">
-              <iframe
-                src={tool.arcadeDemoUrl}
-                title={`${tool.name} Arcade virtual demo`}
-                className="absolute inset-0 h-full w-full border-0"
-                allow="fullscreen"
-                allowFullScreen
-                loading="lazy"
-              />
-            </div>
+        <section className="section-divider bg-muted/25">
+          <div className="relative aspect-video w-full overflow-hidden bg-black">
+            <iframe
+              src={tool.arcadeDemoUrl}
+              title={`${tool.name} Arcade virtual demo`}
+              className="absolute inset-0 h-full w-full border-0"
+              allow="fullscreen"
+              allowFullScreen
+              loading="lazy"
+            />
           </div>
         </section>
 
