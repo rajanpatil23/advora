@@ -125,7 +125,7 @@ function FAQItem({
   onToggle: () => void;
 }) {
   return (
-    <div className="border-b border-slate-200/80">
+    <div className="border-b border-slate-200/80 dark:border-white/10">
       <button
         onClick={onToggle}
         className="flex w-full items-start justify-between gap-6 py-6 text-left sm:py-7"
@@ -134,7 +134,7 @@ function FAQItem({
           <h3
             className={cn(
               "text-lg font-semibold leading-8 tracking-tight transition-colors sm:text-xl",
-              isOpen ? "text-primary" : "text-[#0A1220]",
+              isOpen ? "text-primary" : "text-[#0A1220] dark:text-foreground",
             )}
           >
             {q}
@@ -148,7 +148,7 @@ function FAQItem({
             "mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-colors",
             isOpen
               ? "border-primary/25 bg-primary/10 text-primary"
-              : "border-slate-200 bg-white text-slate-500",
+              : "border-slate-200 bg-white text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-muted-foreground",
           )}
         >
           <ChevronDown className="h-4 w-4" />
@@ -165,8 +165,8 @@ function FAQItem({
             className="overflow-hidden"
           >
             <div className="pb-6 pr-14 sm:pb-7">
-              <div className="mb-5 h-px bg-[linear-gradient(90deg,rgba(37,99,235,0.18),rgba(226,232,240,0.78),transparent)]" />
-              <p className="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+              <div className="mb-5 h-px bg-[linear-gradient(90deg,rgba(37,99,235,0.18),rgba(226,232,240,0.78),transparent)] dark:bg-[linear-gradient(90deg,rgba(37,99,235,0.35),rgba(255,255,255,0.12),transparent)]" />
+              <p className="max-w-3xl text-base leading-8 text-slate-600 dark:text-muted-foreground sm:text-lg">
                 {a}
               </p>
             </div>
@@ -240,7 +240,7 @@ export default function PremiumFAQ({
                       "inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-all duration-300",
                       isActive
                         ? "border-primary bg-primary text-white shadow-[0_16px_34px_-20px_rgba(37,99,235,0.55)]"
-                        : "border-slate-200 bg-white text-slate-600 hover:border-primary/20 hover:text-[#0A1220]",
+                        : "border-slate-200 bg-white text-slate-600 hover:border-primary/20 hover:text-[#0A1220] dark:border-white/10 dark:bg-white/5 dark:text-muted-foreground dark:hover:text-foreground",
                     )}
                   >
                     <Icon className="h-4 w-4" />
@@ -266,7 +266,7 @@ export default function PremiumFAQ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.22 }}
-              className="border-t border-slate-200/80"
+              className="border-t border-slate-200/80 dark:border-white/10"
             >
               {activeFaqs.map((faq, index) => (
                 <FAQItem
