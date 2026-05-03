@@ -196,7 +196,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
         <section className="section-divider bg-muted/25 py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div className="grid gap-10 lg:grid-cols-[3fr_7fr] lg:items-center">
               <div className="space-y-6">
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                   <Sparkles className="h-3.5 w-3.5" />
@@ -217,14 +217,6 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   integrations.
                 </p>
 
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {tool.modules.map((item) => (
-                    <div key={item} className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
-                      <span className="text-sm font-medium">{item}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               <div className="overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-[0_24px_70px_-35px_rgba(15,23,42,0.45)]">
