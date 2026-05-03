@@ -240,7 +240,7 @@ export default function PremiumFAQ({
                       "inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-all duration-300",
                       isActive
                         ? "border-primary bg-primary text-white shadow-[0_16px_34px_-20px_rgba(37,99,235,0.55)]"
-                        : "border-slate-200 bg-white text-slate-600 hover:border-primary/20 hover:text-[#0A1220]",
+                        : "border-slate-200 bg-white text-slate-600 hover:border-primary/20 hover:text-[#0A1220] dark:border-white/10 dark:bg-white/5 dark:text-muted-foreground dark:hover:text-foreground",
                     )}
                   >
                     <Icon className="h-4 w-4" />
