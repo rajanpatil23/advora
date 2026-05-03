@@ -64,7 +64,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                 </span>
 
                 <div className="space-y-4">
-                  <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">
                       {tool.headlineSerif}
                     </span>
@@ -90,19 +90,19 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   <Button
                     asChild
                     variant="outline"
-                    className="rounded-full px-7 py-6 font-medium"
+                    className="rounded-full px-7 py-6 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
                   >
                     <a href="#virtual-demo">View Virtual Demo</a>
                   </Button>
                 </div>
 
-                <div className="grid max-w-xl grid-cols-3 gap-3 pt-2">
+                <div className="grid max-w-xl grid-cols-2 gap-3 pt-2 sm:grid-cols-3">
                   {tool.metrics.map((metric) => (
                     <div
                       key={metric.label}
                       className="rounded-2xl border border-border bg-card px-4 py-4"
                     >
-                      <span className="block text-2xl font-bold text-primary">
+                      <span className="block text-xl sm:text-2xl font-bold text-primary break-words">
                         {metric.value}
                       </span>
                       <span className="mt-1 block text-xs font-medium leading-5 text-muted-foreground">
