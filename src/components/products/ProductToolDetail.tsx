@@ -58,23 +58,21 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
               <div className="space-y-6">
-                <Badge
-                  variant="outline"
-                  className="rounded-full px-4 py-1.5 text-sm font-semibold"
-                >
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+                  <Sparkles className="h-3.5 w-3.5" />
                   {tool.eyebrow}
-                </Badge>
+                </span>
 
                 <div className="space-y-4">
-                  <h1 className="text-4xl tracking-tight leading-[1.08] sm:text-5xl lg:text-6xl">
-                    <span className="block font-serif font-normal">
+                  <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+                    <span className="block font-serif italic font-normal">
                       {tool.headlineSerif}
                     </span>
                     <span className="block font-bold text-primary">
                       {tool.headlineStrong}
                     </span>
                   </h1>
-                  <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
+                  <p className="max-w-2xl text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
                     {tool.description}
                   </p>
                 </div>
@@ -149,13 +147,19 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
               <div>
-                <Badge className="mb-5 rounded-full border border-primary/35 bg-transparent px-4 py-1.5 text-sm font-semibold text-primary hover:bg-primary/10">
+                <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary">
+                  <Sparkles className="h-3.5 w-3.5" />
                   Virtual Demo Flow
-                </Badge>
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-                  See how {tool.name} works before you build it.
+                </span>
+                <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+                  <span className="block font-serif italic font-normal">
+                    See how {tool.name} works
+                  </span>
+                  <span className="block font-bold text-primary">
+                    Before you build it.
+                  </span>
                 </h2>
-                <p className="mt-5 text-base leading-8 text-background/65 sm:text-lg">
+                <p className="text-lg text-background/70">
                   The walkthrough is designed to help founders, agencies, and
                   operations teams understand the main workflow, user roles, and
                   customization points quickly.
