@@ -266,9 +266,8 @@ export default function Products() {
                     <img
                       src={preview.image}
                       alt={preview.alt}
-                      className="h-auto w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                      className="block h-auto w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     />
-                    <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/60 rounded-[1.35rem]" />
                   </div>
 
                   {/* meta footer */}
