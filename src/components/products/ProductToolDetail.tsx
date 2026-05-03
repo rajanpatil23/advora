@@ -196,41 +196,15 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
         <section className="section-divider bg-muted/25 py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
-            <div className="grid gap-10 md:grid-cols-[3fr_7fr] md:items-center">
-              <div className="space-y-6">
-                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  Interactive Demo
-                </span>
-                <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15]">
-                  <span className="block font-serif italic font-normal">
-                    Try the Virtual Walkthrough
-                  </span>
-                  <span className="block font-bold text-primary">
-                    Inside the Page.
-                  </span>
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  This Arcade demo gives visitors a hands-on walkthrough of the
-                  product experience, then the tool can be customized around
-                  your workflow, branding, permissions, reports, and
-                  integrations.
-                </p>
-
-              </div>
-
-              <div className="overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-[0_24px_70px_-35px_rgba(15,23,42,0.45)]">
-                <div className="relative aspect-video w-full overflow-hidden bg-black">
-                  <iframe
-                    src={tool.arcadeDemoUrl}
-                    title={`${tool.name} Arcade virtual demo`}
-                    className="absolute inset-0 h-full w-full border-0"
-                    allow="fullscreen"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                </div>
-              </div>
+            <div className="relative aspect-video w-full overflow-hidden rounded-[1.75rem] border border-border bg-black shadow-[0_24px_70px_-35px_rgba(15,23,42,0.45)]">
+              <iframe
+                src={tool.arcadeDemoUrl}
+                title={`${tool.name} Arcade virtual demo`}
+                className="absolute inset-0 h-full w-full border-0"
+                allow="fullscreen"
+                allowFullScreen
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
