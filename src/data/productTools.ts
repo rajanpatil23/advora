@@ -1,6 +1,6 @@
 import invoiceScreenshot from "@/assets/invoice-suite-hero.png";
 import warehouseScreenshot from "@/assets/warehouse-management-hero.png";
-import serviceDeskScreenshot from "@/assets/Service Desk (1).png";
+import serviceDeskScreenshot from "@/assets/service-desk-hero.png";
 import claimsScreenshot from "@/assets/Claims OS (1).png";
 import invoiceDemo from "@/assets/productized-tool-1.png";
 import warehouseDemo from "@/assets/productized-tool-2.png";
