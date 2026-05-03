@@ -6,9 +6,7 @@ import {
   DollarSign,
   Globe,
   Monitor,
-  Paintbrush,
   Palette,
-  Search,
   Smartphone,
   TrendingUp,
   type LucideIcon,
@@ -160,101 +158,69 @@ function getCardCornerTextureStyle(accentHex: string) {
   };
 }
 
-function ServicesMarqueeRow({
-  services,
-  reverse = false,
-  duration = "38s",
-}: {
-  services: ServiceCard[];
-  reverse?: boolean;
-  duration?: string;
-}) {
-  const marqueeCards = [...services, ...services];
+const allServices = [...buildServices, ...growthServices];
 
+function ServiceCardItem({ service }: { service: ServiceCard }) {
+  const tone = toneStyles[service.tone];
   return (
-    <div className="relative overflow-hidden py-1">
+    <Link
+      to={service.to}
+      aria-label={`Learn more about ${service.title}`}
+      className={cn(
+        "group relative isolate flex min-h-[230px] overflow-hidden rounded-[1.4rem] border border-[#E4E9F2] bg-white px-4 py-4 shadow-[0_18px_44px_-32px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1",
+        tone.hoverBorder,
+        tone.hoverShadow,
+      )}
+    >
       <div
-        className={cn(
-          "flex w-max gap-6",
-          reverse ? "animate-marquee-reverse" : "animate-marquee",
-        )}
-        style={{ animationDuration: duration }}
-      >
-        {marqueeCards.map((service, index) => {
-          const tone = toneStyles[service.tone];
+        aria-hidden="true"
+        className="absolute right-0 top-0 h-[104px] w-[136px] rounded-tr-[1.4rem]"
+        style={getCardCornerTextureStyle(tone.accentHex)}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-[1px] rounded-[calc(1.4rem-1px)] border border-white/70"
+      />
 
-          return (
-            <Link
-              key={`${service.title}-${index}`}
-              to={service.to}
-              aria-label={`Learn more about ${service.title}`}
-              className={cn(
-                "group relative isolate flex min-h-[274px] w-[300px] shrink-0 overflow-hidden rounded-[1.7rem] border border-[#E4E9F2] bg-white px-5 py-5 shadow-[0_18px_44px_-32px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1 sm:min-h-[282px] sm:w-[312px] lg:min-h-[290px] lg:w-[320px]",
-                tone.hoverBorder,
-                tone.hoverShadow,
-              )}
-            >
-              <div
-                aria-hidden="true"
-                className="absolute right-0 top-0 h-[104px] w-[136px] rounded-tr-[1.7rem]"
-                style={getCardCornerTextureStyle(tone.accentHex)}
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-[1px] rounded-[calc(1.7rem-1px)] border border-white/70"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-5 top-0 h-px bg-[#E8EDF5]"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute bottom-5 right-5 h-12 w-12 rounded-full border border-[#E7ECF4]"
-              />
+      <div className="relative z-10 flex h-full w-full flex-col">
+        <div
+          className={cn(
+            "flex h-11 w-11 items-center justify-center rounded-[0.85rem] border",
+            tone.iconWrap,
+          )}
+        >
+          <service.icon className="h-5 w-5" />
+        </div>
 
-              <div className="relative z-10 flex h-full flex-col">
-                <div
-                  className={cn(
-                    "flex h-14 w-14 items-center justify-center rounded-[1rem] border",
-                    tone.iconWrap,
-                  )}
-                >
-                  <service.icon className="h-7 w-7" />
-                </div>
+        <div className="mt-4">
+          <p
+            className={cn(
+              "text-[10px] font-semibold uppercase tracking-[0.12em]",
+              tone.label,
+            )}
+          >
+            {service.pillar}
+          </p>
+          <h3 className="mt-2 text-base font-semibold leading-snug text-[#0A1220]">
+            {service.title}
+          </h3>
+          <p className="mt-2 text-[0.8rem] leading-6 text-[#4E5A70]">
+            {service.description}
+          </p>
+        </div>
 
-                <div className="mt-5">
-                  <p
-                    className={cn(
-                      "text-xs font-semibold uppercase tracking-[0.12em]",
-                      tone.label,
-                    )}
-                  >
-                    {service.pillar}
-                  </p>
-                  <h3 className="mt-3 text-[1.33rem] font-semibold leading-[1.22] text-[#0A1220]">
-                    {service.title}
-                  </h3>
-                  <p className="mt-4 pr-2 text-[0.96rem] leading-7 text-[#4E5A70]">
-                    {service.description}
-                  </p>
-                </div>
-
-                <div className="mt-auto flex justify-end pt-5">
-                  <span
-                    className={cn(
-                      "flex h-11 w-11 items-center justify-center rounded-full border border-[#D5DCE8] bg-white text-[#0A1220] shadow-[0_10px_22px_-18px_rgba(15,23,42,0.45)] transition-colors duration-300",
-                      tone.arrowHover,
-                    )}
-                  >
-                    <ArrowRight className="h-4 w-4" />
-                  </span>
-                </div>
-              </div>
-            </Link>
-          );
-        })}
+        <div className="mt-auto flex justify-end pt-3">
+          <span
+            className={cn(
+              "flex h-9 w-9 items-center justify-center rounded-full border border-[#D5DCE8] bg-white text-[#0A1220] transition-colors duration-300",
+              tone.arrowHover,
+            )}
+          >
+            <ArrowRight className="h-3.5 w-3.5" />
+          </span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -306,21 +272,11 @@ export default function ServicesShowcaseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.45, delay: 0.2 }}
-          className="relative mt-14 space-y-7"
+          className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"
         >
-          <ServicesMarqueeRow services={serviceRows[0]} duration="40s" />
-          <div className="flex justify-center px-4">
-            <div className="relative w-full max-w-5xl">
-              <div className="h-px w-full bg-[linear-gradient(90deg,transparent,rgba(203,213,225,0.86)_16%,rgba(203,213,225,1)_50%,rgba(203,213,225,0.86)_84%,transparent)]" />
-              <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#D7E0EE] bg-white" />
-            </div>
-          </div>
-          <ServicesMarqueeRow
-            services={serviceRows[1]}
-            reverse={true}
-            duration="42s"
-          />
-
+          {allServices.map((service) => (
+            <ServiceCardItem key={service.title} service={service} />
+          ))}
         </motion.div>
       </div>
     </section>
