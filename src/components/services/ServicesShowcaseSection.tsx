@@ -169,8 +169,11 @@ function ServiceCardItem({ service }: { service: ServiceCard }) {
       aria-label={`Learn more about ${service.title}`}
       className={cn(
         "group relative isolate flex min-h-[250px] overflow-hidden rounded-[1.5rem] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] px-5 py-5",
+        "dark:border-white/10 dark:bg-gradient-to-b dark:from-card dark:to-card/60",
         "shadow-[0_1px_0_0_rgba(255,255,255,0.9)_inset,0_20px_50px_-32px_rgba(15,23,42,0.22)]",
+        "dark:shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset,0_20px_50px_-20px_rgba(0,0,0,0.6)]",
         "transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-30px_rgba(15,23,42,0.28)]",
+        "dark:hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)]",
         "before:pointer-events-none before:absolute before:-inset-px before:rounded-[1.5rem] before:bg-gradient-to-br before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 group-hover:before:opacity-100 hover:before:opacity-100",
         tone.glow,
       )}
