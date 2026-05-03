@@ -196,7 +196,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
         <section className="section-divider bg-muted/25 py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[3fr_7fr] lg:items-center">
+            <div className="grid gap-10 md:grid-cols-[3fr_7fr] md:items-center">
               <div className="space-y-6">
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                   <Sparkles className="h-3.5 w-3.5" />
