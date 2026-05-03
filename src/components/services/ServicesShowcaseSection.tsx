@@ -120,7 +120,7 @@ const toneStyles: Record<
   blue: {
     accentHex: "#2563EB",
     iconWrap:
-      "border-primary/20 bg-gradient-to-br from-primary/15 to-primary/5 text-primary shadow-[inset_0_1px_0_0_rgba(255,255,255,0.6),0_8px_18px_-10px_rgba(37,99,235,0.45)]",
+      "border-primary/20 bg-gradient-to-br from-primary/15 to-primary/5 text-primary shadow-[inset_0_1px_0_0_rgba(255,255,255,0.6),0_8px_18px_-10px_rgba(37,99,235,0.45)] dark:border-primary/30 dark:from-primary/20 dark:to-primary/10 dark:text-primary",
     label: "text-primary",
     glow: "before:from-primary/25 before:via-primary/0",
     accentBar: "from-primary via-primary/60 to-transparent",
@@ -130,8 +130,8 @@ const toneStyles: Record<
   green: {
     accentHex: "#059669",
     iconWrap:
-      "border-emerald-200 bg-gradient-to-br from-emerald-100 to-emerald-50 text-emerald-600 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),0_8px_18px_-10px_rgba(5,150,105,0.45)]",
-    label: "text-emerald-600",
+      "border-emerald-200 bg-gradient-to-br from-emerald-100 to-emerald-50 text-emerald-600 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),0_8px_18px_-10px_rgba(5,150,105,0.45)] dark:border-emerald-500/30 dark:from-emerald-500/20 dark:to-emerald-500/10 dark:text-emerald-400",
+    label: "text-emerald-600 dark:text-emerald-400",
     glow: "before:from-emerald-400/25 before:via-emerald-400/0",
     accentBar: "from-emerald-500 via-emerald-400/60 to-transparent",
     arrowHover:
