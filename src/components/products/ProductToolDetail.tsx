@@ -55,6 +55,8 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   <img
                     src={tool.screenshot}
                     alt={tool.screenshotAlt}
+                    fetchPriority="high"
+                    decoding="async"
                     className="block w-full h-auto object-cover"
                   />
                 </div>

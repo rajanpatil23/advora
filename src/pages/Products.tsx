@@ -266,6 +266,8 @@ export default function Products() {
                     <img
                       src={preview.image}
                       alt={preview.alt}
+                      loading="lazy"
+                      decoding="async"
                       className="block h-auto w-full object-cover"
                     />
                   </div>
