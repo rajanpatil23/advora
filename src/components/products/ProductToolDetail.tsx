@@ -76,14 +76,14 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     </span>
                   </h1>
 
-                  <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
                     {tool.description}
                   </p>
 
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-1">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
                     <Button
                       asChild
-                      className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 font-medium w-full sm:w-auto"
+                      className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto"
                     >
                       <Link to="/contact">
                         Get Custom Demo
@@ -93,7 +93,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     <Button
                       asChild
                       variant="outline"
-                      className="w-full sm:w-auto rounded-full px-6 py-5 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
+                      className="w-full sm:w-auto rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
                     >
                       <a href="#virtual-demo">View Virtual Demo</a>
                     </Button>
