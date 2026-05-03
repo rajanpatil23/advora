@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
-import ServicesHero from "@/components/services/ServicesHero";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { usePageSEO } from "@/hooks/usePageSEO";
@@ -47,24 +46,63 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
       <Header />
 
       <main>
-        <ServicesHero
-          title={
-            <>
-              <span className="block font-serif italic font-normal">
-                {tool.headlineSerif}
-              </span>
-              <span className="block font-bold text-primary">
-                {tool.headlineStrong}
-              </span>
-            </>
-          }
-          description={tool.description}
-          primaryAction={{ label: "Get Custom Demo", to: "/contact" }}
-          secondaryAction={{ label: "View Virtual Demo", to: "#virtual-demo" }}
-          mediaSrc={tool.screenshot}
-          mediaAlt={tool.screenshotAlt}
-          mediaEyebrow={tool.eyebrow}
-        />
+        <section className="pt-20 sm:pt-24 pb-6 sm:pb-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div className="rounded-[2rem] sm:rounded-[2.5rem] bg-primary/10 dark:bg-card p-4 sm:p-6 md:p-8">
+              <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-10 items-center">
+                <div className="rounded-xl sm:rounded-2xl overflow-hidden bg-white">
+                  <img
+                    src={tool.screenshot}
+                    alt={tool.screenshotAlt}
+                    fetchPriority="high"
+                    decoding="async"
+                    className="block w-full h-auto object-cover"
+                  />
+                </div>
+
+                <div className="space-y-3 sm:space-y-4">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-3 py-1 text-xs font-medium text-primary">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    {tool.eyebrow}
+                  </span>
+
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
+                    <span className="block font-serif italic font-normal">
+                      {tool.headlineSerif}
+                    </span>
+                    <span className="block font-bold text-primary">
+                      {tool.headlineStrong}
+                    </span>
+                  </h1>
+
+                  <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+                    {tool.description}
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-1">
+                    <Button
+                      asChild
+                      className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 font-medium w-full sm:w-auto"
+                    >
+                      <Link to="/contact">
+                        Get Custom Demo
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="w-full sm:w-auto rounded-full px-6 py-5 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
+                    >
+                      <a href="#virtual-demo">View Virtual Demo</a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section
           id="virtual-demo"

@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import PremiumFAQ from "@/components/PremiumFAQ";
-import ServicesHero from "@/components/services/ServicesHero";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { usePageSEO } from "@/hooks/usePageSEO";
@@ -116,6 +115,24 @@ const productFaqs = {
   ],
 };
 
+function HeroProductShowcase() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -30, scale: 0.98 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      transition={{ duration: 0.65, delay: 0.1 }}
+      className="rounded-xl sm:rounded-2xl overflow-hidden bg-white"
+    >
+      <div className="aspect-[4/3]">
+        <img
+          src={productHeroIllustration}
+          alt="Advora product automation dashboard illustration"
+          className="h-full w-full object-contain"
+        />
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Products() {
   usePageSEO({
@@ -130,23 +147,54 @@ export default function Products() {
       <Header />
 
       <main>
-        <ServicesHero
-          title={
-            <>
-              <span className="block font-serif italic font-normal">
-                Productized Tools
-              </span>
-              <span className="block font-bold text-primary">
-                Built to Sell.
-              </span>
-            </>
-          }
-          description="Premium software tools created from Advora's agency workflows, packaged for businesses that need faster launch, smarter operations, and room to customise."
-          primaryAction={{ label: "Explore Tools", to: "#products" }}
-          secondaryAction={{ label: "Talk to Us", to: "/contact" }}
-          mediaSrc={productHeroIllustration}
-          mediaAlt="Advora product automation dashboard illustration"
-        />
+        <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
+              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+                <HeroProductShowcase />
+
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="space-y-4 sm:space-y-6"
+                >
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+                    <span className="block font-serif italic font-normal">
+                      Productized Tools
+                    </span>
+                    <span className="block font-bold text-primary">
+                      Built to Sell.
+                    </span>
+                  </h1>
+
+                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
+                    Premium software tools created from Advora&apos;s agency
+                    workflows, packaged for businesses that need faster launch,
+                    smarter operations, and room to customise.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+                    <a href="#products" className="w-full sm:w-auto">
+                      <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto">
+                        Explore Tools
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </a>
+                    <Link to="/contact" className="w-full sm:w-auto">
+                      <Button
+                        variant="outline"
+                        className="w-full sm:w-auto rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
+                      >
+                        Talk to Us
+                      </Button>
+                    </Link>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="section-divider py-10 sm:py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
