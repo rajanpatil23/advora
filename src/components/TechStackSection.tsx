@@ -44,13 +44,16 @@ export default function TechStackSection({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           {badgeLabel ? (
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
               <Boxes className="w-4 h-4" />
               {badgeLabel}
             </span>
           ) : null}
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-          <p className="text-xl text-muted-foreground">{subtitle}</p>
+          <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4">
+            <span className="block font-serif italic font-normal">Technologies</span>
+            <span className="block font-bold text-primary">We Use</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{subtitle}</p>
         </div>
         
         {/* Scrolling Marquee */}

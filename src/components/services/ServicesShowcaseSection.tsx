@@ -287,7 +287,7 @@ export default function ServicesShowcaseSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
+            className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
           >
             <BriefcaseBusiness className="h-4 w-4" />
             Our Services
@@ -297,13 +297,13 @@ export default function ServicesShowcaseSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl tracking-tight text-[#0A1220] sm:text-5xl lg:text-6xl"
+            className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-4"
           >
             <span className="block font-serif italic font-normal">
               Explore What We
             </span>
-            <span className="block font-bold">
-              Can Build <span className="text-primary">For You</span>
+            <span className="block font-bold text-primary">
+              Can Build For You
             </span>
           </motion.h2>
           <motion.p
@@ -311,7 +311,7 @@ export default function ServicesShowcaseSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[#5B657A] sm:text-[1.16rem]"
+            className="mx-auto max-w-2xl text-lg text-muted-foreground"
           >
             Explore our full range of services across two core pillars:
             technology and growth. Everything we build is designed to create

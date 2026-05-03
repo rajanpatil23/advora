@@ -86,16 +86,17 @@ const Services = () => {
                 How We Work
               </motion.span>
               <motion.h2
-                className="mb-4 text-3xl md:text-5xl font-bold"
+                className="mb-4 text-3xl md:text-5xl tracking-tight leading-[1.1]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
               >
-                Our Development Process
+                <span className="block font-serif italic font-normal">Our Development</span>
+                <span className="block font-bold text-primary">Process</span>
               </motion.h2>
               <motion.p
-                className="mx-auto max-w-2xl text-xl text-background/70"
+                className="mx-auto max-w-2xl text-lg text-background/70"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
