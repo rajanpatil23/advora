@@ -116,24 +116,6 @@ const productFaqs = {
   ],
 };
 
-function HeroProductShowcase() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -30, scale: 0.98 }}
-      animate={{ opacity: 1, x: 0, scale: 1 }}
-      transition={{ duration: 0.65, delay: 0.1 }}
-      className="rounded-xl sm:rounded-2xl overflow-hidden bg-white"
-    >
-      <div className="aspect-[4/3]">
-        <img
-          src={productHeroIllustration}
-          alt="Advora product automation dashboard illustration"
-          className="h-full w-full object-contain"
-        />
-      </div>
-    </motion.div>
-  );
-}
 
 export default function Products() {
   usePageSEO({
