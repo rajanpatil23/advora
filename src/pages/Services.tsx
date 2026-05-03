@@ -6,6 +6,10 @@ import {
   FileText,
   Rocket,
   Search,
+  Sparkles,
+  Layers,
+  Zap,
+  Award,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -27,6 +31,12 @@ const Services = () => {
     canonical: "/services",
   });
 
+  const heroStats = [
+    { icon: Layers, value: "10+", label: "Service Pillars" },
+    { icon: Award, value: "150+", label: "Projects Shipped" },
+    { icon: Zap, value: "24/7", label: "Support" },
+  ];
+
   return (
     <div className="min-h-screen bg-background animate-fade-in">
       <Header />
@@ -34,17 +44,35 @@ const Services = () => {
       <main>
         <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
-              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                <div className="rounded-xl sm:rounded-2xl overflow-hidden">
+            <div className="relative rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12 overflow-hidden">
+              {/* Decorative orbs */}
+              <div className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-24 -left-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+
+              <div className="relative grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+                <div className="relative rounded-xl sm:rounded-2xl overflow-hidden group">
                   <img
                     src={serviceHeroImg}
                     alt="Service hero image"
-                    className="w-full h-auto object-cover aspect-[4/3]"
+                    className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-700 group-hover:scale-105"
                   />
+                  {/* Floating badge on image */}
+                  <div className="absolute bottom-4 left-4 bg-card/95 backdrop-blur border border-border rounded-2xl px-4 py-2.5 shadow-lg flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
+                      <Sparkles className="w-4 h-4 text-primary" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold leading-tight">End-to-End Delivery</div>
+                      <div className="text-[10px] text-muted-foreground">From idea to launch</div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="space-y-4 sm:space-y-6">
+                  <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/15 text-primary text-sm font-medium border border-primary/20">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    Our Services
+                  </span>
                   <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">Expert Solutions</span>
                     <span className="block font-bold text-primary">For Your Business.</span>
@@ -69,20 +97,48 @@ const Services = () => {
                 </div>
               </div>
             </div>
+
+            {/* Premium stats strip */}
+            <div className="mt-6 grid grid-cols-3 gap-3 sm:gap-6">
+              {heroStats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: i * 0.1 }}
+                  className="rounded-2xl border border-border bg-card/80 backdrop-blur px-3 py-4 sm:px-6 sm:py-5 flex items-center gap-3 sm:gap-4 hover:border-primary/40 hover:shadow-md transition-all"
+                >
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-xl sm:text-2xl font-bold text-foreground leading-tight">{stat.value}</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground truncate">{stat.label}</div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
         <ServicesShowcaseSection />
 
-        <section className="section-divider overflow-hidden bg-foreground py-20 pt-24 text-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="section-divider relative overflow-hidden bg-foreground py-20 pt-24 text-background">
+          {/* Premium decorative gradient backdrop */}
+          <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_50%_50%,_white_1px,_transparent_1px)] bg-[length:24px_24px]" />
+          <div className="pointer-events-none absolute -top-32 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-32 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-20 text-center">
               <motion.span
-                className="mb-4 inline-block rounded-full bg-primary/20 px-4 py-1.5 text-sm font-semibold text-primary"
+                className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 backdrop-blur px-4 py-1.5 text-sm font-semibold text-primary"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
+                <Sparkles className="h-3.5 w-3.5" />
                 How We Work
               </motion.span>
               <motion.h2
