@@ -126,6 +126,8 @@ const Services = () => {
 
         <section className="section-divider relative overflow-hidden bg-foreground py-20 pt-24 text-background">
           <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_50%_50%,_white_1px,_transparent_1px)] bg-[length:24px_24px]" />
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
 
             <div className="mb-20 text-center">
               <motion.span
