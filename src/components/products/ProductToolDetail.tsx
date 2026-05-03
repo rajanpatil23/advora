@@ -57,7 +57,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     alt={tool.screenshotAlt}
                     fetchPriority="high"
                     decoding="async"
-                    className="w-full h-auto object-cover aspect-[4/3]"
+                    className="w-full h-auto object-contain aspect-[4/3]"
                   />
                 </div>
 
