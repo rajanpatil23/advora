@@ -194,8 +194,8 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           </div>
         </section>
 
-        <section className="section-divider bg-muted/25">
-          <div className="relative aspect-video w-full overflow-hidden bg-black">
+        <section className="section-divider">
+          <div className="relative aspect-video w-full overflow-hidden">
             <iframe
               src={tool.arcadeDemoUrl}
               title={`${tool.name} Arcade virtual demo`}
