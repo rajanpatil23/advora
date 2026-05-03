@@ -112,41 +112,42 @@ const toneStyles: Record<
     accentHex: string;
     iconWrap: string;
     label: string;
-    hoverBorder: string;
-    hoverShadow: string;
+    glow: string;
+    accentBar: string;
     arrowHover: string;
   }
 > = {
   blue: {
     accentHex: "#2563EB",
-    iconWrap: "border-primary/15 bg-primary/[0.07] text-primary",
+    iconWrap:
+      "border-primary/20 bg-gradient-to-br from-primary/15 to-primary/5 text-primary shadow-[inset_0_1px_0_0_rgba(255,255,255,0.6),0_8px_18px_-10px_rgba(37,99,235,0.45)]",
     label: "text-primary",
-    hoverBorder: "hover:border-primary/40",
-    hoverShadow: "hover:shadow-[0_28px_58px_-36px_rgba(15,23,42,0.26)]",
-    arrowHover: "group-hover:border-primary/50 group-hover:text-primary",
+    glow: "before:from-primary/25 before:via-primary/0",
+    accentBar: "from-primary via-primary/60 to-transparent",
+    arrowHover:
+      "group-hover:bg-primary group-hover:border-primary group-hover:text-white group-hover:shadow-[0_10px_24px_-10px_rgba(37,99,235,0.6)]",
   },
   green: {
     accentHex: "#059669",
-    iconWrap: "border-emerald-200 bg-emerald-50/90 text-emerald-600",
+    iconWrap:
+      "border-emerald-200 bg-gradient-to-br from-emerald-100 to-emerald-50 text-emerald-600 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7),0_8px_18px_-10px_rgba(5,150,105,0.45)]",
     label: "text-emerald-600",
-    hoverBorder: "hover:border-emerald-300",
-    hoverShadow: "hover:shadow-[0_28px_58px_-36px_rgba(15,23,42,0.26)]",
-    arrowHover: "group-hover:border-emerald-400 group-hover:text-emerald-600",
+    glow: "before:from-emerald-400/25 before:via-emerald-400/0",
+    accentBar: "from-emerald-500 via-emerald-400/60 to-transparent",
+    arrowHover:
+      "group-hover:bg-emerald-600 group-hover:border-emerald-600 group-hover:text-white group-hover:shadow-[0_10px_24px_-10px_rgba(5,150,105,0.6)]",
   },
 };
 
-const serviceRows = [buildServices, growthServices];
-
 function getCardCornerTextureStyle(accentHex: string) {
   const textureSvg = encodeURIComponent(`
-    <svg width="136" height="104" viewBox="0 0 136 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M26 0C26 38.66 57.34 70 96 70H136" stroke="${accentHex}" stroke-opacity="0.10"/>
-      <path d="M48 0C48 26.51 69.49 48 96 48H136" stroke="${accentHex}" stroke-opacity="0.08"/>
-      <path d="M70 0C70 14.36 81.64 26 96 26H136" stroke="${accentHex}" stroke-opacity="0.07"/>
-      <circle cx="102" cy="16" r="3" fill="${accentHex}" fill-opacity="0.10"/>
-      <circle cx="114" cy="28" r="3" fill="${accentHex}" fill-opacity="0.08"/>
-      <circle cx="126" cy="40" r="3" fill="${accentHex}" fill-opacity="0.06"/>
-      <path d="M84 12H96V24H84Z" fill="${accentHex}" fill-opacity="0.04"/>
+    <svg width="160" height="120" viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 0C30 44.18 65.82 80 110 80H160" stroke="${accentHex}" stroke-opacity="0.12"/>
+      <path d="M55 0C55 30.38 79.62 55 110 55H160" stroke="${accentHex}" stroke-opacity="0.09"/>
+      <path d="M80 0C80 16.57 93.43 30 110 30H160" stroke="${accentHex}" stroke-opacity="0.07"/>
+      <circle cx="118" cy="18" r="3" fill="${accentHex}" fill-opacity="0.14"/>
+      <circle cx="132" cy="32" r="2.5" fill="${accentHex}" fill-opacity="0.10"/>
+      <circle cx="146" cy="46" r="2" fill="${accentHex}" fill-opacity="0.08"/>
     </svg>
   `);
 
@@ -154,7 +155,7 @@ function getCardCornerTextureStyle(accentHex: string) {
     backgroundImage: `url("data:image/svg+xml,${textureSvg}")`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top right",
-    backgroundSize: "136px 104px",
+    backgroundSize: "160px 120px",
   };
 }
 
@@ -167,52 +168,64 @@ function ServiceCardItem({ service }: { service: ServiceCard }) {
       to={service.to}
       aria-label={`Learn more about ${service.title}`}
       className={cn(
-        "group relative isolate flex min-h-[230px] overflow-hidden rounded-[1.4rem] border border-[#E4E9F2] bg-white px-4 py-4 shadow-[0_18px_44px_-32px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1",
-        tone.hoverBorder,
-        tone.hoverShadow,
+        "group relative isolate flex min-h-[250px] overflow-hidden rounded-[1.5rem] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] px-5 py-5",
+        "shadow-[0_1px_0_0_rgba(255,255,255,0.9)_inset,0_20px_50px_-32px_rgba(15,23,42,0.22)]",
+        "transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-30px_rgba(15,23,42,0.28)]",
+        "before:pointer-events-none before:absolute before:-inset-px before:rounded-[1.5rem] before:bg-gradient-to-br before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 group-hover:before:opacity-100 hover:before:opacity-100",
+        tone.glow,
       )}
     >
       <div
         aria-hidden="true"
-        className="absolute right-0 top-0 h-[104px] w-[136px] rounded-tr-[1.4rem]"
+        className="pointer-events-none absolute right-0 top-0 h-[120px] w-[160px] rounded-tr-[1.5rem] opacity-90 transition-opacity duration-500 group-hover:opacity-100"
         style={getCardCornerTextureStyle(tone.accentHex)}
       />
       <div
         aria-hidden="true"
-        className="absolute inset-[1px] rounded-[calc(1.4rem-1px)] border border-white/70"
+        className={cn(
+          "pointer-events-none absolute left-5 top-0 h-px w-16 bg-gradient-to-r opacity-0 transition-opacity duration-500 group-hover:opacity-100",
+          tone.accentBar,
+        )}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-[1px] rounded-[calc(1.5rem-1px)] ring-1 ring-inset ring-white/60"
       />
 
       <div className="relative z-10 flex h-full w-full flex-col">
         <div
           className={cn(
-            "flex h-11 w-11 items-center justify-center rounded-[0.85rem] border",
+            "flex h-12 w-12 items-center justify-center rounded-[0.95rem] border transition-transform duration-500 group-hover:scale-105 group-hover:rotate-[-3deg]",
             tone.iconWrap,
           )}
         >
           <service.icon className="h-5 w-5" />
         </div>
 
-        <div className="mt-4">
+        <div className="mt-5">
           <p
             className={cn(
-              "text-[10px] font-semibold uppercase tracking-[0.12em]",
+              "text-[10px] font-semibold uppercase tracking-[0.16em]",
               tone.label,
             )}
           >
             {service.pillar}
           </p>
-          <h3 className="mt-2 text-base font-semibold leading-snug text-[#0A1220]">
+          <h3 className="mt-2.5 text-[1.05rem] font-semibold leading-snug tracking-tight text-[#0A1220]">
             {service.title}
           </h3>
-          <p className="mt-2 text-[0.8rem] leading-6 text-[#4E5A70]">
+          <p className="mt-2 text-[0.82rem] leading-[1.55rem] text-[#5A6679]">
             {service.description}
           </p>
         </div>
 
-        <div className="mt-auto flex justify-end pt-3">
+        <div className="mt-auto flex items-center justify-between pt-4">
+          <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#94A0B4] transition-colors duration-300 group-hover:text-[#0A1220]">
+            Learn more
+          </span>
           <span
             className={cn(
-              "flex h-9 w-9 items-center justify-center rounded-full border border-[#D5DCE8] bg-white text-[#0A1220] transition-colors duration-300",
+              "flex h-9 w-9 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-[#0A1220] transition-all duration-300 group-hover:translate-x-0.5",
               tone.arrowHover,
             )}
           >
