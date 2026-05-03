@@ -192,7 +192,7 @@ function ServiceCardItem({ service }: { service: ServiceCard }) {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-[1px] rounded-[calc(1.5rem-1px)] ring-1 ring-inset ring-white/60"
+        className="pointer-events-none absolute inset-[1px] rounded-[calc(1.5rem-1px)] ring-1 ring-inset ring-white/60 dark:ring-white/5"
       />
 
       <div className="relative z-10 flex h-full w-full flex-col">
@@ -214,21 +214,22 @@ function ServiceCardItem({ service }: { service: ServiceCard }) {
           >
             {service.pillar}
           </p>
-          <h3 className="mt-2.5 text-[1.05rem] font-semibold leading-snug tracking-tight text-[#0A1220]">
+          <h3 className="mt-2.5 text-[1.05rem] font-semibold leading-snug tracking-tight text-[#0A1220] dark:text-foreground">
             {service.title}
           </h3>
-          <p className="mt-2 text-[0.82rem] leading-[1.55rem] text-[#5A6679]">
+          <p className="mt-2 text-[0.82rem] leading-[1.55rem] text-[#5A6679] dark:text-muted-foreground">
             {service.description}
           </p>
         </div>
 
         <div className="mt-auto flex items-center justify-between pt-4">
-          <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#94A0B4] transition-colors duration-300 group-hover:text-[#0A1220]">
+          <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#94A0B4] transition-colors duration-300 group-hover:text-[#0A1220] dark:group-hover:text-foreground">
             Learn more
           </span>
           <span
             className={cn(
               "flex h-9 w-9 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-[#0A1220] transition-all duration-300 group-hover:translate-x-0.5",
+              "dark:border-white/10 dark:bg-white/5 dark:text-foreground",
               tone.arrowHover,
             )}
           >
