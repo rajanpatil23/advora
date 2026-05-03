@@ -28,6 +28,7 @@ const productPreviews = productTools.map((tool) => ({
   image: tool.screenshot,
   alt: tool.screenshotAlt,
   route: tool.route,
+  eyebrow: tool.eyebrow,
 }));
 
 const automationFlow = [
@@ -240,7 +241,7 @@ export default function Products() {
             </p>
           </div>
 
-          <div className="grid gap-x-10 gap-y-16 md:grid-cols-2">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
             {productPreviews.map((preview) => (
               <motion.div
                 key={preview.title}
@@ -252,17 +253,38 @@ export default function Products() {
                 <Link
                   to={preview.route}
                   aria-label={`Open ${preview.title} details`}
-                  className="group relative mx-auto block max-w-2xl overflow-hidden rounded-2xl bg-card shadow-[0_24px_60px_-28px_rgba(15,23,42,0.35)] transition-shadow duration-300 hover:shadow-[0_30px_70px_-20px_rgba(15,23,42,0.45)] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 dark:shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] dark:hover:shadow-[0_30px_70px_-20px_rgba(0,0,0,0.75)]"
+                  className="group relative isolate block overflow-hidden rounded-[1.75rem] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] p-3 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 dark:border-border dark:bg-card dark:from-card dark:to-card"
                 >
-                  <img
-                    src={preview.image}
-                    alt={preview.alt}
-                    className="h-auto w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  {/* accent corner glow */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/15 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 via-black/35 to-transparent" />
-                  <h3 className="pointer-events-none absolute inset-x-0 bottom-0 px-5 pb-5 font-serif text-lg font-semibold leading-tight text-white drop-shadow-sm sm:px-6 sm:pb-6 sm:text-xl">
-                    {preview.title}
-                  </h3>
+
+                  {/* image frame */}
+                  <div className="relative overflow-hidden rounded-[1.35rem] bg-[#F2F4F8] dark:bg-muted/40">
+                    <img
+                      src={preview.image}
+                      alt={preview.alt}
+                      className="h-auto w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    />
+                    <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/60 rounded-[1.35rem]" />
+                  </div>
+
+                  {/* meta footer */}
+                  <div className="relative z-10 flex items-center justify-between gap-4 px-3 pt-5 pb-2 sm:px-4">
+                    <div className="min-w-0">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
+                        {preview.eyebrow}
+                      </p>
+                      <h3 className="mt-1.5 font-serif text-xl font-semibold leading-tight tracking-tight text-foreground sm:text-[1.4rem]">
+                        {preview.title}
+                      </h3>
+                    </div>
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:shadow-[0_10px_24px_-10px_rgba(37,99,235,0.6)] dark:border-border dark:bg-card">
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
                 </Link>
               </motion.div>
             ))}
