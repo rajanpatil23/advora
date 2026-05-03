@@ -168,7 +168,7 @@ export default function Products() {
                     </span>
                   </h1>
 
-                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
+                  <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed">
                     Premium software tools created from Advora&apos;s agency
                     workflows, packaged for businesses that need faster launch,
                     smarter operations, and room to customise.
