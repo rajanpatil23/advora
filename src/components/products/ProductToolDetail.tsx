@@ -48,13 +48,6 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
       <main>
         <section className="pt-20 sm:pt-24 pb-6 sm:pb-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Link
-              to="/products"
-              className="mb-3 inline-flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Products
-            </Link>
 
             <div className="rounded-[2rem] sm:rounded-[2.5rem] bg-primary/10 dark:bg-card p-4 sm:p-6 md:p-8">
               <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-10 items-center">
