@@ -1,4 +1,4 @@
-import invoiceScreenshot from "@/assets/Invoice Suite (1).png";
+import invoiceScreenshot from "@/assets/invoice-suite-hero.png";
 import warehouseScreenshot from "@/assets/Warehouse Management (1).png";
 import serviceDeskScreenshot from "@/assets/Service Desk (1).png";
 import claimsScreenshot from "@/assets/Claims OS (1).png";
