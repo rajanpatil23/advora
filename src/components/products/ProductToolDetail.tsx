@@ -46,24 +46,34 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
       <Header />
 
       <main>
-        <section className="pt-20 sm:pt-24 md:pt-28 pb-14 sm:pb-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               to="/products"
-              className="mb-8 inline-flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="mb-6 inline-flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Products
             </Link>
 
-            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-14">
-              <div className="space-y-6">
-                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  {tool.eyebrow}
-                </span>
+            <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
+              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+                <div className="rounded-xl sm:rounded-2xl overflow-hidden bg-white">
+                  <div className="aspect-[4/3]">
+                    <img
+                      src={tool.screenshot}
+                      alt={tool.screenshotAlt}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 sm:space-y-6">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    {tool.eyebrow}
+                  </span>
+
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">
                       {tool.headlineSerif}
@@ -72,67 +82,44 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                       {tool.headlineStrong}
                     </span>
                   </h1>
-                  <p className="max-w-2xl text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
+
+                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
                     {tool.description}
                   </p>
-                </div>
 
-                <div className="flex flex-col gap-3 pt-2 sm:flex-row">
-                  <Button
-                    asChild
-                    className="rounded-full bg-foreground px-7 py-6 font-medium text-background hover:bg-foreground/90"
-                  >
-                    <Link to="/contact">
-                      Get Custom Demo
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="rounded-full px-7 py-6 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
-                  >
-                    <a href="#virtual-demo">View Virtual Demo</a>
-                  </Button>
-                </div>
-
-                <div className="grid max-w-xl grid-cols-2 gap-3 pt-2 sm:grid-cols-3">
-                  {tool.metrics.map((metric) => (
-                    <div
-                      key={metric.label}
-                      className="rounded-2xl border border-border bg-card px-4 py-4"
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+                    <Button
+                      asChild
+                      className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto"
                     >
-                      <span className="block text-xl sm:text-2xl font-bold text-primary break-words">
-                        {metric.value}
-                      </span>
-                      <span className="mt-1 block text-xs font-medium leading-5 text-muted-foreground">
-                        {metric.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-[0_24px_70px_-35px_rgba(15,23,42,0.45)]">
-                <div className="flex items-center justify-between border-b border-border bg-muted/40 px-4 py-3 sm:px-5">
-                  <div className="flex items-center gap-2 text-sm font-semibold">
-                    <MonitorPlay className="h-4 w-4 text-primary" />
-                    Virtual Demo
+                      <Link to="/contact">
+                        Get Custom Demo
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="w-full sm:w-auto rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
+                    >
+                      <a href="#virtual-demo">View Virtual Demo</a>
+                    </Button>
                   </div>
-                  <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                    Preview
-                  </span>
-                </div>
-                <div className="relative">
-                  <img
-                    src={tool.demoImage}
-                    alt={tool.demoAlt}
-                    className="h-auto w-full object-cover"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent px-5 pb-5 pt-20 text-white">
-                    <p className="max-w-2xl text-sm leading-6 text-white/85">
-                      {tool.demoSummary}
-                    </p>
+
+                  <div className="grid max-w-xl grid-cols-2 gap-3 pt-2 sm:grid-cols-3">
+                    {tool.metrics.map((metric) => (
+                      <div
+                        key={metric.label}
+                        className="rounded-2xl border border-border bg-card/80 backdrop-blur px-4 py-4"
+                      >
+                        <span className="block text-xl sm:text-2xl font-bold text-primary break-words">
+                          {metric.value}
+                        </span>
+                        <span className="mt-1 block text-xs font-medium leading-5 text-muted-foreground">
+                          {metric.label}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
