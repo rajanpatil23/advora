@@ -292,7 +292,7 @@ export default function Products() {
           </div>
         </section>
 
-        <section className="section-divider relative overflow-hidden bg-[#02070d] py-20 pt-24 text-background">
+        <section className="section-divider relative overflow-hidden bg-[#02070d] py-20 pt-24 text-white">
           <div
             aria-hidden="true"
             className="absolute inset-0"
@@ -315,7 +315,7 @@ export default function Products() {
                   and Fuels Growth
                 </span>
               </h2>
-              <p className="mx-auto max-w-2xl text-lg text-background/70">
+              <p className="mx-auto max-w-2xl text-lg text-white/70">
                 Less manual work. More output. Sustainable growth.
               </p>
             </div>
@@ -336,7 +336,7 @@ export default function Products() {
                         className={`relative z-10 text-3xl font-bold transition-colors duration-300 ${
                           index === 1
                             ? "text-primary"
-                            : "text-background/35 group-hover:text-background/60"
+                            : "text-white/35 group-hover:text-white/60"
                         }`}
                       >
                         {step.step}
@@ -344,8 +344,8 @@ export default function Products() {
                       <div
                         className={`relative z-10 flex shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                           index === 1
-                            ? "h-24 w-24 border-primary bg-primary/10 text-background ring-8 ring-primary/10"
-                            : "h-20 w-20 border-background/30 text-background/85 group-hover:border-primary/65 group-hover:text-background"
+                            ? "h-24 w-24 border-primary bg-primary/10 text-white ring-8 ring-primary/10"
+                            : "h-20 w-20 border-white/30 text-white/85 group-hover:border-primary/65 group-hover:text-white"
                         }`}
                       >
                         <step.icon className="h-7 w-7" strokeWidth={1.8} />
@@ -355,24 +355,24 @@ export default function Products() {
                         <div className="pointer-events-none absolute left-[10.25rem] right-[-1rem] top-1/2 hidden -translate-y-1/2 items-center lg:flex">
                           <span
                             className={`h-px flex-1 ${
-                              index === 1 ? "bg-primary/70" : "bg-background/35"
+                              index === 1 ? "bg-primary/70" : "bg-white/35"
                             }`}
                           />
                           <span
                             className={`mx-4 h-2.5 w-2.5 rounded-full border-2 ${
                               index === 1
                                 ? "border-primary bg-[#02070d]"
-                                : "border-background/70 bg-[#02070d]"
+                                : "border-white/70 bg-[#02070d]"
                             }`}
                           />
                           <span
                             className={`h-px flex-1 ${
-                              index === 1 ? "bg-primary/70" : "bg-background/35"
+                              index === 1 ? "bg-primary/70" : "bg-white/35"
                             }`}
                           />
                           <ArrowRight
                             className={`ml-2 h-5 w-5 ${
-                              index === 1 ? "text-primary" : "text-background/55"
+                              index === 1 ? "text-primary" : "text-white/55"
                             }`}
                           />
                         </div>
@@ -384,12 +384,12 @@ export default function Products() {
                       className={`mt-5 text-xl font-bold transition-colors duration-300 ${
                         index === 1
                           ? "text-primary"
-                          : "text-background group-hover:text-primary"
+                          : "text-white group-hover:text-primary"
                       }`}
                     >
                       {step.title}
                     </h3>
-                    <p className="mt-4 max-w-[15rem] text-base leading-8 text-background/68">
+                    <p className="mt-4 max-w-[15rem] text-base leading-8 text-white/70">
                       {step.description}
                     </p>
                   </motion.div>
@@ -407,36 +407,36 @@ export default function Products() {
                     className="group relative flex gap-4 pb-9 last:pb-0"
                   >
                     {index < automationFlow.length - 1 ? (
-                      <span className="absolute left-6 top-14 h-[calc(100%-3rem)] w-px bg-background/18" />
+                      <span className="absolute left-6 top-14 h-[calc(100%-3rem)] w-px bg-white/18" />
                     ) : null}
                     <div
                       className={`relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 ${
                         index === 1
                           ? "border-primary bg-primary/10 text-primary"
-                          : "border-background/25 text-background/80"
+                          : "border-white/25 text-white/80"
                       }`}
                     >
                       <step.icon className="h-5 w-5" strokeWidth={1.8} />
                     </div>
-                    <div className="min-w-0 border-b border-background/10 pb-7 last:border-b-0">
+                    <div className="min-w-0 border-b border-white/10 pb-7 last:border-b-0">
                       <div className="mb-2 flex items-center gap-3">
                         <span
                           className={`text-lg font-bold ${
-                            index === 1 ? "text-primary" : "text-background/40"
+                            index === 1 ? "text-primary" : "text-white/40"
                           }`}
                         >
                           {step.step}
                         </span>
-                        <span className="h-px w-4 bg-background/30" />
+                        <span className="h-px w-4 bg-white/30" />
                       </div>
                       <h3
                         className={`text-xl font-bold ${
-                          index === 1 ? "text-primary" : "text-background"
+                          index === 1 ? "text-primary" : "text-white"
                         }`}
                       >
                         {step.title}
                       </h3>
-                      <p className="mt-3 text-sm leading-7 text-background/62">
+                      <p className="mt-3 text-sm leading-7 text-white/65">
                         {step.description}
                       </p>
                     </div>
@@ -444,14 +444,14 @@ export default function Products() {
                 ))}
               </div>
 
-              <div className="mt-12 rounded-2xl border border-background/10 bg-background/[0.015] px-5 py-7 lg:mt-16 lg:px-10">
+              <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] px-5 py-7 lg:mt-16 lg:px-10">
                 <div className="grid gap-6 md:grid-cols-3 md:gap-0">
                   {automationOutcomes.map((outcome, index) => (
                     <div
                       key={outcome.title}
                       className={`flex gap-5 ${
                         index > 0
-                          ? "md:border-l md:border-background/15 md:pl-10"
+                          ? "md:border-l md:border-white/15 md:pl-10"
                           : ""
                       } ${index < automationOutcomes.length - 1 ? "md:pr-10" : ""}`}
                     >
@@ -459,10 +459,10 @@ export default function Products() {
                         <CheckCircle2 className="h-5 w-5" strokeWidth={1.8} />
                       </span>
                       <span>
-                        <span className="block text-base font-semibold leading-6 text-background">
+                        <span className="block text-base font-semibold leading-6 text-white">
                           {outcome.title}
                         </span>
-                        <span className="mt-2 block text-sm leading-6 text-background/62">
+                        <span className="mt-2 block text-sm leading-6 text-white/65">
                           {outcome.description}
                         </span>
                       </span>
