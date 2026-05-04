@@ -5,6 +5,7 @@ import PremiumFAQ from "@/components/PremiumFAQ";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { usePageSEO } from "@/hooks/usePageSEO";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -141,6 +142,14 @@ export default function Products() {
       "Explore Advora Digital's four productized tools for sales, bookings, client portals, and commerce operations.",
     canonical: "/products",
   });
+
+  const [activeStep, setActiveStep] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveStep((p) => (p + 1) % automationFlow.length);
+    }, 1500);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background animate-fade-in">
@@ -334,7 +343,7 @@ export default function Products() {
                     <div className="relative flex min-h-24 items-center gap-6">
                       <span
                         className={`relative z-10 text-3xl font-bold transition-colors duration-300 ${
-                          index === 1
+                          index === activeStep
                             ? "text-primary"
                             : "text-white/35 group-hover:text-white/60"
                         }`}
@@ -343,7 +352,7 @@ export default function Products() {
                       </span>
                       <div
                         className={`relative z-10 flex shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
-                          index === 1
+                          index === activeStep
                             ? "h-24 w-24 border-primary bg-primary/10 text-white ring-8 ring-primary/10"
                             : "h-20 w-20 border-white/30 text-white/85 group-hover:border-primary/65 group-hover:text-white"
                         }`}
@@ -355,24 +364,24 @@ export default function Products() {
                         <div className="pointer-events-none absolute left-[10.25rem] right-[-1rem] top-1/2 hidden -translate-y-1/2 items-center lg:flex">
                           <span
                             className={`h-px flex-1 ${
-                              index === 1 ? "bg-primary/70" : "bg-white/35"
+                              index === activeStep ? "bg-primary/70" : "bg-white/35"
                             }`}
                           />
                           <span
                             className={`mx-4 h-2.5 w-2.5 rounded-full border-2 ${
-                              index === 1
+                              index === activeStep
                                 ? "border-primary bg-[#02070d]"
                                 : "border-white/70 bg-[#02070d]"
                             }`}
                           />
                           <span
                             className={`h-px flex-1 ${
-                              index === 1 ? "bg-primary/70" : "bg-white/35"
+                              index === activeStep ? "bg-primary/70" : "bg-white/35"
                             }`}
                           />
                           <ArrowRight
                             className={`ml-2 h-5 w-5 ${
-                              index === 1 ? "text-primary" : "text-white/55"
+                              index === activeStep ? "text-primary" : "text-white/55"
                             }`}
                           />
                         </div>
@@ -382,7 +391,7 @@ export default function Products() {
                     <span className="mt-7 block h-px w-5 bg-primary" />
                     <h3
                       className={`mt-5 text-xl font-bold transition-colors duration-300 ${
-                        index === 1
+                        index === activeStep
                           ? "text-primary"
                           : "text-white group-hover:text-primary"
                       }`}
@@ -411,7 +420,7 @@ export default function Products() {
                     ) : null}
                     <div
                       className={`relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-colors duration-300 ${
-                        index === 1
+                        index === activeStep
                           ? "border-primary bg-primary/10 text-primary"
                           : "border-white/25 text-white/80"
                       }`}
@@ -422,7 +431,7 @@ export default function Products() {
                       <div className="mb-2 flex items-center gap-3">
                         <span
                           className={`text-lg font-bold ${
-                            index === 1 ? "text-primary" : "text-white/40"
+                            index === activeStep ? "text-primary" : "text-white/40"
                           }`}
                         >
                           {step.step}
@@ -431,7 +440,7 @@ export default function Products() {
                       </div>
                       <h3
                         className={`text-xl font-bold ${
-                          index === 1 ? "text-primary" : "text-white"
+                          index === activeStep ? "text-primary" : "text-white"
                         }`}
                       >
                         {step.title}
