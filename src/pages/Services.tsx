@@ -73,12 +73,12 @@ const Services = () => {
                     <Sparkles className="w-3.5 h-3.5" />
                     Our Services
                   </span>
-                  <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">Expert Solutions</span>
                     <span className="block font-bold text-primary">For Your Business.</span>
                   </h1>
 
-                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
+                  <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed">
                     From custom web and mobile development to cloud infrastructure and UI/UX design, we deliver digital solutions that drive growth, efficiency, and long-term impact.
                   </p>
 
@@ -107,14 +107,14 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: i * 0.1 }}
-                  className="rounded-2xl border border-border bg-card/80 backdrop-blur px-3 py-4 sm:px-6 sm:py-5 flex items-center gap-3 sm:gap-4 hover:border-primary/40 hover:shadow-md transition-all"
+                  className="rounded-2xl border border-border bg-card/80 backdrop-blur p-3 sm:px-6 sm:py-5 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 hover:border-primary/40 hover:shadow-md transition-all"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                  <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <stat.icon className="w-4 h-4 sm:w-6 sm:h-6 text-primary" />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-xl sm:text-2xl font-bold text-foreground leading-tight">{stat.value}</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground truncate">{stat.label}</div>
+                    <div className="text-lg sm:text-2xl font-bold text-foreground leading-tight">{stat.value}</div>
+                    <div className="text-[11px] sm:text-sm text-muted-foreground leading-tight">{stat.label}</div>
                   </div>
                 </motion.div>
               ))}
