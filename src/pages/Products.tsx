@@ -273,7 +273,7 @@ export default function Products() {
                 <Link
                   to={preview.route}
                   aria-label={`Open ${preview.title} details`}
-                  className="group relative isolate block overflow-hidden rounded-[1.75rem] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] p-3 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 dark:border-border dark:bg-card dark:from-card dark:to-card"
+                  className="group relative isolate block overflow-hidden rounded-[15px] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] p-0 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 dark:border-border dark:bg-card dark:from-card dark:to-card"
                 >
                   {/* accent corner glow */}
                   <div
@@ -282,7 +282,7 @@ export default function Products() {
                   />
 
                   {/* image frame */}
-                  <div className="relative overflow-hidden rounded-[1.35rem] bg-background">
+                  <div className="relative overflow-hidden rounded-[15px] bg-background">
                     <img
                       src={preview.image}
                       alt={preview.alt}
