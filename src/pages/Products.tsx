@@ -5,6 +5,7 @@ import PremiumFAQ from "@/components/PremiumFAQ";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { usePageSEO } from "@/hooks/usePageSEO";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -141,6 +142,14 @@ export default function Products() {
       "Explore Advora Digital's four productized tools for sales, bookings, client portals, and commerce operations.",
     canonical: "/products",
   });
+
+  const [activeStep, setActiveStep] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveStep((p) => (p + 1) % automationFlow.length);
+    }, 1500);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background animate-fade-in">
