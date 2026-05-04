@@ -107,14 +107,14 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: i * 0.1 }}
-                  className="rounded-2xl border border-border bg-card/80 backdrop-blur p-3 sm:px-6 sm:py-5 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 hover:border-primary/40 hover:shadow-md transition-all"
+                  className="rounded-2xl border border-border bg-card/80 backdrop-blur p-3 sm:px-6 sm:py-5 flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left gap-2 sm:gap-4 hover:border-primary/40 hover:shadow-md transition-all"
                 >
                   <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <stat.icon className="w-4 h-4 sm:w-6 sm:h-6 text-primary" />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-lg sm:text-2xl font-bold text-foreground leading-tight">{stat.value}</div>
-                    <div className="text-[11px] sm:text-sm text-muted-foreground leading-tight">{stat.label}</div>
+                    <div className="text-base sm:text-2xl font-bold text-foreground leading-tight">{stat.value}</div>
+                    <div className="text-[10px] sm:text-sm text-muted-foreground leading-tight">{stat.label}</div>
                   </div>
                 </motion.div>
               ))}
