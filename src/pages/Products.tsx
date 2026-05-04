@@ -269,11 +269,12 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.18 }}
                 transition={{ duration: 0.45 }}
+                className="h-full"
               >
                 <Link
                   to={preview.route}
                   aria-label={`Open ${preview.title} details`}
-                  className="group relative isolate block overflow-hidden rounded-[15px] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] p-0 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 dark:border-border dark:bg-card dark:from-card dark:to-card"
+                  className="group relative isolate flex h-full flex-col overflow-hidden rounded-[15px] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] p-0 shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 dark:border-border dark:bg-card dark:from-card dark:to-card"
                 >
                   {/* accent corner glow */}
                   <div
@@ -282,18 +283,18 @@ export default function Products() {
                   />
 
                   {/* image frame */}
-                  <div className="relative overflow-hidden rounded-[15px] bg-background">
+                  <div className="relative w-full overflow-hidden bg-background aspect-[16/10]">
                     <img
                       src={preview.image}
                       alt={preview.alt}
                       loading="lazy"
                       decoding="async"
-                      className="block h-auto w-full object-cover"
+                      className="absolute inset-0 h-full w-full object-cover object-top"
                     />
                   </div>
 
                   {/* meta footer */}
-                  <div className="relative z-10 flex items-center justify-between gap-4 px-4 pt-4 pb-4 sm:px-5 sm:pt-5 sm:pb-5">
+                  <div className="relative z-10 mt-auto flex items-center justify-between gap-4 px-4 pt-4 pb-4 sm:px-5 sm:pt-5 sm:pb-5">
                     <div className="min-w-0">
                       <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
                         {preview.eyebrow}
