@@ -23,11 +23,17 @@ import { Link } from "react-router-dom";
 
 import productHeroIllustration from "@/assets/product-hero-illustration.webp";
 import serviceDeskCardImage from "@/assets/service-desk-card.png";
+import warehouseCardImage from "@/assets/warehouse-card.png";
 import { productTools } from "@/data/productTools";
+
+const productCardImageOverrides: Record<string, string> = {
+  "service-desk": serviceDeskCardImage,
+  "warehouse-management": warehouseCardImage,
+};
 
 const productPreviews = productTools.map((tool) => ({
   title: tool.name,
-  image: tool.id === "service-desk" ? serviceDeskCardImage : tool.screenshot,
+  image: productCardImageOverrides[tool.id] ?? tool.screenshot,
   alt: tool.screenshotAlt,
   route: tool.route,
   eyebrow: tool.eyebrow,
