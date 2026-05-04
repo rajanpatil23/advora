@@ -22,11 +22,12 @@ import {
 import { Link } from "react-router-dom";
 
 import productHeroIllustration from "@/assets/product-hero-illustration.webp";
+import serviceDeskCardImage from "@/assets/service-desk-card.png";
 import { productTools } from "@/data/productTools";
 
 const productPreviews = productTools.map((tool) => ({
   title: tool.name,
-  image: tool.screenshot,
+  image: tool.id === "service-desk" ? serviceDeskCardImage : tool.screenshot,
   alt: tool.screenshotAlt,
   route: tool.route,
   eyebrow: tool.eyebrow,
