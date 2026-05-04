@@ -25,12 +25,14 @@ import productHeroIllustration from "@/assets/product-hero-illustration.webp";
 import serviceDeskCardImage from "@/assets/service-desk-card.png";
 import warehouseCardImage from "@/assets/warehouse-card.png";
 import claimsPortalCardImage from "@/assets/claims-portal-card.png";
+import invoiceSuiteCardImage from "@/assets/invoice-suite-card.png";
 import { productTools } from "@/data/productTools";
 
 const productCardImageOverrides: Record<string, string> = {
   "service-desk": serviceDeskCardImage,
   "warehouse-management": warehouseCardImage,
   "claims-os": claimsPortalCardImage,
+  "invoice-suite": invoiceSuiteCardImage,
 };
 
 const productPreviews = productTools.map((tool) => ({
