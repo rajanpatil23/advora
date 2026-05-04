@@ -294,7 +294,7 @@ export default function Products() {
                   </div>
 
                   {/* meta footer */}
-                  <div className="relative z-10 flex items-center justify-between gap-4 px-4 pt-4 pb-4 sm:px-5 sm:pt-5 sm:pb-5">
+                  <div className="relative z-10 mt-auto flex items-center justify-between gap-4 px-4 pt-4 pb-4 sm:px-5 sm:pt-5 sm:pb-5">
                     <div className="min-w-0">
                       <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
                         {preview.eyebrow}
