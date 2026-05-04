@@ -282,13 +282,13 @@ export default function Products() {
                   />
 
                   {/* image frame */}
-                  <div className="relative overflow-hidden rounded-[15px] bg-background">
+                  <div className="relative overflow-hidden rounded-[15px] bg-white p-3 sm:p-4">
                     <img
                       src={preview.image}
                       alt={preview.alt}
                       loading="lazy"
                       decoding="async"
-                      className="block h-auto w-full object-cover"
+                      className="block h-auto w-full rounded-[10px] object-cover"
                     />
                   </div>
 
