@@ -110,23 +110,23 @@ const Footer = () => {
               {/* Contact mini list */}
               <ul className="mt-7 space-y-2.5 text-sm">
                 <li className="flex items-center gap-3 text-foreground/70">
-                  <span className="w-8 h-8 rounded-full bg-background/5 border border-background/10 flex items-center justify-center">
+                  <span className="w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center">
                     <Mail className="h-3.5 w-3.5 text-primary" />
                   </span>
-                  <a href="mailto:advora.in@gmail.com" className="hover:text-background transition-colors">
+                  <a href="mailto:advora.in@gmail.com" className="hover:text-foreground transition-colors">
                     advora.in@gmail.com
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-foreground/70">
-                  <span className="w-8 h-8 rounded-full bg-background/5 border border-background/10 flex items-center justify-center">
+                  <span className="w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center">
                     <Phone className="h-3.5 w-3.5 text-primary" />
                   </span>
-                  <a href="tel:+917219860213" className="hover:text-background transition-colors">
+                  <a href="tel:+917219860213" className="hover:text-foreground transition-colors">
                     +91 7219860213
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-foreground/70">
-                  <span className="w-8 h-8 rounded-full bg-background/5 border border-background/10 flex items-center justify-center">
+                  <span className="w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center">
                     <MapPin className="h-3.5 w-3.5 text-primary" />
                   </span>
                   <span>Kharadi, Pune</span>
@@ -136,27 +136,27 @@ const Footer = () => {
 
             {/* Newsletter card */}
             <div className="lg:col-span-7">
-              <div className="relative rounded-3xl border border-background/10 bg-background/[0.03] backdrop-blur-sm p-6 sm:p-8 overflow-hidden">
+              <div className="relative rounded-3xl border border-foreground/10 bg-foreground/[0.03] backdrop-blur-sm p-6 sm:p-8 overflow-hidden">
                 <div className="pointer-events-none absolute -top-16 -right-16 w-56 h-56 rounded-full bg-primary/20 blur-3xl" />
                 <div className="relative">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 text-primary text-[11px] font-medium uppercase tracking-wider mb-4">
                     <Sparkles className="h-3 w-3" />
                     Weekly insights
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-background mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                     Stay ahead of the curve
                   </h3>
                   <p className="text-sm text-foreground/60 mb-5 max-w-md">
                     Curated playbooks on growth, design and product — straight to your inbox. No spam, ever.
                   </p>
 
-                  <div className="flex w-full rounded-full border border-background/15 bg-background/5 backdrop-blur-sm overflow-hidden p-1">
+                  <div className="flex w-full rounded-full border border-foreground/15 bg-foreground/5 backdrop-blur-sm overflow-hidden p-1">
                     <input
                       type="email"
                       value={upperEmail}
                       onChange={(e) => setUpperEmail(e.target.value)}
                       placeholder="you@company.com"
-                      className="flex-1 px-5 py-2.5 bg-transparent focus:outline-none text-sm text-background placeholder:text-foreground/40"
+                      className="flex-1 px-5 py-2.5 bg-transparent focus:outline-none text-sm text-foreground placeholder:text-foreground/40"
                       disabled={upperSending || upperSent}
                     />
                     <button
@@ -233,7 +233,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pt-8 border-t border-background/10">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pt-8 border-t border-foreground/10">
             <p className="text-sm text-foreground/50 order-2 sm:order-1">
               © {new Date().getFullYear()} Advora Digital. Crafted with care.
             </p>
@@ -244,7 +244,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-10 h-10 rounded-full bg-background/5 border border-background/10 flex items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -253,7 +253,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full bg-background/5 border border-background/10 flex items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
               >
                 <Instagram className="h-4 w-4" />
               </a>
