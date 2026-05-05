@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 import { ImageOff, Zap, Shield, Rocket, Smartphone, Cloud, Code, Palette, Users, Target, Layers, TrendingUp, BarChart3, Layout, PenTool, Award } from "lucide-react";
 
-import heroDashboard from "@/assets/hero-dashboard.jpg";
-import heroWorkspace from "@/assets/hero-workspace.jpg";
-import projectFinanceflow from "@/assets/project-financeflow.jpg";
-import projectHealthtrack from "@/assets/project-healthtrack.jpg";
-import projectEdulearn from "@/assets/project-edulearn.jpg";
+import heroDashboard from "@/assets/solution-web-platforms.png";
+import heroWorkspace from "@/assets/solution-mobile-apps.png";
+import projectFinanceflow from "@/assets/solution-business-tools.png";
+import projectHealthtrack from "@/assets/solution-uiux-design.png";
+import projectEdulearn from "@/assets/solution-branding.png";
 
 const solutionsData = [
   {
