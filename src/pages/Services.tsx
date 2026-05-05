@@ -11,8 +11,8 @@ import {
   Zap,
   Award,
 } from "lucide-react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
@@ -55,6 +55,9 @@ const processPhases = [
   },
 ] as const;
 
+const clamp = (value: number, min: number, max: number) =>
+  Math.min(Math.max(value, min), max);
+
 function ProcessPhase({
   phase,
   index,
@@ -64,39 +67,35 @@ function ProcessPhase({
   phase: (typeof processPhases)[number];
   index: number;
   total: number;
-  progress: ReturnType<typeof useScroll>["scrollYProgress"];
+  progress: number;
 }) {
   const stepPoint = total === 1 ? 0 : index / (total - 1);
-  const rangeStart = Math.max(0, stepPoint - 0.18);
-  const rangeEnd = Math.min(1, stepPoint + 0.18);
-  const cardOpacity = useTransform(progress, [rangeStart, stepPoint, rangeEnd], [0.45, 1, 1]);
-  const cardScale = useTransform(progress, [rangeStart, stepPoint], [0.96, 1]);
-  const cardY = useTransform(progress, [rangeStart, stepPoint], [32, 0]);
-  const glowOpacity = useTransform(progress, [rangeStart, stepPoint], [0, 1]);
-  const iconScale = useTransform(progress, [rangeStart, stepPoint], [0.82, 1]);
-  const iconOpacity = useTransform(progress, [rangeStart, stepPoint], [0.35, 1]);
-  const numberOpacity = useTransform(progress, [rangeStart, stepPoint], [0.16, 0.34]);
+  const activation = clamp((progress - (stepPoint - 0.18)) / 0.18, 0, 1);
+  const isActive = progress >= stepPoint - 0.02;
 
   return (
     <motion.div
-      style={{ opacity: cardOpacity, y: cardY, scale: cardScale }}
+      animate={{
+        opacity: 0.42 + activation * 0.58,
+        y: (1 - activation) * 28,
+        scale: 0.96 + activation * 0.04,
+      }}
+      transition={{ duration: 0.28, ease: "easeOut" }}
       className={`relative mb-20 flex items-start gap-8 last:mb-0 md:gap-16 ${
         index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
       }`}
     >
       <div className="absolute left-8 z-10 -translate-x-1/2 md:left-1/2">
         <motion.div
-          style={{ scale: iconScale }}
-          className="relative flex h-16 w-16 items-center justify-center rounded-full border border-primary/30 bg-background shadow-lg shadow-primary/20"
+          animate={{ scale: 0.88 + activation * 0.12 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className={`relative flex h-16 w-16 items-center justify-center rounded-full border transition-all duration-300 ${
+            isActive
+              ? "border-primary bg-primary shadow-[0_0_24px_hsl(var(--primary)/0.55)]"
+              : "border-primary/30 bg-background shadow-lg shadow-primary/10"
+          }`}
         >
-          <motion.div
-            style={{ opacity: glowOpacity }}
-            className="absolute inset-0 rounded-full bg-primary"
-            aria-hidden
-          />
-          <motion.div style={{ opacity: iconOpacity }} className="relative z-10">
-            <phase.icon className="h-7 w-7 text-primary-foreground" />
-          </motion.div>
+          <phase.icon className={`h-7 w-7 relative z-10 ${isActive ? "text-primary-foreground" : "text-primary"}`} />
         </motion.div>
       </div>
 
@@ -116,14 +115,17 @@ function ProcessPhase({
       >
         <div className="mb-2 inline-flex items-center gap-3">
           <motion.span
-            style={{ opacity: numberOpacity }}
+            animate={{ opacity: 0.18 + activation * 0.4 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
             className={`text-5xl font-bold text-primary md:text-6xl ${index % 2 === 0 ? "md:order-2" : ""}`}
           >
             {phase.step}
           </motion.span>
         </div>
-        <h3 className="mb-3 text-3xl font-bold text-background md:text-4xl">{phase.title}</h3>
-        <p className="inline-block max-w-md text-base leading-relaxed text-background/70 md:text-lg">
+        <h3 className={`mb-3 text-3xl font-bold md:text-4xl transition-colors duration-300 ${isActive ? "text-primary" : "text-background"}`}>
+          {phase.title}
+        </h3>
+        <p className={`inline-block max-w-md text-base leading-relaxed md:text-lg transition-colors duration-300 ${isActive ? "text-background/90" : "text-background/60"}`}>
           {phase.description}
         </p>
       </div>
