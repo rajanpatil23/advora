@@ -70,15 +70,16 @@ function ProcessPhase({
   progress: number;
 }) {
   const stepPoint = total === 1 ? 0 : index / (total - 1);
-  const activation = clamp((progress - (stepPoint - 0.18)) / 0.18, 0, 1);
-  const isActive = progress >= stepPoint - 0.02;
+  const localProgress = clamp((progress - (stepPoint - 0.12)) / 0.22, 0, 1);
+  const isCompleted = progress > stepPoint + 0.08;
+  const isActive = progress >= stepPoint - 0.04;
 
   return (
     <motion.div
       animate={{
-        opacity: 0.42 + activation * 0.58,
-        y: (1 - activation) * 28,
-        scale: 0.96 + activation * 0.04,
+        opacity: 0.38 + localProgress * 0.62,
+        y: (1 - localProgress) * 28,
+        scale: 0.96 + localProgress * 0.04,
       }}
       transition={{ duration: 0.28, ease: "easeOut" }}
       className={`relative mb-20 flex items-start gap-8 last:mb-0 md:gap-16 ${
@@ -87,11 +88,11 @@ function ProcessPhase({
     >
       <div className="absolute left-8 z-10 -translate-x-1/2 md:left-1/2">
         <motion.div
-          animate={{ scale: 0.88 + activation * 0.12 }}
+          animate={{ scale: 0.88 + localProgress * 0.12 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
           className={`relative flex h-16 w-16 items-center justify-center rounded-full border transition-all duration-300 ${
             isActive
-              ? "border-primary bg-primary shadow-[0_0_24px_hsl(var(--primary)/0.55)]"
+              ? "border-primary bg-primary shadow-[0_0_26px_hsl(var(--primary)/0.6)]"
               : "border-primary/30 bg-background shadow-lg shadow-primary/10"
           }`}
         >
@@ -115,7 +116,7 @@ function ProcessPhase({
       >
         <div className="mb-2 inline-flex items-center gap-3">
           <motion.span
-            animate={{ opacity: 0.18 + activation * 0.4 }}
+            animate={{ opacity: isCompleted ? 0.62 : 0.18 + localProgress * 0.32 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
             className={`text-5xl font-bold text-primary md:text-6xl ${index % 2 === 0 ? "md:order-2" : ""}`}
           >
@@ -125,7 +126,7 @@ function ProcessPhase({
         <h3 className={`mb-3 text-3xl font-bold md:text-4xl transition-colors duration-300 ${isActive ? "text-primary" : "text-background"}`}>
           {phase.title}
         </h3>
-        <p className={`inline-block max-w-md text-base leading-relaxed md:text-lg transition-colors duration-300 ${isActive ? "text-background/90" : "text-background/60"}`}>
+        <p className={`inline-block max-w-md text-base leading-relaxed md:text-lg transition-colors duration-300 ${isActive ? "text-background/95" : "text-background/60"}`}>
           {phase.description}
         </p>
       </div>
