@@ -227,7 +227,7 @@ const SolutionsCarouselSection = () => {
                       </div>
 
                       {/* Right - Image */}
-                      <div className="hidden md:flex w-[55%] items-center justify-center">
+                      <div className="hidden md:flex w-[55%] items-center justify-center relative overflow-visible">
                         {imageErrors[solution.id] ? (
                           <div className="w-full h-full rounded-2xl bg-white/10 flex items-center justify-center">
                             <ImageOff className="w-16 h-16 text-white/40" />
@@ -236,7 +236,7 @@ const SolutionsCarouselSection = () => {
                           <img
                             src={solution.image}
                             alt={solution.title}
-                            className="w-full h-full object-contain"
+                            className="w-[125%] max-w-none h-auto object-contain scale-110"
                             onError={() => handleImageError(solution.id)}
                           />
                         )}
@@ -265,7 +265,7 @@ const SolutionsCarouselSection = () => {
               className="w-full rounded-[1.5rem] p-4"
             >
               {/* Image Section - Rounded inside card */}
-              <div className="w-full h-48 rounded-2xl overflow-hidden mb-5">
+              <div className="w-full h-64 rounded-2xl overflow-hidden mb-5">
                 {imageErrors[solution.id] ? (
                   <div className="w-full h-full bg-white/10 flex items-center justify-center">
                     <ImageOff className="w-10 h-10 text-white/40" />
