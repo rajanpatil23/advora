@@ -83,16 +83,16 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Upper Footer - premium dark glass */}
+      {/* Upper Footer - premium light glass */}
       <div
-        className="relative z-10 bg-foreground text-background rounded-b-[3rem] sm:rounded-b-[4.5rem] overflow-hidden border-b border-background/5"
+        className="relative z-10 bg-background text-foreground rounded-b-[3rem] sm:rounded-b-[4.5rem] overflow-hidden border-b border-foreground/5"
         style={{ marginTop: "-200px" }}
       >
         {/* Ambient gradient blobs */}
-        <div className="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-primary/20 blur-3xl" />
+        <div className="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-primary/15 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -right-20 w-[32rem] h-[32rem] rounded-full bg-primary/10 blur-3xl" />
         {/* Subtle grid */}
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--background)/0.04)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--background)/0.04)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--foreground)/0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--foreground)/0.05)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-10 sm:pb-14">
           {/* Brand + CTA Card */}
