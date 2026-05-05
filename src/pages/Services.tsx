@@ -150,16 +150,35 @@ const Services = () => {
   ];
 
   const processSectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: processSectionRef,
-    offset: ["start 70%", "end 35%"],
-  });
-  const timelineProgress = useSpring(scrollYProgress, {
-    stiffness: 120,
-    damping: 26,
-    mass: 0.35,
-  });
-  const timelineHeight = useTransform(timelineProgress, [0, 1], ["0%", "100%"]);
+  const [timelineProgress, setTimelineProgress] = useState(0);
+
+  useEffect(() => {
+    const updateTimelineProgress = () => {
+      const section = processSectionRef.current;
+
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const start = viewportHeight * 0.72;
+      const end = rect.height - viewportHeight * 0.2;
+      const travelled = start - rect.top;
+      const nextProgress = end <= 0 ? 0 : clamp(travelled / end, 0, 1);
+
+      setTimelineProgress(nextProgress);
+    };
+
+    updateTimelineProgress();
+    window.addEventListener("scroll", updateTimelineProgress, { passive: true });
+    window.addEventListener("resize", updateTimelineProgress);
+
+    return () => {
+      window.removeEventListener("scroll", updateTimelineProgress);
+      window.removeEventListener("resize", updateTimelineProgress);
+    };
+  }, []);
+
+  const timelineHeight = `${timelineProgress * 100}%`;
 
   return (
     <div className="min-h-screen bg-background animate-fade-in">
