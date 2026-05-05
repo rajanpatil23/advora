@@ -147,6 +147,18 @@ const Services = () => {
     { icon: Zap, value: "24/7", label: "Support" },
   ];
 
+  const processSectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: processSectionRef,
+    offset: ["start 70%", "end 35%"],
+  });
+  const timelineProgress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 26,
+    mass: 0.35,
+  });
+  const timelineHeight = useTransform(timelineProgress, [0, 1], ["0%", "100%"]);
+
   return (
     <div className="min-h-screen bg-background animate-fade-in">
       <Header />
@@ -234,7 +246,7 @@ const Services = () => {
 
         <ServicesShowcaseSection />
 
-        <section className="section-divider relative overflow-hidden bg-foreground py-20 pt-24 text-background">
+        <section ref={processSectionRef} className="section-divider relative overflow-hidden bg-foreground py-20 pt-24 text-background">
           <div className="pointer-events-none absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_50%_50%,_white_1px,_transparent_1px)] bg-[length:24px_24px]" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -272,127 +284,19 @@ const Services = () => {
 
             <div className="relative mx-auto max-w-5xl">
               <div className="absolute bottom-0 left-8 top-0 w-px bg-gradient-to-b from-primary via-primary/50 to-primary/20 md:left-1/2" />
+              <motion.div
+                style={{ height: timelineHeight }}
+                className="absolute left-8 top-0 w-px bg-primary shadow-[0_0_18px_hsl(var(--primary)/0.45)] md:left-1/2"
+              />
 
-              {[
-                {
-                  step: "01",
-                  title: "Discovery",
-                  icon: Search,
-                  description:
-                    "Deep dive into your business goals, target audience, and requirements through comprehensive research.",
-                },
-                {
-                  step: "02",
-                  title: "Planning",
-                  icon: FileText,
-                  description:
-                    "Architect solutions with detailed specifications, wireframes, and project roadmaps.",
-                },
-                {
-                  step: "03",
-                  title: "Development",
-                  icon: Code,
-                  description:
-                    "Build your solution using agile sprints with regular demos and feedback loops.",
-                },
-                {
-                  step: "04",
-                  title: "Launch",
-                  icon: Rocket,
-                  description:
-                    "Smooth deployment with ongoing maintenance, monitoring, and dedicated support.",
-                },
-              ].map((phase, index, arr) => (
-                <motion.div
+              {processPhases.map((phase, index) => (
+                <ProcessPhase
                   key={phase.step}
-                  className={`relative mb-20 flex items-start gap-8 last:mb-0 md:gap-16 ${
-                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                >
-                  <div className="absolute left-8 z-10 -translate-x-1/2 md:left-1/2">
-                    <motion.div
-                      className="flex h-16 w-16 items-center justify-center rounded-full bg-primary shadow-lg shadow-primary/25"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <phase.icon className="h-7 w-7 text-primary-foreground" />
-                    </motion.div>
-                  </div>
-
-                  {index < arr.length - 1 ? (
-                    <motion.div
-                      className="absolute left-8 top-20 flex -translate-x-1/2 flex-col items-center gap-1 md:left-1/2"
-                      initial={{ opacity: 0, y: -10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.15 + 0.3 }}
-                    >
-                      <motion.div
-                        className="h-1.5 w-1.5 rounded-full bg-primary/60"
-                        animate={{ y: [0, 4, 0], opacity: [0.4, 1, 0.4] }}
-                        transition={{ duration: 1.5, repeat: Infinity, delay: 0 }}
-                      />
-                      <motion.div
-                        className="h-1.5 w-1.5 rounded-full bg-primary/50"
-                        animate={{ y: [0, 4, 0], opacity: [0.3, 0.8, 0.3] }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          delay: 0.2,
-                        }}
-                      />
-                      <motion.div
-                        className="h-1.5 w-1.5 rounded-full bg-primary/40"
-                        animate={{ y: [0, 4, 0], opacity: [0.2, 0.6, 0.2] }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          delay: 0.4,
-                        }}
-                      />
-                      <motion.div
-                        animate={{ y: [0, 3, 0] }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }}
-                      >
-                        <ChevronRight className="h-4 w-4 rotate-90 text-primary/60" />
-                      </motion.div>
-                    </motion.div>
-                  ) : null}
-
-                  <div
-                    className={`flex-1 pl-24 md:pl-0 ${
-                      index % 2 === 0
-                        ? "md:pr-16 md:text-right"
-                        : "md:pl-16 md:text-left"
-                    }`}
-                  >
-                    <div className="mb-2 inline-flex items-center gap-3">
-                      <span
-                        className={`text-5xl font-bold text-primary/20 md:text-6xl ${
-                          index % 2 === 0 ? "md:order-2" : ""
-                        }`}
-                      >
-                        {phase.step}
-                      </span>
-                    </div>
-                    <h3 className="mb-3 text-3xl md:text-4xl font-bold text-background">
-                      {phase.title}
-                    </h3>
-                    <p className="inline-block max-w-md text-base leading-relaxed text-background/70 md:text-lg">
-                      {phase.description}
-                    </p>
-                  </div>
-
-                  <div className="hidden flex-1 md:block" />
-                </motion.div>
+                  phase={phase}
+                  index={index}
+                  total={processPhases.length}
+                  progress={timelineProgress}
+                />
               ))}
             </div>
           </div>
