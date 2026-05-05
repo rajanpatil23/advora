@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-import productHeroIllustration from "@/assets/product-hero-illustration.webp";
+import productHeroIllustration from "@/assets/product-hero-illustration.png";
 import serviceDeskCardImage from "@/assets/service-desk-card.png";
 import warehouseCardImage from "@/assets/warehouse-card.png";
 import claimsPortalCardImage from "@/assets/claims-portal-card.png";
