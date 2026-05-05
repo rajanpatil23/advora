@@ -21,9 +21,9 @@ const FooterSection = ({
       {/* Mobile/Tablet: Collapsible */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden w-full flex items-center justify-between py-4 border-b border-background/10"
+        className="lg:hidden w-full flex items-center justify-between py-4 border-b border-foreground/10"
       >
-        <h3 className="font-semibold text-[11px] uppercase tracking-[0.18em] text-background">
+        <h3 className="font-semibold text-[11px] uppercase tracking-[0.18em] text-foreground">
           {title}
         </h3>
         <ChevronDown
