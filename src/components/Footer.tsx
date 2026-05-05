@@ -68,9 +68,10 @@ const Footer = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Upper footer is bg-foreground (dark in light mode, white in dark mode)
-  // So logo on upper footer needs the OPPOSITE of normal
-  const upperLogo = isDark ? logoDark : logoLight;
+  // Upper footer uses bg-background → logo matches normal theme
+  const upperLogo = isDark ? logoLight : logoDark;
+  // Bottom sticky reveal uses bg-foreground → opposite logo
+  const revealLogo = isDark ? logoDark : logoLight;
 
   return (
     <footer className="relative mt-12 sm:mt-16 bg-foreground">
