@@ -27,7 +27,7 @@ const FooterSection = ({
           {title}
         </h3>
         <ChevronDown
-          className={`h-4 w-4 text-background/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          className={`h-4 w-4 text-foreground/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -38,7 +38,7 @@ const FooterSection = ({
 
       {/* Desktop */}
       <div className="hidden lg:block">
-        <h3 className="font-semibold mb-5 text-[11px] uppercase tracking-[0.18em] text-background/70">
+        <h3 className="font-semibold mb-5 text-[11px] uppercase tracking-[0.18em] text-foreground/70">
           {title}
         </h3>
         {children}
@@ -48,7 +48,7 @@ const FooterSection = ({
 };
 
 const linkClass =
-  "group inline-flex items-center gap-1 text-background/65 hover:text-background transition-colors duration-200";
+  "group inline-flex items-center gap-1 text-foreground/70 hover:text-background transition-colors duration-200";
 
 const Footer = () => {
   const [isDark, setIsDark] = useState(false);
@@ -103,13 +103,13 @@ const Footer = () => {
               <Link to="/" className="inline-flex items-center mb-6">
                 <img src={upperLogo} alt="Advora Labs" className="h-9 sm:h-10 w-auto" />
               </Link>
-              <p className="text-background/65 text-base leading-relaxed max-w-md">
+              <p className="text-foreground/70 text-base leading-relaxed max-w-md">
                 We design, build and scale digital products that move businesses forward — strategy, software and growth, all under one roof.
               </p>
 
               {/* Contact mini list */}
               <ul className="mt-7 space-y-2.5 text-sm">
-                <li className="flex items-center gap-3 text-background/70">
+                <li className="flex items-center gap-3 text-foreground/70">
                   <span className="w-8 h-8 rounded-full bg-background/5 border border-background/10 flex items-center justify-center">
                     <Mail className="h-3.5 w-3.5 text-primary" />
                   </span>
@@ -117,7 +117,7 @@ const Footer = () => {
                     advora.in@gmail.com
                   </a>
                 </li>
-                <li className="flex items-center gap-3 text-background/70">
+                <li className="flex items-center gap-3 text-foreground/70">
                   <span className="w-8 h-8 rounded-full bg-background/5 border border-background/10 flex items-center justify-center">
                     <Phone className="h-3.5 w-3.5 text-primary" />
                   </span>
@@ -125,7 +125,7 @@ const Footer = () => {
                     +91 7219860213
                   </a>
                 </li>
-                <li className="flex items-center gap-3 text-background/70">
+                <li className="flex items-center gap-3 text-foreground/70">
                   <span className="w-8 h-8 rounded-full bg-background/5 border border-background/10 flex items-center justify-center">
                     <MapPin className="h-3.5 w-3.5 text-primary" />
                   </span>
@@ -146,7 +146,7 @@ const Footer = () => {
                   <h3 className="text-xl sm:text-2xl font-bold text-background mb-2">
                     Stay ahead of the curve
                   </h3>
-                  <p className="text-sm text-background/60 mb-5 max-w-md">
+                  <p className="text-sm text-foreground/60 mb-5 max-w-md">
                     Curated playbooks on growth, design and product — straight to your inbox. No spam, ever.
                   </p>
 
@@ -156,7 +156,7 @@ const Footer = () => {
                       value={upperEmail}
                       onChange={(e) => setUpperEmail(e.target.value)}
                       placeholder="you@company.com"
-                      className="flex-1 px-5 py-2.5 bg-transparent focus:outline-none text-sm text-background placeholder:text-background/40"
+                      className="flex-1 px-5 py-2.5 bg-transparent focus:outline-none text-sm text-background placeholder:text-foreground/40"
                       disabled={upperSending || upperSent}
                     />
                     <button
@@ -234,7 +234,7 @@ const Footer = () => {
 
           {/* Bottom Bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pt-8 border-t border-background/10">
-            <p className="text-sm text-background/50 order-2 sm:order-1">
+            <p className="text-sm text-foreground/50 order-2 sm:order-1">
               © {new Date().getFullYear()} Advora Digital. Crafted with care.
             </p>
 
@@ -244,7 +244,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-10 h-10 rounded-full bg-background/5 border border-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-background/5 border border-background/10 flex items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -253,7 +253,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full bg-background/5 border border-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-background/5 border border-background/10 flex items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -266,11 +266,11 @@ const Footer = () => {
       <div className="sticky bottom-0 bg-foreground h-[70vh] sm:h-[400px]">
         <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 gap-6 sm:gap-8">
           <Link to="/" className="flex items-center">
-            <img src={upperLogo} alt="Advora Labs" className="h-16 sm:h-20 lg:h-24 w-auto" />
+            <img src={revealLogo} alt="Advora Labs" className="h-16 sm:h-20 lg:h-24 w-auto" />
           </Link>
 
           <div className="text-center">
-            <p className="font-serif italic text-lg sm:text-xl text-background/70">
+            <p className="font-serif italic text-lg sm:text-xl text-foreground/70">
               Have something in mind, but not sure where to start?
             </p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-background mt-2">
@@ -289,7 +289,7 @@ const Footer = () => {
                   value={footerEmail}
                   onChange={(e) => setFooterEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full h-full px-5 bg-transparent focus:outline-none text-sm text-background placeholder:text-background/60 pr-32"
+                  className="w-full h-full px-5 bg-transparent focus:outline-none text-sm text-background placeholder:text-foreground/60 pr-32"
                   disabled={isSending || isSent}
                 />
               </div>
