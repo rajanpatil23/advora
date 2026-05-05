@@ -21,13 +21,13 @@ const FooterSection = ({
       {/* Mobile/Tablet: Collapsible */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden w-full flex items-center justify-between py-4 border-b border-foreground/10"
+        className="lg:hidden w-full flex items-center justify-between py-4 border-b border-background/10"
       >
-        <h3 className="font-semibold text-[11px] uppercase tracking-[0.18em] text-foreground">
+        <h3 className="font-semibold text-[11px] uppercase tracking-[0.18em] text-background">
           {title}
         </h3>
         <ChevronDown
-          className={`h-4 w-4 text-foreground/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          className={`h-4 w-4 text-background/60 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -38,7 +38,7 @@ const FooterSection = ({
 
       {/* Desktop */}
       <div className="hidden lg:block">
-        <h3 className="font-semibold mb-5 text-[11px] uppercase tracking-[0.18em] text-foreground/70">
+        <h3 className="font-semibold mb-5 text-[11px] uppercase tracking-[0.18em] text-background/70">
           {title}
         </h3>
         {children}
@@ -48,7 +48,7 @@ const FooterSection = ({
 };
 
 const linkClass =
-  "group inline-flex items-center gap-1 text-foreground/70 hover:text-foreground transition-colors duration-200";
+  "group inline-flex items-center gap-1 text-background/65 hover:text-background transition-colors duration-200";
 
 const Footer = () => {
   const [isDark, setIsDark] = useState(false);
@@ -68,10 +68,9 @@ const Footer = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Upper footer uses bg-background → logo matches normal theme
-  const upperLogo = isDark ? logoLight : logoDark;
-  // Bottom sticky reveal uses bg-foreground → opposite logo
-  const revealLogo = isDark ? logoDark : logoLight;
+  // Upper footer is bg-foreground (dark in light mode, white in dark mode)
+  // So logo on upper footer needs the OPPOSITE of normal
+  const upperLogo = isDark ? logoDark : logoLight;
 
   return (
     <footer className="relative mt-12 sm:mt-16 bg-foreground">
@@ -84,16 +83,16 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Upper Footer - premium light glass */}
+      {/* Upper Footer - premium dark glass */}
       <div
-        className="relative z-10 bg-background text-foreground rounded-b-[3rem] sm:rounded-b-[4.5rem] overflow-hidden border-b border-foreground/5"
+        className="relative z-10 bg-foreground text-background rounded-b-[3rem] sm:rounded-b-[4.5rem] overflow-hidden border-b border-background/5"
         style={{ marginTop: "-200px" }}
       >
         {/* Ambient gradient blobs */}
-        <div className="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-primary/15 blur-3xl" />
+        <div className="pointer-events-none absolute -top-32 -left-32 w-[28rem] h-[28rem] rounded-full bg-primary/20 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -right-20 w-[32rem] h-[32rem] rounded-full bg-primary/10 blur-3xl" />
         {/* Subtle grid */}
-        
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--background)/0.04)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--background)/0.04)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-10 sm:pb-14">
           {/* Brand + CTA Card */}
@@ -103,30 +102,30 @@ const Footer = () => {
               <Link to="/" className="inline-flex items-center mb-6">
                 <img src={upperLogo} alt="Advora Labs" className="h-9 sm:h-10 w-auto" />
               </Link>
-              <p className="text-foreground/70 text-base leading-relaxed max-w-md">
+              <p className="text-background/65 text-base leading-relaxed max-w-md">
                 We design, build and scale digital products that move businesses forward — strategy, software and growth, all under one roof.
               </p>
 
               {/* Contact mini list */}
               <ul className="mt-7 space-y-2.5 text-sm">
-                <li className="flex items-center gap-3 text-foreground/70">
-                  <span className="w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center">
+                <li className="flex items-center gap-3 text-background/70">
+                  <span className="w-8 h-8 rounded-full bg-background/5 border border-background/10 flex items-center justify-center">
                     <Mail className="h-3.5 w-3.5 text-primary" />
                   </span>
-                  <a href="mailto:advora.in@gmail.com" className="hover:text-foreground transition-colors">
+                  <a href="mailto:advora.in@gmail.com" className="hover:text-background transition-colors">
                     advora.in@gmail.com
                   </a>
                 </li>
-                <li className="flex items-center gap-3 text-foreground/70">
-                  <span className="w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center">
+                <li className="flex items-center gap-3 text-background/70">
+                  <span className="w-8 h-8 rounded-full bg-background/5 border border-background/10 flex items-center justify-center">
                     <Phone className="h-3.5 w-3.5 text-primary" />
                   </span>
-                  <a href="tel:+917219860213" className="hover:text-foreground transition-colors">
+                  <a href="tel:+917219860213" className="hover:text-background transition-colors">
                     +91 7219860213
                   </a>
                 </li>
-                <li className="flex items-center gap-3 text-foreground/70">
-                  <span className="w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center">
+                <li className="flex items-center gap-3 text-background/70">
+                  <span className="w-8 h-8 rounded-full bg-background/5 border border-background/10 flex items-center justify-center">
                     <MapPin className="h-3.5 w-3.5 text-primary" />
                   </span>
                   <span>Kharadi, Pune</span>
@@ -136,27 +135,27 @@ const Footer = () => {
 
             {/* Newsletter card */}
             <div className="lg:col-span-7">
-              <div className="relative rounded-3xl border border-foreground/10 bg-foreground/[0.03] backdrop-blur-sm p-6 sm:p-8 overflow-hidden">
+              <div className="relative rounded-3xl border border-background/10 bg-background/[0.03] backdrop-blur-sm p-6 sm:p-8 overflow-hidden">
                 <div className="pointer-events-none absolute -top-16 -right-16 w-56 h-56 rounded-full bg-primary/20 blur-3xl" />
                 <div className="relative">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 border border-primary/30 text-primary text-[11px] font-medium uppercase tracking-wider mb-4">
                     <Sparkles className="h-3 w-3" />
                     Weekly insights
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-background mb-2">
                     Stay ahead of the curve
                   </h3>
-                  <p className="text-sm text-foreground/60 mb-5 max-w-md">
+                  <p className="text-sm text-background/60 mb-5 max-w-md">
                     Curated playbooks on growth, design and product — straight to your inbox. No spam, ever.
                   </p>
 
-                  <div className="flex w-full rounded-full border border-foreground/15 bg-foreground/5 backdrop-blur-sm overflow-hidden p-1">
+                  <div className="flex w-full rounded-full border border-background/15 bg-background/5 backdrop-blur-sm overflow-hidden p-1">
                     <input
                       type="email"
                       value={upperEmail}
                       onChange={(e) => setUpperEmail(e.target.value)}
                       placeholder="you@company.com"
-                      className="flex-1 px-5 py-2.5 bg-transparent focus:outline-none text-sm text-foreground placeholder:text-foreground/40"
+                      className="flex-1 px-5 py-2.5 bg-transparent focus:outline-none text-sm text-background placeholder:text-background/40"
                       disabled={upperSending || upperSent}
                     />
                     <button
@@ -233,8 +232,8 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pt-8 border-t border-foreground/10">
-            <p className="text-sm text-foreground/50 order-2 sm:order-1">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pt-8 border-t border-background/10">
+            <p className="text-sm text-background/50 order-2 sm:order-1">
               © {new Date().getFullYear()} Advora Digital. Crafted with care.
             </p>
 
@@ -244,7 +243,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-10 h-10 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-background/5 border border-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -253,7 +252,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center text-foreground/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-background/5 border border-background/10 flex items-center justify-center text-background/70 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -266,11 +265,11 @@ const Footer = () => {
       <div className="sticky bottom-0 bg-foreground h-[70vh] sm:h-[400px]">
         <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 gap-6 sm:gap-8">
           <Link to="/" className="flex items-center">
-            <img src={revealLogo} alt="Advora Labs" className="h-16 sm:h-20 lg:h-24 w-auto" />
+            <img src={upperLogo} alt="Advora Labs" className="h-16 sm:h-20 lg:h-24 w-auto" />
           </Link>
 
           <div className="text-center">
-            <p className="font-serif italic text-lg sm:text-xl text-foreground/70">
+            <p className="font-serif italic text-lg sm:text-xl text-background/70">
               Have something in mind, but not sure where to start?
             </p>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-background mt-2">
@@ -289,7 +288,7 @@ const Footer = () => {
                   value={footerEmail}
                   onChange={(e) => setFooterEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="w-full h-full px-5 bg-transparent focus:outline-none text-sm text-background placeholder:text-foreground/60 pr-32"
+                  className="w-full h-full px-5 bg-transparent focus:outline-none text-sm text-background placeholder:text-background/60 pr-32"
                   disabled={isSending || isSent}
                 />
               </div>
