@@ -236,7 +236,7 @@ const SolutionsCarouselSection = () => {
                           <img
                             src={solution.image}
                             alt={solution.title}
-                            className="w-full h-full object-cover rounded-2xl"
+                            className="w-full h-full object-contain"
                             onError={() => handleImageError(solution.id)}
                           />
                         )}
@@ -274,7 +274,7 @@ const SolutionsCarouselSection = () => {
                   <img
                     src={solution.image}
                     alt={solution.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     onError={() => handleImageError(solution.id)}
                   />
                 )}
