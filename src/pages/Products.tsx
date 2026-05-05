@@ -133,7 +133,7 @@ function HeroProductShowcase() {
       initial={{ opacity: 0, x: -30, scale: 0.98 }}
       animate={{ opacity: 1, x: 0, scale: 1 }}
       transition={{ duration: 0.65, delay: 0.1 }}
-      className="rounded-xl sm:rounded-2xl overflow-hidden bg-white"
+      className="rounded-xl sm:rounded-2xl overflow-hidden"
     >
       <div className="aspect-[4/3]">
         <img
