@@ -11,7 +11,8 @@ import {
   Zap,
   Award,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
@@ -22,6 +23,115 @@ import ServicesShowcaseSection from "@/components/services/ServicesShowcaseSecti
 import { usePageSEO } from "@/hooks/usePageSEO";
 
 import serviceHeroImg from "@/assets/serviceheroimg.webp";
+
+const processPhases = [
+  {
+    step: "01",
+    title: "Discovery",
+    icon: Search,
+    description:
+      "Deep dive into your business goals, target audience, and requirements through comprehensive research.",
+  },
+  {
+    step: "02",
+    title: "Planning",
+    icon: FileText,
+    description:
+      "Architect solutions with detailed specifications, wireframes, and project roadmaps.",
+  },
+  {
+    step: "03",
+    title: "Development",
+    icon: Code,
+    description:
+      "Build your solution using agile sprints with regular demos and feedback loops.",
+  },
+  {
+    step: "04",
+    title: "Launch",
+    icon: Rocket,
+    description:
+      "Smooth deployment with ongoing maintenance, monitoring, and dedicated support.",
+  },
+] as const;
+
+function ProcessPhase({
+  phase,
+  index,
+  total,
+  progress,
+}: {
+  phase: (typeof processPhases)[number];
+  index: number;
+  total: number;
+  progress: ReturnType<typeof useScroll>["scrollYProgress"];
+}) {
+  const stepPoint = total === 1 ? 0 : index / (total - 1);
+  const rangeStart = Math.max(0, stepPoint - 0.18);
+  const rangeEnd = Math.min(1, stepPoint + 0.18);
+  const cardOpacity = useTransform(progress, [rangeStart, stepPoint, rangeEnd], [0.45, 1, 1]);
+  const cardScale = useTransform(progress, [rangeStart, stepPoint], [0.96, 1]);
+  const cardY = useTransform(progress, [rangeStart, stepPoint], [32, 0]);
+  const glowOpacity = useTransform(progress, [rangeStart, stepPoint], [0, 1]);
+  const iconScale = useTransform(progress, [rangeStart, stepPoint], [0.82, 1]);
+  const iconOpacity = useTransform(progress, [rangeStart, stepPoint], [0.35, 1]);
+  const numberOpacity = useTransform(progress, [rangeStart, stepPoint], [0.16, 0.34]);
+
+  return (
+    <motion.div
+      style={{ opacity: cardOpacity, y: cardY, scale: cardScale }}
+      className={`relative mb-20 flex items-start gap-8 last:mb-0 md:gap-16 ${
+        index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+      }`}
+    >
+      <div className="absolute left-8 z-10 -translate-x-1/2 md:left-1/2">
+        <motion.div
+          style={{ scale: iconScale }}
+          className="relative flex h-16 w-16 items-center justify-center rounded-full border border-primary/30 bg-background shadow-lg shadow-primary/20"
+        >
+          <motion.div
+            style={{ opacity: glowOpacity }}
+            className="absolute inset-0 rounded-full bg-primary"
+            aria-hidden
+          />
+          <motion.div style={{ opacity: iconOpacity }} className="relative z-10">
+            <phase.icon className="h-7 w-7 text-primary-foreground" />
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {index < total - 1 ? (
+        <div className="absolute left-8 top-20 flex -translate-x-1/2 flex-col items-center gap-1 md:left-1/2">
+          <div className="h-1.5 w-1.5 rounded-full bg-primary/60" />
+          <div className="h-1.5 w-1.5 rounded-full bg-primary/50" />
+          <div className="h-1.5 w-1.5 rounded-full bg-primary/40" />
+          <ChevronRight className="h-4 w-4 rotate-90 text-primary/60" />
+        </div>
+      ) : null}
+
+      <div
+        className={`flex-1 pl-24 md:pl-0 ${
+          index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"
+        }`}
+      >
+        <div className="mb-2 inline-flex items-center gap-3">
+          <motion.span
+            style={{ opacity: numberOpacity }}
+            className={`text-5xl font-bold text-primary md:text-6xl ${index % 2 === 0 ? "md:order-2" : ""}`}
+          >
+            {phase.step}
+          </motion.span>
+        </div>
+        <h3 className="mb-3 text-3xl font-bold text-background md:text-4xl">{phase.title}</h3>
+        <p className="inline-block max-w-md text-base leading-relaxed text-background/70 md:text-lg">
+          {phase.description}
+        </p>
+      </div>
+
+      <div className="hidden flex-1 md:block" />
+    </motion.div>
+  );
+}
 
 const Services = () => {
   usePageSEO({
