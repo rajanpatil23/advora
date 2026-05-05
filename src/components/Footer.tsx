@@ -48,7 +48,7 @@ const FooterSection = ({
 };
 
 const linkClass =
-  "group inline-flex items-center gap-1 text-foreground/70 hover:text-background transition-colors duration-200";
+  "group inline-flex items-center gap-1 text-foreground/70 hover:text-foreground transition-colors duration-200";
 
 const Footer = () => {
   const [isDark, setIsDark] = useState(false);
