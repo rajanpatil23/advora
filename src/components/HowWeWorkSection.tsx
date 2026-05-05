@@ -76,10 +76,13 @@ export default function HowWeWorkSection() {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start 80%", "end 60%"],
+    offset: ["start end", "end start"],
   });
 
-  const smooth = useSpring(scrollYProgress, { stiffness: 80, damping: 20, mass: 0.3 });
+  // Remap so progress 0→1 happens while the section travels through the
+  // middle of the viewport (roughly 25% → 75% of raw scroll progress).
+  const mapped = useTransform(scrollYProgress, [0.2, 0.8], [0, 1]);
+  const smooth = useSpring(mapped, { stiffness: 80, damping: 20, mass: 0.3 });
   const progressWidth = useTransform(smooth, [0, 1], ["0%", "100%"]);
 
   return (
