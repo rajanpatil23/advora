@@ -72,7 +72,7 @@ const Portfolio = () => {
     },
     {
       title: "HealthTrack Pro",
-      category: "Healthcare Platform",
+      category: "Learning Platform",
       description: "Cross-platform health and fitness tracking app with personalized workout plans and nutrition guidance.",
       tech: ["React Native", "Firebase", "Machine Learning"],
       image: projectHealthTrack,
