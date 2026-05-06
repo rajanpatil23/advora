@@ -417,7 +417,7 @@ const Portfolio = () => {
             {projects.map((project, index) => (
               <div
                 key={project.title}
-                className={`group rounded-[2rem] bg-card border border-border hover:border-accent/50 overflow-hidden transition-all duration-300 hover:scale-[1.02] animate-slide-up stagger-${(index % 6) + 1}`}
+                className={`group rounded-[15px] bg-card border border-border hover:border-accent/50 overflow-hidden transition-all duration-300 hover:scale-[1.02] animate-slide-up stagger-${(index % 6) + 1}`}
               >
                 <div className="aspect-video overflow-hidden">
                   <img 
