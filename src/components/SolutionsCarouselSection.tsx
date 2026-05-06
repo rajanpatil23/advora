@@ -244,7 +244,7 @@ const SolutionsCarouselSection = () => {
                       </div>
 
                       {/* Right - Image */}
-                      <div className="hidden md:flex w-[70%] items-center justify-center relative overflow-visible">
+                      <div className="hidden md:flex w-[100%] items-center justify-center relative overflow-visible">
                         {imageErrors[solution.id] ? (
                           <div className="w-full h-full rounded-2xl bg-white/10 flex items-center justify-center">
                             <ImageOff className="w-16 h-16 text-white/40" />
