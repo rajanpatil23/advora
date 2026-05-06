@@ -16,6 +16,7 @@ import projectEduLearn from "@/assets/project-edulearn.jpg";
 import projectPropertyPro from "@/assets/project-propertypro.jpg";
 import projectLogiTrack from "@/assets/project-logitrack.jpg";
 import projectMediConnect from "@/assets/project-mediconnect.jpg";
+import portfolioHeroIllustration from "@/assets/portfolio-hero-illustration.png";
 
 const industries = [
   { icon: ShoppingCart, title: "E-commerce", description: "Marketplaces, funnels, stores" },
