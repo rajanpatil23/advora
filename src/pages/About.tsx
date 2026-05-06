@@ -221,24 +221,12 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative"
               >
-                <div className="rounded-[2rem] overflow-visible">
+                <div className="rounded-[2rem] overflow-visible group">
                   <img
                     src={aboutWorkspace}
                     alt="Advora vision illustration"
-                    className="w-full h-auto object-contain aspect-[4/3]"
+                    className="w-full h-auto object-contain aspect-[4/3] transition-transform duration-500 ease-out group-hover:scale-105"
                   />
-                </div>
-                {/* Floating capability cards */}
-                <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-card border border-border rounded-2xl p-4 shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center">
-                      <Lightbulb className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-sm">Innovation First</div>
-                      <div className="text-xs text-muted-foreground">Always pushing boundaries</div>
-                    </div>
-                  </div>
                 </div>
               </motion.div>
             </div>
