@@ -318,7 +318,7 @@ const Portfolio = () => {
                 </div>
 
                 {/* Quick Stats */}
-                <div className="flex flex-wrap gap-x-10 gap-y-4 pt-4 border-t border-border/60 mt-2">
+                <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 pt-4 border-t border-border/60 mt-2 text-center">
                   <div>
                     <div className="text-3xl font-bold text-primary">40+</div>
                     <div className="text-sm text-muted-foreground">Projects Shipped</div>
