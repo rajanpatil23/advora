@@ -257,100 +257,146 @@ const Portfolio = () => {
       <Header />
       
       <main>
-        {/* Hero Section - Editorial Split Layout */}
-        <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
+        {/* Hero Section - Premium Floating Showcase */}
+        <section className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24 overflow-hidden">
+          {/* Subtle ambient backdrop */}
+          <div className="absolute inset-0 -z-10 pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-[40rem] h-[40rem] rounded-full bg-primary/5 blur-3xl" />
+            <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] rounded-full bg-accent/5 blur-3xl" />
+          </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Hero Card */}
-            <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
-              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                {/* Masonry Grid */}
-                <motion.div 
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
+            <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
+              {/* Floating Showcase Collage */}
+              <motion.div
+                className="relative h-[460px] sm:h-[560px] lg:h-[600px] order-2 lg:order-1"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+              >
+                {/* Soft glow accent */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[70%] rounded-full bg-primary/15 blur-3xl" />
+
+                {/* Connector dots */}
+                <div className="absolute top-[18%] right-[12%] w-1.5 h-1.5 rounded-full bg-primary/40" />
+                <div className="absolute bottom-[22%] left-[8%] w-1.5 h-1.5 rounded-full bg-primary/40" />
+                <div className="absolute top-[55%] right-[6%] w-1 h-1 rounded-full bg-foreground/30" />
+
+                {/* Primary featured visual — desktop dashboard */}
+                <motion.div
+                  className="absolute top-[8%] left-[6%] w-[72%] rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10 bg-card"
+                  style={{ rotate: "-2deg" }}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.02, rotate: 0 }}
                 >
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                    <div className="space-y-3 sm:space-y-4">
-                      <motion.div 
-                        className="rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3]"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img src={projectFinanceFlow} alt="FinanceFlow" className="w-full h-full object-cover" />
-                      </motion.div>
-                      <motion.div 
-                        className="rounded-xl sm:rounded-2xl overflow-hidden aspect-[5/4]"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img src={projectHealthTrack} alt="HealthTrack" className="w-full h-full object-cover" />
-                      </motion.div>
-                    </div>
-                    <div className="space-y-3 sm:space-y-4 pt-8">
-                      <motion.div 
-                        className="rounded-xl sm:rounded-2xl overflow-hidden aspect-[5/4]"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img src={projectRetailHub} alt="RetailHub" className="w-full h-full object-cover" />
-                      </motion.div>
-                      <motion.div 
-                        className="rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3]"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img src={projectTaskMaster} alt="TaskMaster" className="w-full h-full object-cover" />
-                      </motion.div>
-                    </div>
-                  </div>
+                  <img src={projectFinanceFlow} alt="FinanceFlow dashboard" className="w-full h-auto block" />
                 </motion.div>
 
-                {/* Content */}
-                <motion.div 
-                  className="space-y-4 sm:space-y-6"
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
+                {/* Secondary — mobile app screen */}
+                <motion.div
+                  className="absolute bottom-[4%] left-[2%] w-[34%] rounded-2xl overflow-hidden border border-border/60 shadow-xl shadow-foreground/10 bg-card"
+                  style={{ rotate: "-6deg" }}
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  whileHover={{ scale: 1.04, rotate: 0 }}
                 >
-                  <span className="inline-block px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-medium">
-                    150+ Projects Delivered
-                  </span>
-                  
-                  <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
-                    <span className="block font-serif italic font-normal">Work That</span>
-                    <span className="block font-bold text-primary">Speaks for Itself</span>
-                  </h1>
-
-                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
-                    From startups to enterprises, we've helped businesses across industries achieve their digital ambitions.
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
-                    <Link to="/contact" className="w-full sm:w-auto">
-                      <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto">
-                        Start Your Project
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
-                  </div>
-
-                  {/* Quick Stats */}
-                  <div className="flex gap-8 pt-4">
-                    <div>
-                      <div className="text-3xl font-bold text-primary">4.9</div>
-                      <div className="text-sm text-muted-foreground">Avg Rating</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-primary">95%</div>
-                      <div className="text-sm text-muted-foreground">Client Retention</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-primary">50+</div>
-                      <div className="text-sm text-muted-foreground">Happy Clients</div>
-                    </div>
-                  </div>
+                  <img src={projectHealthTrack} alt="HealthTrack mobile" className="w-full h-auto block aspect-[3/4] object-cover" />
                 </motion.div>
-              </div>
+
+                {/* Secondary — analytics panel */}
+                <motion.div
+                  className="absolute bottom-[8%] right-[2%] w-[52%] rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10 bg-card"
+                  style={{ rotate: "4deg" }}
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  whileHover={{ scale: 1.03, rotate: 0 }}
+                >
+                  <img src={projectTaskMaster} alt="TaskMaster analytics" className="w-full h-auto block" />
+                </motion.div>
+
+                {/* Floating metric chip — top */}
+                <motion.div
+                  className="absolute top-[2%] right-[8%] px-4 py-3 rounded-2xl bg-background/80 backdrop-blur-md border border-border shadow-lg"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Client Retention</div>
+                  <div className="text-lg font-bold text-foreground">95%</div>
+                </motion.div>
+
+                {/* Floating metric chip — middle left */}
+                <motion.div
+                  className="absolute top-[40%] left-[0%] px-3 py-2 rounded-xl bg-background/80 backdrop-blur-md border border-border shadow-lg flex items-center gap-2"
+                  animate={{ y: [0, 5, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                >
+                  <Star className="w-3.5 h-3.5 text-primary fill-primary" />
+                  <span className="text-sm font-semibold">4.9</span>
+                </motion.div>
+
+                {/* Floating metric chip — bottom right */}
+                <motion.div
+                  className="absolute top-[18%] right-[2%] px-3 py-2 rounded-xl bg-primary/10 backdrop-blur-md border border-primary/20 shadow-lg"
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+                >
+                  <div className="text-xs font-semibold text-primary">+150 Projects</div>
+                </motion.div>
+              </motion.div>
+
+              {/* Editorial Content */}
+              <motion.div
+                className="order-1 lg:order-2 space-y-7"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  150+ Projects Delivered
+                </div>
+
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.05]">
+                  <span className="block font-serif italic font-normal text-foreground/90">Work That</span>
+                  <span className="block font-bold text-primary">Speaks for</span>
+                  <span className="block font-bold text-foreground">Itself.</span>
+                </h1>
+
+                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-lg">
+                  From startups to enterprises, we've helped businesses across industries achieve their digital ambitions with modern, scalable and impactful solutions.
+                </p>
+
+                <div className="pt-1">
+                  <Link to="/contact">
+                    <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-7 py-6 font-medium group">
+                      Start Your Project
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Inline proof strip */}
+                <div className="flex items-center gap-5 sm:gap-7 pt-6 border-t border-border/60">
+                  <div className="flex items-center gap-2">
+                    <Star className="w-4 h-4 text-primary fill-primary" />
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-lg font-bold text-foreground">4.9</span>
+                      <span className="text-xs text-muted-foreground">Rating</span>
+                    </div>
+                  </div>
+                  <div className="h-6 w-px bg-border" />
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-lg font-bold text-foreground">95%</span>
+                    <span className="text-xs text-muted-foreground">Retention</span>
+                  </div>
+                  <div className="h-6 w-px bg-border" />
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-lg font-bold text-foreground">50+</span>
+                    <span className="text-xs text-muted-foreground">Clients</span>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
