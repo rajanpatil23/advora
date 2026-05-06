@@ -19,10 +19,10 @@ import {
   Puzzle,
 } from "lucide-react";
 
-import heroDashboard from "@/assets/hero-dashboard.jpg";
-import heroWorkspace from "@/assets/hero-workspace.jpg";
-import projectFinanceflow from "@/assets/project-financeflow.jpg";
-import projectHealthtrack from "@/assets/project-healthtrack.jpg";
+import heroDashboard from "@/assets/grow-digital-presence.png";
+import heroWorkspace from "@/assets/grow-growth-marketing.png";
+import projectFinanceflow from "@/assets/grow-sales-revenue.png";
+import projectHealthtrack from "@/assets/grow-strategy-scaling.png";
 
 const digitalServicesData = [
   {
@@ -190,14 +190,14 @@ const DigitalServicesCarouselSection = () => {
                     <div className="flex flex-col md:flex-row h-full gap-6">
                       {/* Image (top on tablet, left on desktop) */}
                       <div className="flex w-full md:w-[55%] items-center justify-center">
-                        <div className="w-full h-48 sm:h-56 md:h-full rounded-2xl overflow-hidden bg-white/10 flex items-center justify-center">
+                        <div className="w-full h-48 sm:h-56 md:h-full rounded-2xl overflow-visible flex items-center justify-center relative">
                           {imageErrors[solution.id] || !solution.image ? (
                             <ImageOff className="w-16 h-16 text-white/40" />
                           ) : (
                             <img
                               src={solution.image}
                               alt={solution.title}
-                              className="w-full h-full object-cover"
+                              className="w-[115%] max-w-none h-auto object-contain scale-110"
                               onError={() => handleImageError(solution.id)}
                             />
                           )}
@@ -255,16 +255,16 @@ const DigitalServicesCarouselSection = () => {
           >
             <div style={{ backgroundColor: solution.bgColor }} className="w-full rounded-[1.5rem] p-4">
               {/* Image Section - Rounded inside card */}
-              <div className="w-full h-48 rounded-2xl overflow-hidden mb-5">
+              <div className="w-full h-56 rounded-2xl overflow-visible mb-5 flex items-center justify-center">
                 {imageErrors[solution.id] || !solution.image ? (
-                  <div className="w-full h-full bg-white/10 flex items-center justify-center">
+                  <div className="w-full h-full bg-white/10 flex items-center justify-center rounded-2xl">
                     <ImageOff className="w-10 h-10 text-white/40" />
                   </div>
                 ) : (
                   <img
                     src={solution.image}
                     alt={solution.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     onError={() => handleImageError(solution.id)}
                   />
                 )}
