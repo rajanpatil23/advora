@@ -302,18 +302,33 @@ const SolutionsCarouselSection = () => {
           >
             <div style={{ backgroundColor: solution.bgColor }} className="w-full rounded-[1.5rem] p-4">
               {/* Image Section - Rounded inside card */}
-              <div className="w-full h-64 rounded-2xl overflow-hidden mb-5">
+              <div className="relative w-full h-64 rounded-2xl overflow-visible mb-5 flex items-center justify-center" style={{ perspective: "1000px" }}>
                 {imageErrors[solution.id] ? (
-                  <div className="w-full h-full bg-white/10 flex items-center justify-center">
+                  <div className="w-full h-full bg-white/10 flex items-center justify-center rounded-2xl">
                     <ImageOff className="w-10 h-10 text-white/40" />
                   </div>
                 ) : (
-                  <img
-                    src={solution.image}
-                    alt={solution.title}
-                    className="w-full h-full object-contain"
-                    onError={() => handleImageError(solution.id)}
-                  />
+                  <>
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 m-auto w-[75%] h-[75%] rounded-full blur-3xl opacity-60 pointer-events-none"
+                      style={{
+                        background:
+                          "radial-gradient(circle at center, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 40%, transparent 70%)",
+                      }}
+                    />
+                    <img
+                      src={solution.image}
+                      alt={solution.title}
+                      className="relative w-full h-full object-contain"
+                      style={{
+                        transform: "rotateY(-10deg) rotateX(5deg)",
+                        transformStyle: "preserve-3d",
+                        filter: "drop-shadow(0 18px 25px rgba(0,0,0,0.4))",
+                      }}
+                      onError={() => handleImageError(solution.id)}
+                    />
+                  </>
                 )}
               </div>
 
