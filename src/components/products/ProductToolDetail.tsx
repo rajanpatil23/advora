@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import type { ProductTool } from "@/data/productTools";
-import productHeroIllustration from "@/assets/product-hero-illustration.png";
 import {
   ArrowLeft,
   ArrowRight,
@@ -52,9 +51,9 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
             <div className="rounded-[2rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-3 sm:p-8 md:p-12">
               <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                <div className="rounded-xl sm:rounded-2xl overflow-hidden">
+                <div className="rounded-xl sm:rounded-2xl overflow-hidden bg-white">
                   <img
-                    src={productHeroIllustration}
+                    src={tool.screenshot}
                     alt={tool.screenshotAlt}
                     fetchPriority="high"
                     decoding="async"
