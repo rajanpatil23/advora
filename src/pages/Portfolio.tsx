@@ -267,79 +267,75 @@ const Portfolio = () => {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
-              {/* Floating Showcase Collage */}
+              {/* Premium Single Device Showcase */}
               <motion.div
-                className="relative h-[460px] sm:h-[560px] lg:h-[600px] order-2 lg:order-1"
+                className="relative h-[460px] sm:h-[560px] lg:h-[600px] order-2 lg:order-1 flex items-center justify-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
               >
                 {/* Soft glow accent */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[70%] rounded-full bg-primary/15 blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[70%] rounded-full bg-primary/15 blur-3xl" />
 
-                {/* Connector dots */}
-                <div className="absolute top-[18%] right-[12%] w-1.5 h-1.5 rounded-full bg-primary/40" />
-                <div className="absolute bottom-[22%] left-[8%] w-1.5 h-1.5 rounded-full bg-primary/40" />
-                <div className="absolute top-[55%] right-[6%] w-1 h-1 rounded-full bg-foreground/30" />
-
-                {/* Primary featured visual — desktop dashboard */}
+                {/* Laptop mockup */}
                 <motion.div
-                  className="absolute top-[8%] left-[6%] w-[72%] rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10 bg-card"
-                  style={{ rotate: "-2deg" }}
-                  animate={{ y: [0, -8, 0] }}
+                  className="relative w-full max-w-[560px] mx-auto"
+                  animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  whileHover={{ scale: 1.02, rotate: 0 }}
                 >
-                  <img src={projectFinanceFlow} alt="FinanceFlow dashboard" className="w-full h-auto block" />
+                  {/* Screen frame */}
+                  <div className="relative rounded-t-2xl bg-foreground/90 p-3 sm:p-4 shadow-2xl shadow-primary/20 border border-border/40">
+                    {/* Browser top bar */}
+                    <div className="flex items-center gap-1.5 mb-2.5 px-1">
+                      <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+                      <div className="ml-3 flex-1 h-5 rounded-md bg-background/10" />
+                    </div>
+                    {/* Screen */}
+                    <div className="rounded-lg overflow-hidden bg-card aspect-[16/10]">
+                      <img
+                        src={projectFinanceFlow}
+                        alt="FinanceFlow flagship project preview"
+                        className="w-full h-full object-cover block"
+                      />
+                    </div>
+                  </div>
+                  {/* Laptop base */}
+                  <div className="relative h-3 bg-gradient-to-b from-foreground/80 to-foreground/60 rounded-b-[1.5rem] mx-[-4%]" />
+                  <div className="h-1.5 bg-foreground/30 rounded-b-full mx-[20%]" />
+                  {/* Reflection */}
+                  <div className="absolute inset-x-0 -bottom-6 h-12 bg-gradient-to-b from-foreground/15 to-transparent blur-xl rounded-full mx-8" />
                 </motion.div>
 
-                {/* Secondary — mobile app screen */}
+                {/* Floating accent — top right metric */}
                 <motion.div
-                  className="absolute bottom-[4%] left-[2%] w-[34%] rounded-2xl overflow-hidden border border-border/60 shadow-xl shadow-foreground/10 bg-card"
-                  style={{ rotate: "-6deg" }}
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  whileHover={{ scale: 1.04, rotate: 0 }}
+                  className="absolute top-[6%] right-[2%] sm:right-[4%] px-4 py-3 rounded-2xl bg-background/85 backdrop-blur-md border border-border shadow-xl"
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <img src={projectHealthTrack} alt="HealthTrack mobile" className="w-full h-auto block aspect-[3/4] object-cover" />
-                </motion.div>
-
-                {/* Secondary — analytics panel */}
-                <motion.div
-                  className="absolute bottom-[8%] right-[2%] w-[52%] rounded-2xl overflow-hidden border border-border/60 shadow-2xl shadow-primary/10 bg-card"
-                  style={{ rotate: "4deg" }}
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  whileHover={{ scale: 1.03, rotate: 0 }}
-                >
-                  <img src={projectTaskMaster} alt="TaskMaster analytics" className="w-full h-auto block" />
-                </motion.div>
-
-                {/* Floating metric chip — top */}
-                <motion.div
-                  className="absolute top-[2%] right-[8%] px-4 py-3 rounded-2xl bg-background/80 backdrop-blur-md border border-border shadow-lg"
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Client Retention</div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Retention</div>
                   <div className="text-lg font-bold text-foreground">95%</div>
                 </motion.div>
 
-                {/* Floating metric chip — middle left */}
+                {/* Floating accent — bottom left rating */}
                 <motion.div
-                  className="absolute top-[40%] left-[0%] px-3 py-2 rounded-xl bg-background/80 backdrop-blur-md border border-border shadow-lg flex items-center gap-2"
-                  animate={{ y: [0, 5, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                  className="absolute bottom-[10%] left-[2%] sm:left-[4%] px-3.5 py-2.5 rounded-2xl bg-background/85 backdrop-blur-md border border-border shadow-xl flex items-center gap-2"
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
                 >
-                  <Star className="w-3.5 h-3.5 text-primary fill-primary" />
-                  <span className="text-sm font-semibold">4.9</span>
+                  <Star className="w-4 h-4 text-primary fill-primary" />
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground leading-none">Rating</div>
+                    <div className="text-sm font-bold text-foreground leading-tight">4.9 / 5</div>
+                  </div>
                 </motion.div>
 
-                {/* Floating metric chip — bottom right */}
+                {/* Floating accent — projects badge */}
                 <motion.div
-                  className="absolute top-[18%] right-[2%] px-3 py-2 rounded-xl bg-primary/10 backdrop-blur-md border border-primary/20 shadow-lg"
+                  className="absolute top-[40%] right-[0%] px-3 py-1.5 rounded-full bg-primary/10 backdrop-blur-md border border-primary/20 shadow-lg"
                   animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
                   <div className="text-xs font-semibold text-primary">+150 Projects</div>
                 </motion.div>
