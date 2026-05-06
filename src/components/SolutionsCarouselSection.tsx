@@ -4,7 +4,24 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
-import { ImageOff, Zap, Shield, Rocket, Smartphone, Cloud, Code, Palette, Users, Target, Layers, TrendingUp, BarChart3, Layout, PenTool, Award } from "lucide-react";
+import {
+  ImageOff,
+  Zap,
+  Shield,
+  Rocket,
+  Smartphone,
+  Cloud,
+  Code,
+  Palette,
+  Users,
+  Target,
+  Layers,
+  TrendingUp,
+  BarChart3,
+  Layout,
+  PenTool,
+  Award,
+} from "lucide-react";
 
 import heroDashboard from "@/assets/solution-web-platforms.png";
 import heroWorkspace from "@/assets/solution-mobile-apps.png";
@@ -18,7 +35,8 @@ const solutionsData = [
     label: "Web Development",
     title: "High-Performance",
     subtitle: "Web Platforms",
-    description: "Startup, SaaS & enterprise websites. Landing pages, web apps, CMS-based & headless architectures with performance optimization.",
+    description:
+      "Startup, SaaS & enterprise websites. Landing pages, web apps, CMS-based & headless architectures with performance optimization.",
     mobileDescription: "Scalable websites & web apps built for performance.",
     outcome: "Fast, scalable, production-ready web platforms.",
     ctaText: "Start Your Project",
@@ -36,7 +54,8 @@ const solutionsData = [
     label: "Mobile Apps",
     title: "iOS & Android",
     subtitle: "Development",
-    description: "Native & cross-platform apps. MVP apps for startups, SaaS companion apps, performance optimization, and store readiness & deployment support.",
+    description:
+      "Native & cross-platform apps. MVP apps for startups, SaaS companion apps, performance optimization, and store readiness & deployment support.",
     mobileDescription: "Native & cross-platform apps ready for growth.",
     outcome: "Stable, user-ready mobile applications built for growth.",
     ctaText: "Build Your App",
@@ -54,7 +73,8 @@ const solutionsData = [
     label: "Custom Software",
     title: "Business Tools &",
     subtitle: "Automation",
-    description: "Internal tools, CRM/ERP/workflow platforms, API development & integrations, custom SaaS & enterprise software, and AI-enabled tools when relevant.",
+    description:
+      "Internal tools, CRM/ERP/workflow platforms, API development & integrations, custom SaaS & enterprise software, and AI-enabled tools when relevant.",
     mobileDescription: "Custom tools & automation for your business.",
     outcome: "Tailor-made software that improves efficiency and operations.",
     ctaText: "Let's Build",
@@ -72,7 +92,8 @@ const solutionsData = [
     label: "UI/UX Design",
     title: "Product",
     subtitle: "Experience",
-    description: "UX research & user journey mapping, wireframes & prototypes, conversion-focused UI design, design systems & component libraries, and usability optimization.",
+    description:
+      "UX research & user journey mapping, wireframes & prototypes, conversion-focused UI design, design systems & component libraries, and usability optimization.",
     mobileDescription: "Intuitive designs that convert users.",
     outcome: "Intuitive, high-converting digital experiences.",
     ctaText: "Design with Us",
@@ -90,7 +111,8 @@ const solutionsData = [
     label: "Branding",
     title: "Product",
     subtitle: "Positioning",
-    description: "Brand identity (logo, color system, typography), messaging & value proposition, startup positioning, pitch decks & storytelling, and design consistency.",
+    description:
+      "Brand identity (logo, color system, typography), messaging & value proposition, startup positioning, pitch decks & storytelling, and design consistency.",
     mobileDescription: "Clear brand identity that stands out.",
     outcome: "A clear, credible, and differentiated brand presence.",
     ctaText: "Build Your Brand",
@@ -114,7 +136,7 @@ const SolutionsCarouselSection = () => {
   };
 
   const handleImageError = (id: string) => {
-    setImageErrors(prev => ({ ...prev, [id]: true }));
+    setImageErrors((prev) => ({ ...prev, [id]: true }));
   };
 
   return (
@@ -126,15 +148,14 @@ const SolutionsCarouselSection = () => {
               BUILD
             </Badge>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4">
-              <span className="block font-serif italic font-normal mb-1">
-                How We Build the Products
-              </span>
+              <span className="block font-serif italic font-normal mb-1">How We Build the Products</span>
               <span className="block font-bold">
                 That <span className="text-primary">Power Your Business</span>
               </span>
             </h2>
             <p className="text-base md:text-lg text-muted-foreground font-normal max-w-2xl mx-auto">
-              From first idea to scalable systems, we design and engineer digital products that are reliable, secure, and built to grow with your business.
+              From first idea to scalable systems, we design and engineer digital products that are reliable, secure,
+              and built to grow with your business.
             </p>
           </div>
         </ScrollReveal>
@@ -147,9 +168,7 @@ const SolutionsCarouselSection = () => {
                 key={solution.id}
                 onClick={() => handleTabClick(index)}
                 className={`relative px-2 py-2 text-sm sm:text-base font-medium transition-all duration-300 ${
-                  activeIndex === index
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                  activeIndex === index ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {solution.label}
@@ -202,9 +221,7 @@ const SolutionsCarouselSection = () => {
                           <p className="text-3xl md:text-4xl font-bold text-white leading-tight mb-3">
                             {solution.subtitle}
                           </p>
-                          <p className="text-white/80 text-sm max-w-md mb-4">
-                            {solution.description}
-                          </p>
+                          <p className="text-white/80 text-sm max-w-md mb-4">{solution.description}</p>
                         </div>
 
                         <div className="space-y-4">
@@ -213,7 +230,7 @@ const SolutionsCarouselSection = () => {
                               {solution.ctaText}
                             </Button>
                           </Link>
-                          
+
                           {/* Feature Points */}
                           <div className="space-y-2 pt-2">
                             {solution.features.map((feature, idx) => (
@@ -227,7 +244,7 @@ const SolutionsCarouselSection = () => {
                       </div>
 
                       {/* Right - Image */}
-                      <div className="hidden md:flex w-[55%] items-center justify-center relative overflow-visible">
+                      <div className="hidden md:flex w-[70%] items-center justify-center relative overflow-visible">
                         {imageErrors[solution.id] ? (
                           <div className="w-full h-full rounded-2xl bg-white/10 flex items-center justify-center">
                             <ImageOff className="w-16 h-16 text-white/40" />
@@ -260,10 +277,7 @@ const SolutionsCarouselSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div
-              style={{ backgroundColor: solution.bgColor }}
-              className="w-full rounded-[1.5rem] p-4"
-            >
+            <div style={{ backgroundColor: solution.bgColor }} className="w-full rounded-[1.5rem] p-4">
               {/* Image Section - Rounded inside card */}
               <div className="w-full h-56 rounded-2xl overflow-hidden mb-5">
                 {imageErrors[solution.id] ? (
@@ -279,7 +293,7 @@ const SolutionsCarouselSection = () => {
                   />
                 )}
               </div>
-              
+
               {/* Content Section */}
               <div className="px-1 pb-2">
                 <h3 className="text-2xl font-bold text-white leading-tight mb-2">
@@ -294,7 +308,7 @@ const SolutionsCarouselSection = () => {
                     {solution.ctaText}
                   </Button>
                 </Link>
-                
+
                 {/* Feature Points */}
                 <div className="space-y-2 pt-2">
                   {solution.features.map((feature, idx) => (
