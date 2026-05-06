@@ -253,7 +253,7 @@ const SolutionsCarouselSection = () => {
                           <img
                             src={solution.image}
                             alt={solution.title}
-                            className="w-[115%] max-w-none h-auto object-contain scale-110"
+                            className="w-[100%] max-w-none h-auto object-contain scale-110"
                             onError={() => handleImageError(solution.id)}
                           />
                         )}
