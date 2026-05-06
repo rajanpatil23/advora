@@ -63,7 +63,7 @@ const Portfolio = () => {
   });
   const projects = [
     {
-      title: "Invoice Suite",
+      title: "Connecttly",
       category: "Web Application",
       description: "A comprehensive financial management platform for small businesses with invoicing, expense tracking, and reporting features.",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
@@ -140,7 +140,7 @@ const Portfolio = () => {
       readMoreUrl: "#",
       user: {
         name: "Jennifer Martinez",
-        role: "CEO, Invoice Suite",
+        role: "CEO, Connecttly",
         avatar: "https://randomuser.me/api/portraits/women/44.jpg",
         profileUrl: "#"
       }
