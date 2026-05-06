@@ -26,7 +26,7 @@ import { Button } from "@/components/ui/button";
 import { usePageSEO } from "@/hooks/usePageSEO";
 
 import aboutHero from "@/assets/about-hero.jpg";
-import aboutWorkspace from "@/assets/about-workspace.jpg";
+import aboutWorkspace from "@/assets/about-vision-illustration.png";
 
 const About = () => {
   usePageSEO({
@@ -221,11 +221,11 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative"
               >
-                <div className="rounded-[2rem] overflow-hidden">
+                <div className="rounded-[2rem] overflow-visible">
                   <img
                     src={aboutWorkspace}
-                    alt="Advora team collaborating"
-                    className="w-full h-auto object-cover aspect-[4/3]"
+                    alt="Advora vision illustration"
+                    className="w-full h-auto object-contain aspect-[4/3]"
                   />
                 </div>
                 {/* Floating capability cards */}
