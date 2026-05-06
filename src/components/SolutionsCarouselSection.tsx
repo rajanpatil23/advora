@@ -244,18 +244,41 @@ const SolutionsCarouselSection = () => {
                       </div>
 
                       {/* Right - Image */}
-                      <div className="hidden md:flex w-[55%] items-center justify-center relative overflow-visible">
+                      <div className="hidden md:flex w-[55%] items-center justify-center relative overflow-visible" style={{ perspective: "1200px" }}>
                         {imageErrors[solution.id] ? (
                           <div className="w-full h-full rounded-2xl bg-white/10 flex items-center justify-center">
                             <ImageOff className="w-16 h-16 text-white/40" />
                           </div>
                         ) : (
-                          <img
-                            src={solution.image}
-                            alt={solution.title}
-                            className="w-[100%] max-w-none h-auto object-contain scale-110"
-                            onError={() => handleImageError(solution.id)}
-                          />
+                          <div className="relative w-full h-full flex items-center justify-center">
+                            {/* Background glow */}
+                            <div
+                              aria-hidden
+                              className="absolute inset-0 m-auto w-[80%] h-[80%] rounded-full blur-3xl opacity-60 pointer-events-none"
+                              style={{
+                                background:
+                                  "radial-gradient(circle at center, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 40%, transparent 70%)",
+                              }}
+                            />
+                            <motion.img
+                              src={solution.image}
+                              alt={solution.title}
+                              initial={{ rotateY: 0, rotateX: 0 }}
+                              animate={{ rotateY: -12, rotateX: 6, y: [0, -8, 0] }}
+                              transition={{
+                                rotateY: { duration: 0.8 },
+                                rotateX: { duration: 0.8 },
+                                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                              }}
+                              className="relative w-[100%] max-w-none h-auto object-contain scale-110"
+                              style={{
+                                transformStyle: "preserve-3d",
+                                filter:
+                                  "drop-shadow(0 25px 35px rgba(0,0,0,0.45)) drop-shadow(0 10px 15px rgba(0,0,0,0.3))",
+                              }}
+                              onError={() => handleImageError(solution.id)}
+                            />
+                          </div>
                         )}
                       </div>
                     </div>
