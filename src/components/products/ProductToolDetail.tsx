@@ -22,6 +22,19 @@ import {
   Workflow,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+import tool1Hero from "@/assets/tool1-hero-illustration.png";
+import tool2Hero from "@/assets/tool2-hero-illustration.png";
+import tool3Hero from "@/assets/tool3-hero-illustration.png";
+import tool4Hero from "@/assets/tool4-hero-illustration.png";
+
+const heroIllustrationByToolId: Record<string, string> = {
+  "invoice-suite": tool1Hero,
+  "warehouse-management": tool2Hero,
+  "service-desk": tool3Hero,
+  "claims-os": tool4Hero,
+};
 
 interface ProductToolDetailProps {
   tool: ProductTool;
@@ -51,15 +64,22 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
             <div className="rounded-[2rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-3 sm:p-8 md:p-12">
               <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                <div className="rounded-xl sm:rounded-2xl overflow-hidden bg-white">
-                  <img
-                    src={tool.screenshot}
-                    alt={tool.screenshotAlt}
-                    fetchPriority="high"
-                    decoding="async"
-                    className="block w-full h-auto"
-                  />
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, x: -30, scale: 0.98 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ duration: 0.65, delay: 0.1 }}
+                  className="rounded-xl sm:rounded-2xl overflow-hidden"
+                >
+                  <div className="aspect-[4/3]">
+                    <img
+                      src={heroIllustrationByToolId[tool.id] ?? tool.screenshot}
+                      alt={`${tool.name} hero illustration`}
+                      fetchPriority="high"
+                      decoding="async"
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                </motion.div>
 
                 <div className="space-y-4 sm:space-y-6">
                   <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary border border-primary/20">
