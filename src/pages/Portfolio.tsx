@@ -140,7 +140,7 @@ const Portfolio = () => {
       readMoreUrl: "#",
       user: {
         name: "Jennifer Martinez",
-        role: "CEO, FinanceFlow",
+        role: "CEO, Invoice Suite",
         avatar: "https://randomuser.me/api/portraits/women/44.jpg",
         profileUrl: "#"
       }
