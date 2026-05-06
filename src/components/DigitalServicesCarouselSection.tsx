@@ -197,7 +197,7 @@ const DigitalServicesCarouselSection = () => {
                             <img
                               src={solution.image}
                               alt={solution.title}
-                              className="w-[115%] max-w-none h-auto object-contain scale-110"
+                              className="w-[95%] max-w-none h-auto object-contain scale-95"
                               onError={() => handleImageError(solution.id)}
                             />
                           )}
@@ -255,7 +255,7 @@ const DigitalServicesCarouselSection = () => {
           >
             <div style={{ backgroundColor: solution.bgColor }} className="w-full rounded-[1.5rem] p-4">
               {/* Image Section - Rounded inside card */}
-              <div className="w-full h-56 rounded-2xl overflow-visible mb-5 flex items-center justify-center">
+              <div className="w-full h-48 rounded-2xl overflow-visible mb-5 flex items-center justify-center">
                 {imageErrors[solution.id] || !solution.image ? (
                   <div className="w-full h-full bg-white/10 flex items-center justify-center rounded-2xl">
                     <ImageOff className="w-10 h-10 text-white/40" />
