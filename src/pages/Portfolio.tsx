@@ -258,100 +258,103 @@ const Portfolio = () => {
       <Header />
       
       <main>
-        {/* Hero Section - Editorial Split Layout */}
-        <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
+        {/* Hero Section - Premium Editorial */}
+        <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-20 overflow-hidden">
+          {/* Ambient background accents */}
+          <div className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute top-10 -left-24 w-[28rem] h-[28rem] rounded-full bg-primary/20 blur-[120px]" />
+            <div className="absolute bottom-0 right-0 w-[32rem] h-[32rem] rounded-full bg-accent/20 blur-[140px]" />
+            <div
+              className="absolute inset-0 opacity-[0.04]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--foreground)) 1px, transparent 1px)",
+                backgroundSize: "56px 56px",
+                maskImage:
+                  "radial-gradient(ellipse at center, black 40%, transparent 75%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse at center, black 40%, transparent 75%)",
+              }}
+            />
+          </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Hero Card */}
-            <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
-              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                {/* Masonry Grid */}
-                <motion.div 
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                    <div className="space-y-3 sm:space-y-4">
-                      <motion.div 
-                        className="rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3]"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img src={projectFinanceFlow} alt="FinanceFlow" className="w-full h-full object-cover" />
-                      </motion.div>
-                      <motion.div 
-                        className="rounded-xl sm:rounded-2xl overflow-hidden aspect-[5/4]"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img src={projectHealthTrack} alt="HealthTrack" className="w-full h-full object-cover" />
-                      </motion.div>
-                    </div>
-                    <div className="space-y-3 sm:space-y-4 pt-8">
-                      <motion.div 
-                        className="rounded-xl sm:rounded-2xl overflow-hidden aspect-[5/4]"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img src={projectRetailHub} alt="RetailHub" className="w-full h-full object-cover" />
-                      </motion.div>
-                      <motion.div 
-                        className="rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3]"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img src={projectTaskMaster} alt="TaskMaster" className="w-full h-full object-cover" />
-                      </motion.div>
-                    </div>
-                  </div>
-                </motion.div>
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              {/* Content */}
+              <motion.div
+                className="space-y-6 sm:space-y-7 order-2 lg:order-1"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium backdrop-blur-sm">
+                  <Star className="w-3.5 h-3.5 fill-primary" />
+                  Selected Work · 2020 — 2026
+                </span>
 
-                {/* Content */}
-                <motion.div 
-                  className="space-y-4 sm:space-y-6"
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  <span className="inline-block px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-medium">
-                    150+ Projects Delivered
+                <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.05]">
+                  <span className="block font-serif italic font-normal">Crafted with</span>
+                  <span className="block font-bold bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+                    care &amp; intent.
                   </span>
-                  
-                  <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
-                    <span className="block font-serif italic font-normal">Work That</span>
-                    <span className="block font-bold text-primary">Speaks for Itself</span>
-                  </h1>
+                </h1>
 
-                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
-                    From startups to enterprises, we've helped businesses across industries achieve their digital ambitions.
-                  </p>
+                <p className="text-muted-foreground text-lg sm:text-xl leading-relaxed max-w-xl">
+                  A curated showcase of products, platforms and brands we've shipped — built end-to-end with our small, senior team.
+                </p>
 
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
-                    <Link to="/contact" className="w-full sm:w-auto">
-                      <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto">
-                        Start Your Project
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+                  <Link to="/contact" className="w-full sm:w-auto">
+                    <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-7 py-6 font-medium w-full sm:w-auto group">
+                      Start Your Project
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                  <a href="#projects" className="w-full sm:w-auto">
+                    <Button variant="ghost" className="rounded-full px-7 py-6 font-medium w-full sm:w-auto hover:bg-primary/10">
+                      Browse Case Studies
+                    </Button>
+                  </a>
+                </div>
+
+                {/* Quick Stats */}
+                <div className="flex flex-wrap gap-x-10 gap-y-4 pt-4 border-t border-border/60 mt-2">
+                  <div>
+                    <div className="text-3xl font-bold text-primary">40+</div>
+                    <div className="text-sm text-muted-foreground">Projects Shipped</div>
                   </div>
-
-                  {/* Quick Stats */}
-                  <div className="flex gap-8 pt-4">
-                    <div>
-                      <div className="text-3xl font-bold text-primary">4.9</div>
-                      <div className="text-sm text-muted-foreground">Avg Rating</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-primary">95%</div>
-                      <div className="text-sm text-muted-foreground">Client Retention</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-primary">50+</div>
-                      <div className="text-sm text-muted-foreground">Happy Clients</div>
-                    </div>
+                  <div>
+                    <div className="text-3xl font-bold text-primary">12</div>
+                    <div className="text-sm text-muted-foreground">Industries Served</div>
                   </div>
+                  <div>
+                    <div className="text-3xl font-bold text-primary">4.9</div>
+                    <div className="text-sm text-muted-foreground">Avg. Client Rating</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Illustration */}
+              <motion.div
+                className="relative order-1 lg:order-2"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 0.15 }}
+              >
+                <motion.div
+                  animate={{ y: [0, -12, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative aspect-square w-full max-w-xl mx-auto"
+                >
+                  <img
+                    src={portfolioHeroIllustration}
+                    alt="Portfolio of digital products and platforms designed by Advora Digital"
+                    className="w-full h-full object-contain drop-shadow-2xl"
+                    width={1024}
+                    height={1024}
+                  />
                 </motion.div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
