@@ -465,35 +465,15 @@ const Portfolio = () => {
                     Featured Case Study
                   </span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-tight">
-                    <span className="block font-serif italic font-normal text-white/90">How We Helped FinanceFlow</span>
+                    <span className="block font-serif italic font-normal text-white/90">How We Helped Invoice Suite</span>
                     <span className="block font-bold">Scale to <span className="text-primary">100K Users</span></span>
                   </h2>
                   <p className="text-white/60 leading-relaxed text-lg">
-                    FinanceFlow came to us with a legacy system that was struggling to keep up with demand. Through a complete platform redesign and modern technology stack, we helped them achieve 300% user growth in just 6 months.
+                    Invoice Suite came to us with a legacy system that was struggling to keep up with demand. Through a complete platform redesign and modern technology stack, we helped them achieve 300% user growth in just 6 months.
                   </p>
-                  <div className="grid grid-cols-2 gap-6 pt-2">
-                    {[
-                      { value: "300%", label: "User Growth" },
-                      { value: "50%", label: "Fewer Support Tickets" },
-                      { value: "12 wks", label: "Development Time" },
-                      { value: "99.9%", label: "Uptime" },
-                    ].map((stat) => (
-                      <div key={stat.label}>
-                        <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
-                        <div className="text-white/40 text-sm">{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="rounded-2xl sm:rounded-3xl bg-white/[0.04] backdrop-blur-sm p-8 md:p-10 border border-white/10">
-                  <div className="flex gap-1.5 mb-6">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                    ))}
-                  </div>
+...
                   <blockquote className="text-xl leading-relaxed mb-8 text-white/80 font-light">
-                    "Advora didn't just build us a new platform—they transformed our entire business. The team understood our challenges and delivered a solution that exceeded every expectation."
+                    "Advora didn't just build us a new platform-they transformed our entire business. The team understood our challenges and delivered a solution that exceeded every expectation."
                   </blockquote>
                   <div className="flex items-center gap-4 pt-6 border-t border-white/10">
                     <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
@@ -501,7 +481,7 @@ const Portfolio = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-white/90">Jennifer Martinez</div>
-                      <div className="text-white/40 text-sm">CEO, FinanceFlow</div>
+                      <div className="text-white/40 text-sm">CEO, Invoice Suite</div>
                     </div>
                   </div>
                 </div>
