@@ -259,7 +259,7 @@ const Portfolio = () => {
       
       <main>
         {/* Hero Section - Premium Editorial */}
-        <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-20 overflow-hidden">
+        <section className="relative pt-20 sm:pt-20 md:pt-20 pb-8 sm:pb-12 overflow-hidden">
           {/* Ambient background accents */}
           <div className="pointer-events-none absolute inset-0 -z-10">
             <div className="absolute top-10 -left-24 w-[28rem] h-[28rem] rounded-full bg-primary/20 blur-[120px]" />
