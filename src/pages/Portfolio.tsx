@@ -374,7 +374,7 @@ const Portfolio = () => {
         </section>
 
         {/* Projects Grid */}
-        <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-20">
+        <section id="projects" className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-20">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <div
