@@ -63,7 +63,7 @@ const Portfolio = () => {
   });
   const projects = [
     {
-      title: "FinanceFlow",
+      title: "Invoice Suite",
       category: "Web Application",
       description: "A comprehensive financial management platform for small businesses with invoicing, expense tracking, and reporting features.",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
@@ -72,7 +72,7 @@ const Portfolio = () => {
     },
     {
       title: "HealthTrack Pro",
-      category: "Mobile App",
+      category: "Healthcare Platform",
       description: "Cross-platform health and fitness tracking app with personalized workout plans and nutrition guidance.",
       tech: ["React Native", "Firebase", "Machine Learning"],
       image: projectHealthTrack,
