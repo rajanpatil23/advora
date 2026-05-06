@@ -227,7 +227,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           </div>
         </section>
 
-        <section className="bg-[#02070d] pb-12 text-white sm:pb-24">
+        <section className="section-divider bg-[#02070d] py-12 text-white sm:py-24">
           <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
