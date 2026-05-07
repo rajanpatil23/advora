@@ -139,7 +139,7 @@ function HeroProductShowcase() {
         <img
           src={productHeroIllustration}
           alt="Advora product automation dashboard illustration"
-          className="h-full w-full object-contain"
+          className="h-full w-full object-contain scale-125"
         />
       </div>
     </motion.div>
