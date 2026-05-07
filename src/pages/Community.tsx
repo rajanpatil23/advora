@@ -85,9 +85,9 @@ const Community = () => {
 
                 {/* Content */}
                 <div className="space-y-4 sm:space-y-6">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-foreground">
-                    Join Our
-                    <span className="block text-primary">Community</span>
+                  <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+                    <span className="block font-serif italic font-normal">Join Our</span>
+                    <span className="block font-bold text-primary">Community</span>
                   </h1>
 
                   <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
