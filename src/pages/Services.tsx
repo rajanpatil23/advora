@@ -201,16 +201,6 @@ const Services = () => {
                     alt="Service hero image"
                     className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-700 group-hover:scale-105"
                   />
-                  {/* Floating badge on image */}
-                  <div className="absolute bottom-4 left-4 bg-card/95 backdrop-blur border border-border rounded-2xl px-4 py-2.5 shadow-lg flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
-                      <Sparkles className="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold leading-tight">End-to-End Delivery</div>
-                      <div className="text-[10px] text-muted-foreground">From idea to launch</div>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="space-y-4 sm:space-y-6">
