@@ -195,11 +195,11 @@ const Services = () => {
               <div className="pointer-events-none absolute -bottom-24 -left-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
 
               <div className="relative grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                <div className="relative">
+                <div className="relative lg:-ml-6">
                   <img
                     src={serviceHeroImg}
                     alt="Service hero image"
-                    className="w-full h-auto object-contain"
+                    className="w-full h-auto object-contain scale-110 lg:scale-125"
                   />
                 </div>
 
