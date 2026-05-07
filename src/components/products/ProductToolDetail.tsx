@@ -76,7 +76,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                       alt={`${tool.name} hero illustration`}
                       fetchPriority="high"
                       decoding="async"
-                      className="h-full w-full object-contain"
+                      className="h-full w-full object-contain scale-125"
                     />
                   </div>
                 </motion.div>
