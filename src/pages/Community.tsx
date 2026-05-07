@@ -5,7 +5,7 @@ import WorldMapSection from "@/components/WorldMapSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Users, MessageCircle, Calendar, Github, Slack, Twitter, ArrowRight, Heart, Star, Code } from "lucide-react";
-import aboutHero from "@/assets/about-hero.jpg";
+import communityHero from "@/assets/community-hero.jpg";
 import { usePageSEO } from "@/hooks/usePageSEO";
 
 const Community = () => {
@@ -77,7 +77,7 @@ const Community = () => {
                 {/* Image */}
                 <div className="rounded-xl sm:rounded-2xl overflow-hidden">
                   <img
-                    src={aboutHero}
+                    src={communityHero}
                     alt="Advora Community"
                     className="w-full h-auto object-cover aspect-[4/3]"
                   />
