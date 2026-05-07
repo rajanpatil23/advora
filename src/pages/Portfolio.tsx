@@ -270,48 +270,34 @@ const Portfolio = () => {
             <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
               {/* Premium Single Device Showcase */}
               <motion.div
-                className="relative h-[460px] sm:h-[560px] lg:h-[600px] order-2 lg:order-1 flex items-center justify-center"
+                className="relative h-[460px] sm:h-[560px] lg:h-[640px] order-2 lg:order-1 flex items-center justify-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
               >
                 {/* Soft glow accent */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[70%] rounded-full bg-primary/15 blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[70%] rounded-full bg-primary/20 blur-3xl" />
 
-                {/* Laptop mockup */}
+                {/* Premium showcase image */}
                 <motion.div
-                  className="relative w-full max-w-[560px] mx-auto"
+                  className="relative w-full max-w-[600px] mx-auto rounded-[2rem] overflow-hidden border border-border/40 shadow-2xl shadow-primary/20"
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  {/* Screen frame */}
-                  <div className="relative rounded-t-2xl bg-foreground/90 p-3 sm:p-4 shadow-2xl shadow-primary/20 border border-border/40">
-                    {/* Browser top bar */}
-                    <div className="flex items-center gap-1.5 mb-2.5 px-1">
-                      <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-                      <div className="ml-3 flex-1 h-5 rounded-md bg-background/10" />
-                    </div>
-                    {/* Screen */}
-                    <div className="rounded-lg overflow-hidden bg-card aspect-[16/10]">
-                      <img
-                        src={projectFinanceFlow}
-                        alt="FinanceFlow flagship project preview"
-                        className="w-full h-full object-cover block"
-                      />
-                    </div>
-                  </div>
-                  {/* Laptop base */}
-                  <div className="relative h-3 bg-gradient-to-b from-foreground/80 to-foreground/60 rounded-b-[1.5rem] mx-[-4%]" />
-                  <div className="h-1.5 bg-foreground/30 rounded-b-full mx-[20%]" />
-                  {/* Reflection */}
-                  <div className="absolute inset-x-0 -bottom-6 h-12 bg-gradient-to-b from-foreground/15 to-transparent blur-xl rounded-full mx-8" />
+                  <img
+                    src={portfolioHeroShowcase}
+                    alt="Premium portfolio showcase featuring laptop, mobile and tablet projects"
+                    className="w-full h-auto object-cover block"
+                    width={1280}
+                    height={1280}
+                  />
+                  {/* subtle inner gradient overlay for editorial feel */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent" />
                 </motion.div>
 
                 {/* Floating accent — top right metric */}
                 <motion.div
-                  className="absolute top-[6%] right-[2%] sm:right-[4%] px-4 py-3 rounded-2xl bg-background/85 backdrop-blur-md border border-border shadow-xl"
+                  className="absolute top-[4%] right-[2%] sm:right-[4%] px-4 py-3 rounded-2xl bg-background/85 backdrop-blur-md border border-border shadow-xl"
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 >
@@ -321,7 +307,7 @@ const Portfolio = () => {
 
                 {/* Floating accent — bottom left rating */}
                 <motion.div
-                  className="absolute bottom-[10%] left-[2%] sm:left-[4%] px-3.5 py-2.5 rounded-2xl bg-background/85 backdrop-blur-md border border-border shadow-xl flex items-center gap-2"
+                  className="absolute bottom-[6%] left-[2%] sm:left-[4%] px-3.5 py-2.5 rounded-2xl bg-background/85 backdrop-blur-md border border-border shadow-xl flex items-center gap-2"
                   animate={{ y: [0, 6, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
                 >
@@ -334,7 +320,7 @@ const Portfolio = () => {
 
                 {/* Floating accent — projects badge */}
                 <motion.div
-                  className="absolute top-[40%] right-[0%] px-3 py-1.5 rounded-full bg-primary/10 backdrop-blur-md border border-primary/20 shadow-lg"
+                  className="absolute top-[44%] -right-[1%] px-3 py-1.5 rounded-full bg-primary/15 backdrop-blur-md border border-primary/30 shadow-lg"
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
