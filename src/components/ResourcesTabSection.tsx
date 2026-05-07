@@ -230,15 +230,12 @@ export default function ResourcesTabSection() {
                   className="bg-background rounded-2xl border border-border overflow-hidden shadow-sm cursor-grab active:cursor-grabbing"
                   style={{ touchAction: "pan-y" }}
                 >
-                  {/* Preview Image */}
-                  <div className="relative overflow-hidden bg-muted shrink-0">
-                    <img
-                      src={mobileTabData.cards[0]?.image}
-                      alt={mobileTabData.label}
-                      loading="lazy"
-                      decoding="async"
-                      className="block w-full h-48 sm:h-56 object-cover pointer-events-none"
-                    />
+                  {/* Preview Icon */}
+                  <div className="relative overflow-hidden bg-primary/5 shrink-0 flex items-center justify-center h-48 sm:h-56">
+                    {(() => {
+                      const FirstIcon = mobileTabData.cards[0]?.icon;
+                      return FirstIcon ? <FirstIcon className="w-20 h-20 text-primary" strokeWidth={1.5} /> : null;
+                    })()}
                   </div>
                   
                   {/* Content */}
@@ -358,12 +355,8 @@ export default function ResourcesTabSection() {
                         transition={{ duration: 0.3, delay: index * 0.1 }}
                         className="flex gap-3 p-3 rounded-xl bg-primary/10 hover:bg-primary/15 transition-colors cursor-pointer group"
                       >
-                        <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                          <img
-                            src={card.image}
-                            alt={card.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
+                        <div className="w-16 h-16 rounded-lg flex-shrink-0 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          <card.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" strokeWidth={1.5} />
                         </div>
                         <div className="flex-1 min-w-0">
                           {card.tag && (
