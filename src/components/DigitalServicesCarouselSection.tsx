@@ -197,7 +197,7 @@ const DigitalServicesCarouselSection = () => {
                             <img
                               src={solution.image}
                               alt={solution.title}
-                              className="w-[95%] max-w-none h-auto object-contain scale-95"
+                              className="w-[120%] max-w-none h-auto object-contain scale-110"
                               onError={() => handleImageError(solution.id)}
                             />
                           )}
