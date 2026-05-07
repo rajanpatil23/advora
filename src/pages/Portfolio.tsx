@@ -268,64 +268,20 @@ const Portfolio = () => {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
-              {/* Premium Single Device Showcase */}
+              {/* Hero Showcase Image */}
               <motion.div
-                className="relative h-[460px] sm:h-[560px] lg:h-[640px] order-2 lg:order-1 flex items-center justify-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
+                initial={{ opacity: 0, x: -30, scale: 0.98 }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
+                transition={{ duration: 0.65, delay: 0.1 }}
+                className="order-2 lg:order-1 rounded-xl sm:rounded-2xl overflow-hidden"
               >
-                {/* Soft glow accent */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[70%] rounded-full bg-primary/20 blur-3xl" />
-
-                {/* Premium showcase image */}
-                <motion.div
-                  className="relative w-full max-w-[600px] mx-auto rounded-[2rem] overflow-hidden border border-border/40 shadow-2xl shadow-primary/20"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                >
+                <div className="aspect-[4/3]">
                   <img
                     src={portfolioHeroShowcase}
-                    alt="Premium portfolio showcase featuring laptop, mobile and tablet projects"
-                    className="w-full h-auto object-cover block"
-                    width={1280}
-                    height={1280}
+                    alt="Advora portfolio showcase featuring laptop, mobile and tablet projects"
+                    className="h-full w-full object-contain scale-125"
                   />
-                  {/* subtle inner gradient overlay for editorial feel */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent" />
-                </motion.div>
-
-                {/* Floating accent — top right metric */}
-                <motion.div
-                  className="absolute top-[4%] right-[2%] sm:right-[4%] px-4 py-3 rounded-2xl bg-background/85 backdrop-blur-md border border-border shadow-xl"
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Retention</div>
-                  <div className="text-lg font-bold text-foreground">95%</div>
-                </motion.div>
-
-                {/* Floating accent — bottom left rating */}
-                <motion.div
-                  className="absolute bottom-[6%] left-[2%] sm:left-[4%] px-3.5 py-2.5 rounded-2xl bg-background/85 backdrop-blur-md border border-border shadow-xl flex items-center gap-2"
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-                >
-                  <Star className="w-4 h-4 text-primary fill-primary" />
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground leading-none">Rating</div>
-                    <div className="text-sm font-bold text-foreground leading-tight">4.9 / 5</div>
-                  </div>
-                </motion.div>
-
-                {/* Floating accent — projects badge */}
-                <motion.div
-                  className="absolute top-[44%] -right-[1%] px-3 py-1.5 rounded-full bg-primary/15 backdrop-blur-md border border-primary/30 shadow-lg"
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                >
-                  <div className="text-xs font-semibold text-primary">+150 Projects</div>
-                </motion.div>
+                </div>
               </motion.div>
 
               {/* Editorial Content */}
