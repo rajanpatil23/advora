@@ -161,9 +161,10 @@ const Services = () => {
 
       const rect = section.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      // Progress completes when the section's center aligns with the viewport center
+      // Progress fills as section scrolls through viewport center.
+      // Starts when section top reaches viewport center, completes when section bottom reaches viewport center.
       const travelled = viewportHeight / 2 - rect.top;
-      const end = rect.height / 2;
+      const end = rect.height;
       const nextProgress = end <= 0 ? 0 : clamp(travelled / end, 0, 1);
 
       setTimelineProgress(nextProgress);
