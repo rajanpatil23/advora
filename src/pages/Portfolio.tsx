@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import projectFinanceFlow from "@/assets/project-financeflow.jpg";
+import portfolioHeroShowcase from "@/assets/portfolio-hero-showcase.jpg";
 import projectHealthTrack from "@/assets/project-healthtrack.jpg";
 import projectRetailHub from "@/assets/project-retailhub.jpg";
 import projectTaskMaster from "@/assets/project-taskmaster.jpg";
