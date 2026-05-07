@@ -10,6 +10,11 @@ import projectFinanceFlow from "@/assets/project-financeflow.jpg";
 import projectHealthTrack from "@/assets/project-healthtrack.jpg";
 import projectRetailHub from "@/assets/project-retailhub.jpg";
 
+// Portfolio tab images (used only in resources -> portfolio tab)
+import portfolioFinanceFlow from "@/assets/portfolio-financeflow.png";
+import portfolioHealthTrack from "@/assets/portfolio-healthtrack.png";
+import portfolioRetailHub from "@/assets/portfolio-retailhub.png";
+
 // Blog images
 import blogFutureWeb from "@/assets/blog-future-web.jpg";
 import blogReactScalable from "@/assets/blog-react-scalable.jpg";
@@ -56,9 +61,9 @@ const tabsData: TabData[] = [
     link: "/portfolio",
     linkText: "View portfolio",
     cards: [
-      { title: "FinanceFlow", description: "Modern fintech dashboard platform", image: projectFinanceFlow, tag: "Fintech" },
-      { title: "HealthTrack", description: "Healthcare management system", image: projectHealthTrack, tag: "Healthcare" },
-      { title: "RetailHub", description: "E-commerce analytics solution", image: projectRetailHub, tag: "E-commerce" },
+      { title: "FinanceFlow", description: "Modern fintech dashboard platform", image: portfolioFinanceFlow, tag: "Fintech" },
+      { title: "HealthTrack", description: "Healthcare management system", image: portfolioHealthTrack, tag: "Healthcare" },
+      { title: "RetailHub", description: "E-commerce analytics solution", image: portfolioRetailHub, tag: "E-commerce" },
     ],
   },
   {
