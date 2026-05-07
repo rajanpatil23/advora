@@ -20,6 +20,11 @@ import blogFutureWeb from "@/assets/blog-future-web.jpg";
 import blogReactScalable from "@/assets/blog-react-scalable.jpg";
 import blogFinanceflowCase from "@/assets/blog-financeflow-case.jpg";
 
+// Community tab images (used only in resources -> community tab)
+import communityMeetups from "@/assets/community-meetups.png";
+import communityOpenSource from "@/assets/community-opensource.png";
+import communityDiscord from "@/assets/community-discord.png";
+
 type TabType = "blog" | "portfolio" | "community" | "support" | "careers";
 
 interface ContentCard {
@@ -74,9 +79,9 @@ const tabsData: TabData[] = [
     link: "/community",
     linkText: "Join community",
     cards: [
-      { title: "Developer Meetups", description: "Monthly virtual events and workshops", image: projectFinanceFlow, tag: "Events" },
-      { title: "Open Source Projects", description: "Contribute to our public repositories", image: blogFutureWeb, tag: "Open Source" },
-      { title: "Discord Community", description: "Connect with 5,000+ developers", image: projectHealthTrack, tag: "Discord" },
+      { title: "Developer Meetups", description: "Monthly virtual events and workshops", image: communityMeetups, tag: "Events" },
+      { title: "Open Source Projects", description: "Contribute to our public repositories", image: communityOpenSource, tag: "Open Source" },
+      { title: "Discord Community", description: "Connect with 5,000+ developers", image: communityDiscord, tag: "Discord" },
     ],
   },
   {
