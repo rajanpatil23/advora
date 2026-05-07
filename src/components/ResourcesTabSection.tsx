@@ -1,36 +1,16 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, BookOpen, Briefcase, Users, HeadphonesIcon, GraduationCap } from "lucide-react";
+import { ArrowRight, BookOpen, Briefcase, Users, HeadphonesIcon, GraduationCap, TrendingUp, Code2, LineChart, Wallet, HeartPulse, ShoppingCart, CalendarDays, Github, MessageCircle, Cpu, Palette, Server, FileText, HelpCircle, Sparkles, type LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-
-// Project images
-import projectFinanceFlow from "@/assets/project-financeflow.jpg";
-import projectHealthTrack from "@/assets/project-healthtrack.jpg";
-import projectRetailHub from "@/assets/project-retailhub.jpg";
-
-// Portfolio tab images (used only in resources -> portfolio tab)
-import portfolioFinanceFlow from "@/assets/portfolio-financeflow.png";
-import portfolioHealthTrack from "@/assets/portfolio-healthtrack.png";
-import portfolioRetailHub from "@/assets/portfolio-retailhub.png";
-
-// Blog images
-import blogFutureWeb from "@/assets/blog-future-web.jpg";
-import blogReactScalable from "@/assets/blog-react-scalable.jpg";
-import blogFinanceflowCase from "@/assets/blog-financeflow-case.jpg";
-
-// Community tab images (used only in resources -> community tab)
-import communityMeetups from "@/assets/community-meetups.png";
-import communityOpenSource from "@/assets/community-opensource.png";
-import communityDiscord from "@/assets/community-discord.png";
 
 type TabType = "blog" | "portfolio" | "community" | "support" | "careers";
 
 interface ContentCard {
   title: string;
   description: string;
-  image: string;
+  icon: LucideIcon;
   tag?: string;
 }
 
@@ -53,9 +33,9 @@ const tabsData: TabData[] = [
     link: "/blog",
     linkText: "Read our blog",
     cards: [
-      { title: "The Future of Web Development", description: "Exploring emerging trends in modern web technologies", image: blogFutureWeb, tag: "Trends" },
-      { title: "Building Scalable React Apps", description: "Best practices for enterprise-level applications", image: blogReactScalable, tag: "Tutorial" },
-      { title: "FinanceFlow Case Study", description: "How we built a fintech platform", image: blogFinanceflowCase, tag: "Case Study" },
+      { title: "The Future of Web Development", description: "Exploring emerging trends in modern web technologies", icon: TrendingUp, tag: "Trends" },
+      { title: "Building Scalable React Apps", description: "Best practices for enterprise-level applications", icon: Code2, tag: "Tutorial" },
+      { title: "FinanceFlow Case Study", description: "How we built a fintech platform", icon: LineChart, tag: "Case Study" },
     ],
   },
   {
@@ -66,9 +46,9 @@ const tabsData: TabData[] = [
     link: "/portfolio",
     linkText: "View portfolio",
     cards: [
-      { title: "FinanceFlow", description: "Modern fintech dashboard platform", image: portfolioFinanceFlow, tag: "Fintech" },
-      { title: "HealthTrack", description: "Healthcare management system", image: portfolioHealthTrack, tag: "Healthcare" },
-      { title: "RetailHub", description: "E-commerce analytics solution", image: portfolioRetailHub, tag: "E-commerce" },
+      { title: "FinanceFlow", description: "Modern fintech dashboard platform", icon: Wallet, tag: "Fintech" },
+      { title: "HealthTrack", description: "Healthcare management system", icon: HeartPulse, tag: "Healthcare" },
+      { title: "RetailHub", description: "E-commerce analytics solution", icon: ShoppingCart, tag: "E-commerce" },
     ],
   },
   {
@@ -79,9 +59,9 @@ const tabsData: TabData[] = [
     link: "/community",
     linkText: "Join community",
     cards: [
-      { title: "Developer Meetups", description: "Monthly virtual events and workshops", image: communityMeetups, tag: "Events" },
-      { title: "Open Source Projects", description: "Contribute to our public repositories", image: communityOpenSource, tag: "Open Source" },
-      { title: "Discord Community", description: "Connect with 5,000+ developers", image: communityDiscord, tag: "Discord" },
+      { title: "Developer Meetups", description: "Monthly virtual events and workshops", icon: CalendarDays, tag: "Events" },
+      { title: "Open Source Projects", description: "Contribute to our public repositories", icon: Github, tag: "Open Source" },
+      { title: "Discord Community", description: "Connect with 5,000+ developers", icon: MessageCircle, tag: "Discord" },
     ],
   },
   {
@@ -92,9 +72,9 @@ const tabsData: TabData[] = [
     link: "/careers",
     linkText: "View openings",
     cards: [
-      { title: "Senior Full-Stack Developer", description: "Remote · Full-time · Engineering", image: projectFinanceFlow, tag: "Engineering" },
-      { title: "Product Designer", description: "Hybrid · Full-time · Design", image: blogFutureWeb, tag: "Design" },
-      { title: "DevOps Engineer", description: "Remote · Full-time · Infrastructure", image: projectHealthTrack, tag: "DevOps" },
+      { title: "Senior Full-Stack Developer", description: "Remote · Full-time · Engineering", icon: Cpu, tag: "Engineering" },
+      { title: "Product Designer", description: "Hybrid · Full-time · Design", icon: Palette, tag: "Design" },
+      { title: "DevOps Engineer", description: "Remote · Full-time · Infrastructure", icon: Server, tag: "DevOps" },
     ],
   },
   {
@@ -105,9 +85,9 @@ const tabsData: TabData[] = [
     link: "/contact",
     linkText: "Get support",
     cards: [
-      { title: "Documentation", description: "Comprehensive guides and API references", image: blogReactScalable, tag: "Docs" },
-      { title: "FAQ & Knowledge Base", description: "Quick answers to common questions", image: projectRetailHub, tag: "FAQ" },
-      { title: "Priority Support", description: "Direct access to our engineering team", image: blogFinanceflowCase, tag: "Premium" },
+      { title: "Documentation", description: "Comprehensive guides and API references", icon: FileText, tag: "Docs" },
+      { title: "FAQ & Knowledge Base", description: "Quick answers to common questions", icon: HelpCircle, tag: "FAQ" },
+      { title: "Priority Support", description: "Direct access to our engineering team", icon: Sparkles, tag: "Premium" },
     ],
   },
 ];
