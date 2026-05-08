@@ -7,8 +7,8 @@ import ServiceToolStackSection from "@/components/services/ServiceToolStackSecti
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Globe, Layout, Zap, Search, Shield } from "lucide-react";
-import serviceWebDev from "@/assets/webdev-hero.png";
+import { ArrowRight, Globe, Layout, Zap, Search, Shield, Activity, Gauge, Cloud, TrendingUp, Server, CheckCircle2 } from "lucide-react";
+import serviceWebDev from "@/assets/webdev-browser.png";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { serviceDetails } from "@/data/serviceDetails";
 import { homepageTestimonials } from "@/data/testimonials";
@@ -55,31 +55,114 @@ const WebDevelopment = () => {
         <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
-              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                <div className="relative">
-                  <img src={serviceWebDev} alt="Web Development" className="w-full h-auto object-contain" />
+              <div className="text-center max-w-3xl mx-auto space-y-4 sm:space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary">
+                  <Globe className="w-4 h-4" />
+                  <span className="text-sm font-medium">Web Development</span>
                 </div>
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary">
-                    <Globe className="w-4 h-4" />
-                    <span className="text-sm font-medium">Web Development</span>
+                <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+                  <span className="block font-serif italic font-normal">Custom Web</span>
+                  <span className="block font-bold text-primary">Solutions</span>
+                </h1>
+                <p className="text-muted-foreground text-lg sm:text-lg md:text-xl leading-relaxed">
+                  From responsive websites to complex web applications, we build digital experiences that engage users and grow your business.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                  <Link to="/contact" className="w-full sm:w-auto">
+                    <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto">
+                      Start Your Project <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link to="/portfolio" className="w-full sm:w-auto">
+                    <Button variant="outline" className="rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto">View Our Work</Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Centered browser screen with floating badges */}
+              <div className="relative mt-10 sm:mt-14 max-w-5xl mx-auto">
+                <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
+                  <img src={serviceWebDev} alt="Web Development Browser Preview" className="w-full h-auto object-contain" />
+                </div>
+
+                {/* Floating badges */}
+                <div className="hidden sm:block pointer-events-none absolute inset-0 z-20">
+                  {/* Top left */}
+                  <div className="absolute -top-6 left-0 lg:-left-8 animate-float-y">
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-background/90 backdrop-blur border border-border shadow-lg">
+                      <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
+                        <Activity className="w-4 h-4 text-primary" />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-[10px] text-muted-foreground leading-none">Performance</div>
+                        <div className="text-xs font-semibold leading-tight">98 / 100</div>
+                      </div>
+                    </div>
                   </div>
-                  <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
-                    <span className="block font-serif italic font-normal">Custom Web</span>
-                    <span className="block font-bold text-primary">Solutions</span>
-                  </h1>
-                  <p className="text-muted-foreground text-xl sm:text-lg md:text-xl leading-relaxed">
-                    From responsive websites to complex web applications, we build digital experiences that engage users and grow your business.
-                  </p>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
-                    <Link to="/contact" className="w-full sm:w-auto">
-                      <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto">
-                        Start Your Project <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
-                    <Link to="/portfolio" className="w-full sm:w-auto">
-                      <Button variant="outline" className="rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto">View Our Work</Button>
-                    </Link>
+
+                  {/* Top right */}
+                  <div className="absolute -top-6 right-0 lg:-right-8 animate-float-y-slow">
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-background/90 backdrop-blur border border-border shadow-lg">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-500/15 flex items-center justify-center">
+                        <TrendingUp className="w-4 h-4 text-emerald-500" />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-[10px] text-muted-foreground leading-none">SEO Growth</div>
+                        <div className="text-xs font-semibold leading-tight">+143%</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Middle left */}
+                  <div className="absolute top-1/2 -translate-y-1/2 -left-4 lg:-left-16 animate-float-xy">
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-background/90 backdrop-blur border border-border shadow-lg">
+                      <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
+                        <Gauge className="w-4 h-4 text-primary" />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-[10px] text-muted-foreground leading-none">Core Web Vitals</div>
+                        <div className="text-xs font-semibold leading-tight">All Pass</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Middle right */}
+                  <div className="absolute top-1/2 -translate-y-1/2 -right-4 lg:-right-16 animate-float-xy" style={{ animationDelay: '1s' }}>
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-background/90 backdrop-blur border border-border shadow-lg">
+                      <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
+                        <Server className="w-4 h-4 text-primary" />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-[10px] text-muted-foreground leading-none">API Response</div>
+                        <div className="text-xs font-semibold leading-tight">128 ms</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom left */}
+                  <div className="absolute -bottom-4 left-4 lg:left-10 animate-float-y-slow" style={{ animationDelay: '0.5s' }}>
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-background/90 backdrop-blur border border-border shadow-lg">
+                      <div className="w-8 h-8 rounded-lg bg-sky-500/15 flex items-center justify-center">
+                        <Cloud className="w-4 h-4 text-sky-500" />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-[10px] text-muted-foreground leading-none">Cloud Sync</div>
+                        <div className="text-xs font-semibold leading-tight">Active</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom right */}
+                  <div className="absolute -bottom-4 right-4 lg:right-10 animate-float-y" style={{ animationDelay: '1.5s' }}>
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-background/90 backdrop-blur border border-border shadow-lg">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-500/15 flex items-center justify-center">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                      </div>
+                      <div className="text-left">
+                        <div className="text-[10px] text-muted-foreground leading-none">Deployment</div>
+                        <div className="text-xs font-semibold leading-tight">Successful</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
