@@ -8,7 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Globe, Layout, Zap, Search, Shield } from "lucide-react";
-import serviceWebDev from "@/assets/service-web-dev.jpg";
+import { WebDevelopmentIllustration } from "@/components/services/WebDevelopmentIllustration";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { serviceDetails } from "@/data/serviceDetails";
 import { homepageTestimonials } from "@/data/testimonials";
@@ -57,7 +57,7 @@ const WebDevelopment = () => {
             <div className="rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12">
               <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                 <div className="rounded-xl sm:rounded-2xl overflow-hidden">
-                  <img src={serviceWebDev} alt="Web Development" className="w-full h-auto object-cover aspect-[4/3]" />
+                  <WebDevelopmentIllustration />
                 </div>
                 <div className="space-y-4 sm:space-y-6">
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary">
