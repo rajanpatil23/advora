@@ -199,7 +199,7 @@ const Services = () => {
                   <img
                     src={serviceHeroImg}
                     alt="Service hero image"
-                    className="w-full h-auto object-contain scale-110 lg:scale-125"
+                    className="w-full h-auto object-contain scale-100 lg:scale-110"
                   />
                 </div>
 
