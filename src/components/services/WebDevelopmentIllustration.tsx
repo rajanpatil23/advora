@@ -171,28 +171,28 @@ export function WebDevelopmentIllustration() {
         title="Performance"
         value="98/100"
         icon={<BarChart3 className="w-3.5 h-3.5 text-blue-600" />}
-        position={{ x: "16%", y: "14%" }}
+        position={{ x: "26%", y: "22%" }}
         delay={0.3}
       />
       <MetricCard
         title="Web Vitals"
         value="Good"
         icon={<Activity className="w-3.5 h-3.5 text-green-600" />}
-        position={{ x: "14%", y: "65%" }}
+        position={{ x: "24%", y: "60%" }}
         delay={0.4}
       />
       <MetricCard
         title="SEO Growth"
         value="+24%"
         icon={<TrendingUp className="w-3.5 h-3.5 text-green-600" />}
-        position={{ x: "70%", y: "65%" }}
+        position={{ x: "60%", y: "60%" }}
         delay={0.6}
       />
       <MetricCard
         title="Cloud"
         value="Active"
         icon={<CheckCircle2 className="w-3.5 h-3.5 text-green-600" />}
-        position={{ x: "72%", y: "14%" }}
+        position={{ x: "62%", y: "22%" }}
         delay={0.7}
       />
     </div>
