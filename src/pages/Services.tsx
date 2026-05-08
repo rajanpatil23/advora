@@ -22,7 +22,7 @@ import TechStackSection from "@/components/TechStackSection";
 import ServicesShowcaseSection from "@/components/services/ServicesShowcaseSection";
 import { usePageSEO } from "@/hooks/usePageSEO";
 
-import serviceHeroImg from "@/assets/serviceheroimg.png";
+import serviceHeroImg from "@/assets/serviceheroimg.webp";
 
 const processPhases = [
   {
