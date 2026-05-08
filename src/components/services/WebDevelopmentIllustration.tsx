@@ -77,14 +77,14 @@ function FloatingBadge({ icon, position, delay = 0 }: FloatingBadgeProps) {
 
 export function WebDevelopmentIllustration() {
   return (
-    <div className="relative w-full aspect-[4/3] max-w-2xl mx-auto">
-      {/* Floating Badges */}
-      <FloatingBadge icon={<Globe className="w-4 h-4 text-blue-500" />} position={{ x: "5%", y: "10%" }} delay={0.1} />
-      <FloatingBadge icon={<Cloud className="w-4 h-4 text-blue-500" />} position={{ x: "85%", y: "8%" }} delay={0.2} />
-      <FloatingBadge icon={<TrendingUp className="w-4 h-4 text-green-500" />} position={{ x: "85%", y: "78%" }} delay={0.3} />
-      <FloatingBadge icon={<Activity className="w-4 h-4 text-purple-500" />} position={{ x: "5%", y: "78%" }} delay={0.4} />
-      <FloatingBadge icon={<Zap className="w-4 h-4 text-amber-500" />} position={{ x: "48%", y: "2%" }} delay={0.15} />
-      <FloatingBadge icon={<Database className="w-4 h-4 text-indigo-500" />} position={{ x: "1%", y: "45%" }} delay={0.25} />
+    <div className="relative w-full aspect-[4/3] max-w-md mx-auto">
+      {/* Floating Badges - moved closer to interface */}
+      <FloatingBadge icon={<Globe className="w-4 h-4 text-blue-500" />} position={{ x: "18%", y: "20%" }} delay={0.1} />
+      <FloatingBadge icon={<Cloud className="w-4 h-4 text-blue-500" />} position={{ x: "75%", y: "18%" }} delay={0.2} />
+      <FloatingBadge icon={<TrendingUp className="w-4 h-4 text-green-500" />} position={{ x: "75%", y: "70%" }} delay={0.3} />
+      <FloatingBadge icon={<Activity className="w-4 h-4 text-purple-500" />} position={{ x: "18%", y: "70%" }} delay={0.4} />
+      <FloatingBadge icon={<Zap className="w-4 h-4 text-amber-500" />} position={{ x: "48%", y: "8%" }} delay={0.15} />
+      <FloatingBadge icon={<Database className="w-4 h-4 text-indigo-500" />} position={{ x: "12%", y: "45%" }} delay={0.25} />
 
       {/* Central Browser Window */}
       <motion.div
