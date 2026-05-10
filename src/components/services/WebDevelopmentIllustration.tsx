@@ -71,7 +71,7 @@ function FloatingBadge({ icon, position, delay = 0 }: FloatingBadgeProps) {
 
 export function WebDevelopmentIllustration() {
   return (
-    <div className="relative w-full aspect-[5/4] max-w-xl mx-auto">
+    <div className="relative w-full aspect-square max-w-xl mx-auto">
       {/* LEFT side cards */}
       <MetricCard
         title="Website Performance"
