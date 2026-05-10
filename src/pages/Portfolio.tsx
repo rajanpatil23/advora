@@ -395,7 +395,7 @@ const Portfolio = () => {
                         alt={project.title}
                         loading="lazy"
                         decoding="async"
-                        className="block h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="block h-full w-full object-cover"
                       />
                       {/* category chip */}
                       <span className="absolute top-3 right-3 inline-flex items-center px-3 py-1.5 rounded-full bg-background/85 backdrop-blur-md border border-border/60 text-[11px] font-medium text-foreground/90 shadow-sm">
