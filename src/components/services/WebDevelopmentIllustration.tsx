@@ -137,7 +137,7 @@ export function WebDevelopmentIllustration() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="absolute -translate-x-1/2 -translate-y-1/2 w-[40%] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden"
+        className="absolute -translate-x-1/2 -translate-y-1/2 w-[50%] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden"
         style={{ left: "36%", top: "24%", zIndex: 10 }}
         
       >
