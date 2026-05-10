@@ -379,63 +379,49 @@ const Portfolio = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: (index % 6) * 0.06 }}
-                  className={`${span} group relative overflow-hidden rounded-3xl bg-card border border-border/60 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.25)] hover:-translate-y-1`}
+                  className={`${span} group relative isolate flex flex-col overflow-hidden rounded-[15px] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] dark:border-border dark:bg-card dark:from-card dark:to-card`}
                 >
-                  {/* Background image with gradient overlay */}
-                  <div className="absolute inset-0">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20 group-hover:from-background group-hover:via-background/70 transition-all duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
+                  {/* accent corner glow */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/15 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  />
 
-                  {/* Top-right floating category chip */}
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-md border border-border/60 text-[11px] font-medium text-foreground/90 shadow-sm">
-                      {project.category}
-                    </span>
-                  </div>
-
-                  {/* Content - bottom anchored */}
-                  <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-7">
-                    {/* Results pill */}
-                    <div className="mb-3 flex items-center gap-2">
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/15 backdrop-blur-sm border border-primary/30 text-[11px] font-semibold text-primary">
+                  {/* image frame - top */}
+                  <div className="relative flex-1 min-h-0 overflow-hidden rounded-[15px] bg-white p-3 sm:p-4 dark:bg-card">
+                    <div className="relative h-full w-full overflow-hidden rounded-[10px]">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="block h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      {/* category chip */}
+                      <span className="absolute top-3 right-3 inline-flex items-center px-3 py-1.5 rounded-full bg-background/85 backdrop-blur-md border border-border/60 text-[11px] font-medium text-foreground/90 shadow-sm">
+                        {project.category}
+                      </span>
+                      {/* results pill */}
+                      <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/15 backdrop-blur-sm border border-primary/30 text-[11px] font-semibold text-primary">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                         {project.results}
                       </span>
                     </div>
+                  </div>
 
-                    <h3 className={`${isFeatured ? "text-3xl sm:text-4xl" : "text-xl sm:text-2xl"} font-bold tracking-tight text-foreground mb-2 group-hover:text-primary transition-colors duration-300`}>
-                      {project.title}
-                    </h3>
-
-                    <p className={`text-muted-foreground leading-relaxed mb-4 ${isFeatured ? "text-sm sm:text-base line-clamp-3 max-w-xl" : "text-sm line-clamp-2"}`}>
-                      {project.description}
-                    </p>
-
-                    {/* Tech stack */}
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {project.tech.slice(0, isFeatured ? 4 : 3).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-1 rounded-md bg-foreground/5 backdrop-blur-sm border border-border/50 text-[10px] font-medium text-foreground/70"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                  {/* meta footer - bottom */}
+                  <div className="relative z-10 flex items-center justify-between gap-4 px-4 pt-3 pb-4 sm:px-5 sm:pt-4 sm:pb-5">
+                    <div className="min-w-0">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary truncate">
+                        {project.tech.slice(0, isFeatured ? 4 : 3).join(" · ")}
+                      </p>
+                      <h3 className={`mt-1.5 font-serif font-semibold leading-tight tracking-tight text-foreground ${isFeatured ? "text-2xl sm:text-[1.65rem]" : "text-xl sm:text-[1.4rem]"}`}>
+                        {project.title}
+                      </h3>
                     </div>
-
-                    {/* CTA row */}
-                    <div className="flex items-center justify-between pt-3 border-t border-border/50">
-                      <span className="text-xs font-medium text-muted-foreground">View case study</span>
-                      <div className="w-9 h-9 rounded-full bg-primary/10 group-hover:bg-primary flex items-center justify-center transition-all duration-300 group-hover:rotate-[-45deg]">
-                        <ArrowRight className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors" />
-                      </div>
-                    </div>
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:shadow-[0_10px_24px_-10px_rgba(37,99,235,0.6)] dark:border-border dark:bg-card">
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
                   </div>
                 </motion.article>
               );
