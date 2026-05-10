@@ -77,21 +77,19 @@ function FloatingBadge({ icon, position, delay = 0 }: FloatingBadgeProps) {
 
 export function WebDevelopmentIllustration() {
   return (
-    <div className="relative w-full aspect-[4/3] max-w-md mx-auto">
-      {/* Floating Badges - moved closer to interface */}
-      <FloatingBadge icon={<Globe className="w-4 h-4 text-blue-500" />} position={{ x: "18%", y: "20%" }} delay={0.1} />
-      <FloatingBadge icon={<Cloud className="w-4 h-4 text-blue-500" />} position={{ x: "75%", y: "18%" }} delay={0.2} />
-      <FloatingBadge icon={<TrendingUp className="w-4 h-4 text-green-500" />} position={{ x: "75%", y: "70%" }} delay={0.3} />
-      <FloatingBadge icon={<Activity className="w-4 h-4 text-purple-500" />} position={{ x: "18%", y: "70%" }} delay={0.4} />
-      <FloatingBadge icon={<Zap className="w-4 h-4 text-amber-500" />} position={{ x: "48%", y: "8%" }} delay={0.15} />
-      <FloatingBadge icon={<Database className="w-4 h-4 text-indigo-500" />} position={{ x: "12%", y: "45%" }} delay={0.25} />
+    <div className="relative w-full aspect-[5/4] max-w-lg mx-auto">
+      {/* Floating circular badges */}
+      <FloatingBadge icon={<Globe className="w-4 h-4 text-blue-500" />} position={{ x: "8%", y: "30%" }} delay={0.1} />
+      <FloatingBadge icon={<Database className="w-4 h-4 text-indigo-500" />} position={{ x: "4%", y: "55%" }} delay={0.25} />
+      <FloatingBadge icon={<Zap className="w-4 h-4 text-amber-500" />} position={{ x: "52%", y: "14%" }} delay={0.15} />
+      <FloatingBadge icon={<Activity className="w-4 h-4 text-purple-500" />} position={{ x: "18%", y: "68%" }} delay={0.4} />
 
-      {/* Central Browser Window */}
+      {/* Browser window - positioned bottom-right */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[55%] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden"
+        className="absolute right-0 bottom-0 w-[60%] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden"
         style={{ zIndex: 10 }}
       >
         <div className="bg-slate-50 border-b border-slate-200 px-3 py-2 flex items-center gap-2">
@@ -166,34 +164,27 @@ export function WebDevelopmentIllustration() {
         </div>
       </motion.div>
 
-      {/* Metric Cards */}
+      {/* Metric Cards - arranged top-left around browser */}
       <MetricCard
         title="Performance"
         value="98/100"
         icon={<BarChart3 className="w-3.5 h-3.5 text-blue-600" />}
-        position={{ x: "26%", y: "22%" }}
+        position={{ x: "18%", y: "18%" }}
         delay={0.3}
-      />
-      <MetricCard
-        title="Web Vitals"
-        value="Good"
-        icon={<Activity className="w-3.5 h-3.5 text-green-600" />}
-        position={{ x: "24%", y: "60%" }}
-        delay={0.4}
-      />
-      <MetricCard
-        title="SEO Growth"
-        value="+24%"
-        icon={<TrendingUp className="w-3.5 h-3.5 text-green-600" />}
-        position={{ x: "60%", y: "60%" }}
-        delay={0.6}
       />
       <MetricCard
         title="Cloud"
         value="Active"
         icon={<CheckCircle2 className="w-3.5 h-3.5 text-green-600" />}
-        position={{ x: "62%", y: "22%" }}
-        delay={0.7}
+        position={{ x: "58%", y: "22%" }}
+        delay={0.5}
+      />
+      <MetricCard
+        title="Web Vitals"
+        value="Good"
+        icon={<Activity className="w-3.5 h-3.5 text-green-600" />}
+        position={{ x: "22%", y: "55%" }}
+        delay={0.6}
       />
     </div>
   );
