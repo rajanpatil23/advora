@@ -30,7 +30,7 @@ function MetricCard({ title, value, subtitle, icon, delay = 0, position, align =
         scale: { delay },
         y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay },
       }}
-      className="absolute bg-white rounded-xl shadow-lg p-2.5 border border-slate-200 min-w-[120px]"
+      className="absolute bg-white rounded-xl shadow-lg p-2 border border-slate-200"
       style={{ left: position.x, top: position.y, right: position.right, zIndex: 5 }}
     >
       <div className={`flex items-start gap-2 ${align === "right" ? "flex-row-reverse text-right" : ""}`}>
