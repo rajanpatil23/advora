@@ -30,15 +30,15 @@ function MetricCard({ title, value, subtitle, icon, delay = 0, position, align =
         scale: { delay },
         y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay },
       }}
-      className="absolute bg-white rounded-xl shadow-lg p-2 border border-slate-200"
+      className="absolute bg-white rounded-xl shadow-lg p-2 border border-slate-200 max-w-[130px]"
       style={{ left: position.x, top: position.y, right: position.right, zIndex: 5 }}
     >
-      <div className={`flex items-start gap-2 ${align === "right" ? "flex-row-reverse text-right" : ""}`}>
-        {icon && <div className="p-1.5 bg-blue-50 rounded-lg shrink-0">{icon}</div>}
-        <div>
-          <div className="text-[10px] text-slate-500 font-medium mb-0.5 whitespace-nowrap">{title}</div>
-          <div className="text-sm font-bold text-slate-900">{value}</div>
-          {subtitle && <div className="text-[9px] text-slate-400">{subtitle}</div>}
+      <div className={`flex items-start gap-1.5 ${align === "right" ? "flex-row-reverse text-right" : ""}`}>
+        {icon && <div className="p-1 bg-blue-50 rounded-md shrink-0">{icon}</div>}
+        <div className="min-w-0">
+          <div className="text-[9px] text-slate-500 font-medium leading-tight mb-0.5">{title}</div>
+          <div className="text-sm font-bold text-slate-900 leading-none">{value}</div>
+          {subtitle && <div className="text-[9px] text-slate-400 mt-0.5 leading-tight">{subtitle}</div>}
         </div>
       </div>
     </motion.div>
