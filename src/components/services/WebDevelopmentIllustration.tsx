@@ -164,34 +164,27 @@ export function WebDevelopmentIllustration() {
         </div>
       </motion.div>
 
-      {/* Metric Cards */}
+      {/* Metric Cards - arranged top-left around browser */}
       <MetricCard
         title="Performance"
         value="98/100"
         icon={<BarChart3 className="w-3.5 h-3.5 text-blue-600" />}
-        position={{ x: "26%", y: "22%" }}
+        position={{ x: "18%", y: "18%" }}
         delay={0.3}
-      />
-      <MetricCard
-        title="Web Vitals"
-        value="Good"
-        icon={<Activity className="w-3.5 h-3.5 text-green-600" />}
-        position={{ x: "24%", y: "60%" }}
-        delay={0.4}
-      />
-      <MetricCard
-        title="SEO Growth"
-        value="+24%"
-        icon={<TrendingUp className="w-3.5 h-3.5 text-green-600" />}
-        position={{ x: "60%", y: "60%" }}
-        delay={0.6}
       />
       <MetricCard
         title="Cloud"
         value="Active"
         icon={<CheckCircle2 className="w-3.5 h-3.5 text-green-600" />}
-        position={{ x: "62%", y: "22%" }}
-        delay={0.7}
+        position={{ x: "58%", y: "22%" }}
+        delay={0.5}
+      />
+      <MetricCard
+        title="Web Vitals"
+        value="Good"
+        icon={<Activity className="w-3.5 h-3.5 text-green-600" />}
+        position={{ x: "22%", y: "55%" }}
+        delay={0.6}
       />
     </div>
   );
