@@ -354,40 +354,92 @@ const Portfolio = () => {
           </div>
         </section>
 
-        {/* Projects Grid */}
-        <section className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={project.title}
-                className={`group rounded-[2rem] bg-card border border-border hover:border-accent/50 overflow-hidden transition-all duration-300 hover:scale-[1.02] animate-slide-up stagger-${(index % 6) + 1}`}
-              >
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">{project.category}</span>
+        {/* Projects Grid - Premium Bento Layout */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+          <div className="grid grid-cols-1 md:grid-cols-6 auto-rows-[minmax(320px,auto)] gap-5 sm:gap-6">
+            {projects.map((project, index) => {
+              // Bento pattern: first card spans 4 cols & 2 rows (featured), then mix of 2/3/4 col cards
+              const patterns = [
+                "md:col-span-4 md:row-span-2",
+                "md:col-span-2",
+                "md:col-span-2",
+                "md:col-span-3",
+                "md:col-span-3",
+                "md:col-span-2",
+                "md:col-span-2",
+                "md:col-span-2",
+              ];
+              const span = patterns[index % patterns.length];
+              const isFeatured = index === 0;
+
+              return (
+                <motion.article
+                  key={project.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: (index % 6) * 0.06 }}
+                  className={`${span} group relative overflow-hidden rounded-3xl bg-card border border-border/60 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_hsl(var(--primary)/0.25)] hover:-translate-y-1`}
+                >
+                  {/* Background image with gradient overlay */}
+                  <div className="absolute inset-0">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20 group-hover:from-background group-hover:via-background/70 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-2">{project.description}</p>
-                  <div className="p-3 rounded-xl bg-muted/50 mb-4">
-                    <p className="text-sm font-medium text-primary">{project.results}</p>
+
+                  {/* Top-right floating category chip */}
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-md border border-border/60 text-[11px] font-medium text-foreground/90 shadow-sm">
+                      {project.category}
+                    </span>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span key={tech} className="px-2 py-1 rounded-full bg-muted text-xs">
-                        {tech}
+
+                  {/* Content - bottom anchored */}
+                  <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-7">
+                    {/* Results pill */}
+                    <div className="mb-3 flex items-center gap-2">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/15 backdrop-blur-sm border border-primary/30 text-[11px] font-semibold text-primary">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                        {project.results}
                       </span>
-                    ))}
+                    </div>
+
+                    <h3 className={`${isFeatured ? "text-3xl sm:text-4xl" : "text-xl sm:text-2xl"} font-bold tracking-tight text-foreground mb-2 group-hover:text-primary transition-colors duration-300`}>
+                      {project.title}
+                    </h3>
+
+                    <p className={`text-muted-foreground leading-relaxed mb-4 ${isFeatured ? "text-sm sm:text-base line-clamp-3 max-w-xl" : "text-sm line-clamp-2"}`}>
+                      {project.description}
+                    </p>
+
+                    {/* Tech stack */}
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {project.tech.slice(0, isFeatured ? 4 : 3).map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2.5 py-1 rounded-md bg-foreground/5 backdrop-blur-sm border border-border/50 text-[10px] font-medium text-foreground/70"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* CTA row */}
+                    <div className="flex items-center justify-between pt-3 border-t border-border/50">
+                      <span className="text-xs font-medium text-muted-foreground">View case study</span>
+                      <div className="w-9 h-9 rounded-full bg-primary/10 group-hover:bg-primary flex items-center justify-center transition-all duration-300 group-hover:rotate-[-45deg]">
+                        <ArrowRight className="w-4 h-4 text-primary group-hover:text-primary-foreground transition-colors" />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </motion.article>
+              );
+            })}
           </div>
         </section>
 
