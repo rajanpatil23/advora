@@ -137,8 +137,9 @@ export function WebDevelopmentIllustration() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden"
-        style={{ zIndex: 10 }}
+        className="absolute -translate-x-1/2 -translate-y-1/2 w-[40%] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden"
+        style={{ left: "44%", top: "44%", zIndex: 10 }}
+        
       >
         <div className="bg-slate-50 border-b border-slate-200 px-3 py-2 flex items-center gap-2">
           <div className="flex gap-1">
