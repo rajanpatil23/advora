@@ -152,14 +152,14 @@ export function WebDevelopmentIllustration() {
           </div>
         </div>
 
-        <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600">
+        <div className="p-4 bg-gradient-to-br from-blue-500 to-blue-600">
           <div className="text-white">
-            <h2 className="text-sm font-bold mb-0.5">Frontend Interface</h2>
-            <p className="text-blue-100 text-[10px]">Scalable web architecture</p>
+            <h2 className="text-base font-bold mb-1">Frontend Interface</h2>
+            <p className="text-blue-100 text-[11px]">Scalable web architecture</p>
           </div>
 
-          <div className="mt-2 bg-white/10 rounded-lg p-2 border border-white/20">
-            <svg className="w-full h-10" viewBox="0 0 200 40">
+          <div className="mt-3 bg-white/10 rounded-lg p-3 border border-white/20">
+            <svg className="w-full h-16" viewBox="0 0 200 40" preserveAspectRatio="none">
               <motion.polyline
                 points="0,35 40,28 80,30 120,15 160,18 200,8"
                 fill="none"
