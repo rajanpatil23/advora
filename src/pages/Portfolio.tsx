@@ -120,8 +120,8 @@ const Portfolio = () => {
       results: "30% reduction in delivery times"
     },
     {
-      title: "MediConnect",
-      category: "Healthcare Platform",
+      title: "Mamtva Spices",
+      category: "Food & Beverage",
       description: "Telemedicine platform connecting patients with healthcare providers for virtual consultations.",
       tech: ["Next.js", "WebRTC", "HIPAA Compliance", "AWS"],
       image: projectMediConnect,
