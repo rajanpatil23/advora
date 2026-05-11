@@ -88,7 +88,7 @@ const Portfolio = () => {
       results: "$2M in transactions processed"
     },
     {
-      title: "TaskMaster",
+      title: "TheEduOcean",
       category: "SaaS Application",
       description: "Project management tool with real-time collaboration, Gantt charts, and team productivity analytics.",
       tech: ["React", "GraphQL", "MongoDB", "WebSockets"],
