@@ -279,7 +279,7 @@ const Portfolio = () => {
                   <img
                     src={portfolioHeroShowcase}
                     alt="Advora portfolio showcase featuring laptop, mobile and tablet projects"
-                    className="h-full w-full object-contain scale-125"
+                    className="h-full w-full object-contain"
                   />
                 </div>
               </motion.div>
