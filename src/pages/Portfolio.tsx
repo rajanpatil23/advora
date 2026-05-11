@@ -286,7 +286,7 @@ const Portfolio = () => {
 
               {/* Editorial Content */}
               <motion.div
-                className="order-1 lg:order-2 space-y-7"
+                className="order-1 lg:order-2 space-y-5"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -296,19 +296,19 @@ const Portfolio = () => {
                   150+ Projects Delivered
                 </div>
 
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.05]">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.05]">
                   <span className="block font-serif italic font-normal text-foreground/90">Work That</span>
                   <span className="block font-bold text-primary">Speaks for</span>
                   <span className="block font-bold text-foreground">Itself.</span>
                 </h1>
 
-                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-lg">
+                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-lg">
                   From startups to enterprises, we've helped businesses across industries achieve their digital ambitions with modern, scalable and impactful solutions.
                 </p>
 
                 <div className="pt-1">
                   <Link to="/contact">
-                    <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-7 py-6 font-medium group">
+                    <Button className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 font-medium group">
                       Start Your Project
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
@@ -316,7 +316,7 @@ const Portfolio = () => {
                 </div>
 
                 {/* Inline proof strip */}
-                <div className="flex items-center gap-5 sm:gap-7 pt-6 border-t border-border/60">
+                <div className="flex items-center gap-5 sm:gap-7 pt-4 border-t border-border/60">
                   <div className="flex items-center gap-2">
                     <Star className="w-4 h-4 text-primary fill-primary" />
                     <div className="flex items-baseline gap-1.5">
