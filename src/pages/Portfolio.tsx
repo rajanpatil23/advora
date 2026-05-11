@@ -72,12 +72,12 @@ const Portfolio = () => {
       results: "300% user growth in 6 months"
     },
     {
-      title: "HealthTrack Pro",
-      category: "Mobile App",
-      description: "Cross-platform health and fitness tracking app with personalized workout plans and nutrition guidance.",
-      tech: ["React Native", "Firebase", "Machine Learning"],
-      image: projectHealthTrack,
-      results: "50,000 users in first month"
+      title: "EduLearn",
+      category: "Learning Platform",
+      description: "Online education platform with video courses, interactive quizzes, progress tracking, and certificates.",
+      tech: ["Vue.js", "Django", "PostgreSQL", "Vimeo API"],
+      image: projectEduLearn,
+      results: "10,000+ course completions"
     },
     {
       title: "RetailHub",
@@ -96,12 +96,12 @@ const Portfolio = () => {
       results: "Used by 200+ teams"
     },
     {
-      title: "EduLearn",
-      category: "Learning Platform",
-      description: "Online education platform with video courses, interactive quizzes, progress tracking, and certificates.",
-      tech: ["Vue.js", "Django", "PostgreSQL", "Vimeo API"],
-      image: projectEduLearn,
-      results: "10,000+ course completions"
+      title: "HealthTrack Pro",
+      category: "Mobile App",
+      description: "Cross-platform health and fitness tracking app with personalized workout plans and nutrition guidance.",
+      tech: ["React Native", "Firebase", "Machine Learning"],
+      image: projectHealthTrack,
+      results: "50,000 users in first month"
     },
     {
       title: "PropertyPro",
