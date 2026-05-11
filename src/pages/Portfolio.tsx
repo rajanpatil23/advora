@@ -96,7 +96,7 @@ const Portfolio = () => {
       results: "Used by 200+ teams"
     },
     {
-      title: "HealthTrack Pro",
+      title: "Tadoba Footprint Resort",
       category: "Mobile App",
       description: "Cross-platform health and fitness tracking app with personalized workout plans and nutrition guidance.",
       tech: ["React Native", "Firebase", "Machine Learning"],
