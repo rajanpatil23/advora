@@ -17,6 +17,7 @@ import projectEduLearn from "@/assets/project-edulearn.jpg";
 import projectPropertyPro from "@/assets/project-propertypro.jpg";
 import projectLogiTrack from "@/assets/project-logitrack.jpg";
 import projectMediConnect from "@/assets/project-mediconnect.jpg";
+import projectKrushiConnect from "@/assets/project-krushiconnect.jpg";
 
 const industries = [
   { icon: ShoppingCart, title: "E-commerce", description: "Marketplaces, funnels, stores" },
@@ -126,10 +127,18 @@ const Portfolio = () => {
       tech: ["Next.js", "WebRTC", "HIPAA Compliance", "AWS"],
       image: projectMediConnect,
       results: "100,000+ consultations facilitated"
+    },
+    {
+      title: "Krushi Connect",
+      category: "Agriculture",
+      description: "A mobile platform connecting farmers, traders and service providers with crop listings, contract management, and a service directory.",
+      tech: ["React Native", "Node.js", "PostgreSQL", "Maps API"],
+      image: projectKrushiConnect,
+      results: "Empowering farmers across regions"
     }
   ];
 
-  const categories = ["All", "Web Application", "Mobile App", "Resort", "SaaS Application", "Enterprise Software"];
+  const categories = ["All", "Web Application", "Mobile App", "Resort", "SaaS Application", "Enterprise Software", "Agriculture"];
 
   const testimonials: Testimonial[] = [
     {
