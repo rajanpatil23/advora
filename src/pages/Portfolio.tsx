@@ -81,7 +81,7 @@ const Portfolio = () => {
     },
     {
       title: "EvolveU",
-      category: "E-commerce Platform",
+      category: "Resort",
       description: "Multi-vendor marketplace with advanced inventory management, analytics dashboard, and automated order processing.",
       tech: ["Next.js", "Supabase", "Stripe", "AWS"],
       image: projectRetailHub,
@@ -129,7 +129,7 @@ const Portfolio = () => {
     }
   ];
 
-  const categories = ["All", "Web Application", "Mobile App", "E-commerce Platform", "SaaS Application", "Enterprise Software"];
+  const categories = ["All", "Web Application", "Mobile App", "Resort", "SaaS Application", "Enterprise Software"];
 
   const testimonials: Testimonial[] = [
     {
