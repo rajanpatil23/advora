@@ -267,7 +267,7 @@ const Portfolio = () => {
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center">
               {/* Hero Showcase Image */}
               <motion.div
                 initial={{ opacity: 0, x: -30, scale: 0.98 }}
@@ -275,7 +275,7 @@ const Portfolio = () => {
                 transition={{ duration: 0.65, delay: 0.1 }}
                 className="order-2 lg:order-1 rounded-xl sm:rounded-2xl overflow-hidden"
               >
-                <div className="aspect-[4/3]">
+                <div className="aspect-[16/10]">
                   <img
                     src={portfolioHeroShowcase}
                     alt="Advora portfolio showcase featuring laptop, mobile and tablet projects"
