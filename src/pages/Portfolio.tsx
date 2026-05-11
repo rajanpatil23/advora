@@ -104,7 +104,7 @@ const Portfolio = () => {
       results: "50,000 users in first month"
     },
     {
-      title: "PropertyPro",
+      title: "Wild Spirit Stays",
       category: "Mobile App",
       description: "Real estate listing and management app with virtual tours, mortgage calculator, and agent matching.",
       tech: ["React Native", "Node.js", "MongoDB", "Mapbox"],
