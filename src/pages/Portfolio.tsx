@@ -356,21 +356,10 @@ const Portfolio = () => {
 
         {/* Projects Grid - Premium Bento Layout */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <div className="grid grid-cols-1 md:grid-cols-6 auto-rows-[minmax(320px,auto)] gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[minmax(320px,auto)] gap-5 sm:gap-6">
             {projects.map((project, index) => {
-              // Bento pattern: first card spans 4 cols & 2 rows (featured), then mix of 2/3/4 col cards
-              const patterns = [
-                "md:col-span-4 md:row-span-2",
-                "md:col-span-2",
-                "md:col-span-2",
-                "md:col-span-3",
-                "md:col-span-3",
-                "md:col-span-2",
-                "md:col-span-2",
-                "md:col-span-2",
-              ];
-              const span = patterns[index % patterns.length];
-              const isFeatured = index === 0;
+              const span = "";
+              const isFeatured = false;
 
               return (
                 <motion.article
