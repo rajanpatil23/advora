@@ -406,13 +406,6 @@ const Portfolio = () => {
                         {project.category}
                       </span>
                     </div>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary truncate">
-                        {project.tech.slice(0, isFeatured ? 4 : 3).join(" · ")}
-                      </p>
-                      <h3 className={`mt-1.5 font-serif font-semibold leading-tight tracking-tight text-foreground ${isFeatured ? "text-2xl sm:text-[1.65rem]" : "text-xl sm:text-[1.4rem]"}`}>
-                        {project.title}
-                      </h3>
-                    </div>
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:shadow-[0_10px_24px_-10px_rgba(37,99,235,0.6)] dark:border-border dark:bg-card">
                       <ArrowRight className="h-4 w-4" />
                     </span>
