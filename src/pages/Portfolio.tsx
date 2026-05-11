@@ -259,7 +259,7 @@ const Portfolio = () => {
       
       <main>
         {/* Hero Section - Premium Floating Showcase */}
-        <section className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-24 overflow-hidden">
+        <section className="relative pt-20 sm:pt-24 pb-10 sm:pb-14 overflow-hidden">
           {/* Subtle ambient backdrop */}
           <div className="absolute inset-0 -z-10 pointer-events-none">
             <div className="absolute top-1/4 left-1/4 w-[40rem] h-[40rem] rounded-full bg-primary/5 blur-3xl" />
