@@ -378,7 +378,7 @@ const Portfolio = () => {
 
                   {/* image frame - top */}
                   <div className="relative flex-1 min-h-0 overflow-hidden rounded-none bg-transparent p-3 sm:p-4">
-                    <div className="relative h-full w-full overflow-hidden rounded-none">
+                    <div className="relative h-full w-full overflow-hidden rounded-none shadow-[0_15px_35px_-10px_rgba(15,23,42,0.35)]">
                       <img
                         src={project.image}
                         alt={project.title}
