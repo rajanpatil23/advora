@@ -387,20 +387,25 @@ const Portfolio = () => {
                         className="block h-full w-full object-contain"
                       />
                       {/* category chip */}
-                      <span className="absolute top-3 right-3 inline-flex items-center px-3 py-1.5 rounded-full bg-background/85 backdrop-blur-md border border-border/60 text-[11px] font-medium text-foreground/90 shadow-sm">
-                        {project.category}
-                      </span>
+                      
                       {/* results pill */}
-                      <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/15 backdrop-blur-sm border border-primary/30 text-[11px] font-semibold text-primary">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                        {project.results}
-                      </span>
+                      
                     </div>
                   </div>
 
                   {/* meta footer - bottom */}
                   <div className="relative z-10 flex items-center justify-between gap-4 px-4 pt-3 pb-4 sm:px-5 sm:pt-4 sm:pb-5">
                     <div className="min-w-0">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary truncate">
+                        {project.tech.slice(0, isFeatured ? 4 : 3).join(" · ")}
+                      </p>
+                      <h3 className={`mt-1.5 font-serif font-semibold leading-tight tracking-tight text-foreground ${isFeatured ? "text-2xl sm:text-[1.65rem]" : "text-xl sm:text-[1.4rem]"}`}>
+                        {project.title}
+                      </h3>
+                      <span className="mt-2 inline-flex items-center px-2.5 py-1 rounded-full bg-muted text-[10px] font-medium text-muted-foreground border border-border">
+                        {project.category}
+                      </span>
+                    </div>
                       <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary truncate">
                         {project.tech.slice(0, isFeatured ? 4 : 3).join(" · ")}
                       </p>
