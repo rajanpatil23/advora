@@ -64,7 +64,7 @@ const Portfolio = () => {
   });
   const projects = [
     {
-      title: "FinanceFlow",
+      title: "Connecttly",
       category: "Web Application",
       description: "A comprehensive financial management platform for small businesses with invoicing, expense tracking, and reporting features.",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
@@ -72,7 +72,7 @@ const Portfolio = () => {
       results: "300% user growth in 6 months"
     },
     {
-      title: "EduLearn",
+      title: "TheEduEdge",
       category: "Learning Platform",
       description: "Online education platform with video courses, interactive quizzes, progress tracking, and certificates.",
       tech: ["Vue.js", "Django", "PostgreSQL", "Vimeo API"],
@@ -80,7 +80,7 @@ const Portfolio = () => {
       results: "10,000+ course completions"
     },
     {
-      title: "RetailHub",
+      title: "EvolveU",
       category: "E-commerce Platform",
       description: "Multi-vendor marketplace with advanced inventory management, analytics dashboard, and automated order processing.",
       tech: ["Next.js", "Supabase", "Stripe", "AWS"],
