@@ -365,7 +365,7 @@ const Portfolio = () => {
 
         {/* Projects Grid - Premium Bento Layout */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[minmax(320px,auto)] gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[420px] gap-5 sm:gap-6">
             {projects.map((project, index) => {
               const span = "";
               const isFeatured = false;
