@@ -418,9 +418,6 @@ const Portfolio = () => {
                       <h3 className={`mt-1.5 font-serif font-semibold leading-tight tracking-tight text-foreground ${isFeatured ? "text-2xl sm:text-[1.65rem]" : "text-xl sm:text-[1.4rem]"}`}>
                         {project.title}
                       </h3>
-                      <span className="mt-2 inline-flex items-center px-2.5 py-1 rounded-full bg-muted text-[10px] font-medium text-muted-foreground border border-border">
-                        {project.category}
-                      </span>
                     </div>
                     <button
                       type="button"
