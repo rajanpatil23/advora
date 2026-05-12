@@ -280,15 +280,12 @@ const Portfolio = () => {
       
       <main>
         {/* Hero Section - Premium Floating Showcase */}
-        <section className="relative pt-20 sm:pt-24 pb-10 sm:pb-14 overflow-hidden">
-          {/* Subtle ambient backdrop */}
-          <div className="absolute inset-0 -z-10 pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-[40rem] h-[40rem] rounded-full bg-primary/5 blur-3xl" />
-            <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] rounded-full bg-accent/5 blur-3xl" />
-          </div>
-
+        <section className="pt-20 sm:pt-24 md:pt-28 pb-10 sm:pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center">
+            <div className="relative rounded-[2.5rem] sm:rounded-[3rem] bg-primary/10 dark:bg-card p-4 sm:p-8 md:p-12 overflow-hidden">
+              <div className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-24 -left-24 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+              <div className="relative grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-12 items-center">
               {/* Hero Showcase Image */}
               <motion.div
                 initial={{ opacity: 0, x: -30, scale: 0.98 }}
@@ -357,6 +354,7 @@ const Portfolio = () => {
                   </div>
                 </div>
               </motion.div>
+              </div>
             </div>
           </div>
         </section>
