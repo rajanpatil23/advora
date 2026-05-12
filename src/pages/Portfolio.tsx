@@ -19,7 +19,6 @@ import projectPropertyPro from "@/assets/project-propertypro.jpg";
 import projectLogiTrack from "@/assets/project-logitrack.jpg";
 import projectMediConnect from "@/assets/project-mediconnect.jpg";
 import projectKrushiConnect from "@/assets/project-krushiconnect.jpg";
-import projectConnecttlyDesktop from "@/assets/project-connecttly-desktop.png";
 
 const industries = [
   { icon: ShoppingCart, title: "E-commerce", description: "Marketplaces, funnels, stores" },
@@ -83,7 +82,6 @@ const Portfolio = () => {
       description: "A comprehensive financial management platform for small businesses with invoicing, expense tracking, and reporting features.",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
       image: projectFinanceFlow,
-      desktopImage: projectConnecttlyDesktop,
       results: "300% user growth in 6 months"
     },
     {
@@ -493,7 +491,7 @@ const Portfolio = () => {
                           <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Desktop View</span>
                         </div>
                         <div className="rounded-lg bg-background shadow-2xl border border-border h-[420px] overflow-y-auto overlay-scroll">
-                          <img src={(project as any).desktopImage || project.image} alt={`${project.title} desktop`} className="block w-full h-auto" />
+                          <img src={project.image} alt={`${project.title} desktop`} className="block w-full h-auto" />
                         </div>
                       </div>
 
