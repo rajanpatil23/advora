@@ -456,7 +456,7 @@ const Portfolio = () => {
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 onClick={(e) => e.stopPropagation()}
-                className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-2xl sm:rounded-3xl bg-background border border-border shadow-2xl"
+                className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto overlay-scroll rounded-2xl sm:rounded-3xl bg-background border border-border shadow-2xl"
               >
                 <button
                   type="button"
