@@ -125,7 +125,7 @@ const Portfolio = () => {
       results: "4.8 star rating on app stores"
     },
     {
-      title: "LogiTrack",
+      title: "Patel Furniture",
       category: "Enterprise Software",
       description: "Fleet management and logistics optimization system with real-time tracking and route planning.",
       tech: ["React", "Python", "PostgreSQL", "Redis"],
