@@ -493,7 +493,7 @@ const Portfolio = () => {
                           <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Desktop View</span>
                         </div>
                         <div className="rounded-lg bg-background shadow-2xl border border-border h-[420px] overflow-y-auto overlay-scroll">
-                          <img src={project.image} alt={`${project.title} desktop`} className="block w-full h-auto" />
+                          <img src={(project as any).desktopImage || project.image} alt={`${project.title} desktop`} className="block w-full h-auto" />
                         </div>
                       </div>
 
