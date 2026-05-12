@@ -59,6 +59,17 @@ function IndustriesCarousel() {
 }
 
 const Portfolio = () => {
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (selectedProject !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [selectedProject]);
+
   usePageSEO({
     title: "Portfolio",
     description: "See Advora Digital's portfolio — case studies in fintech, healthcare, e-commerce, edtech, and logistics software development.",
