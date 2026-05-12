@@ -8,7 +8,7 @@ import ServiceToolStackSection from "@/components/services/ServiceToolStackSecti
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Palette, Users, Layers, MousePointer, Eye } from "lucide-react";
-import serviceDesign from "@/assets/service-design.jpg";
+import serviceDesign from "@/assets/service-design-uiux.jpg";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { serviceDetails } from "@/data/serviceDetails";
 
