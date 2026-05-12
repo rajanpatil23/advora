@@ -83,6 +83,7 @@ const Portfolio = () => {
       description: "A comprehensive financial management platform for small businesses with invoicing, expense tracking, and reporting features.",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
       image: projectFinanceFlow,
+      desktopImage: projectConnecttlyDesktop,
       results: "300% user growth in 6 months"
     },
     {
