@@ -397,14 +397,14 @@ const Portfolio = () => {
                   />
 
                   {/* image frame - top */}
-                  <div className="relative overflow-hidden rounded-none bg-transparent p-3 sm:p-4">
-                    <div className="relative aspect-[16/10] w-full overflow-hidden rounded-none bg-muted/30 shadow-[0_15px_35px_-10px_rgba(15,23,42,0.35)]">
+                  <div className="relative flex-1 min-h-0 overflow-hidden rounded-none bg-transparent p-3 sm:p-4">
+                    <div className="relative h-full w-full overflow-hidden rounded-none shadow-[0_15px_35px_-10px_rgba(15,23,42,0.35)]">
                       <img
                         src={project.image}
                         alt={project.title}
                         loading="lazy"
                         decoding="async"
-                        className="absolute inset-0 block h-full w-full object-contain"
+                        className="block h-full w-full object-contain"
                       />
                     </div>
                   </div>
