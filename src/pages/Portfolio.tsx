@@ -19,6 +19,7 @@ import projectPropertyPro from "@/assets/project-propertypro.jpg";
 import projectLogiTrack from "@/assets/project-logitrack.jpg";
 import projectMediConnect from "@/assets/project-mediconnect.jpg";
 import projectKrushiConnect from "@/assets/project-krushiconnect.jpg";
+import projectConnecttlyDesktop from "@/assets/project-connecttly-desktop.png";
 
 const industries = [
   { icon: ShoppingCart, title: "E-commerce", description: "Marketplaces, funnels, stores" },
