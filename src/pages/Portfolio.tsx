@@ -490,12 +490,7 @@ const Portfolio = () => {
                           <Monitor className="h-4 w-4 text-muted-foreground" />
                           <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Desktop View</span>
                         </div>
-                        <div className="rounded-lg overflow-hidden bg-[#0a0a0a] shadow-2xl">
-                          <div className="flex items-center gap-1.5 px-3 py-2 bg-[#1a1a1a]">
-                            <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                          </div>
+                        <div className="rounded-lg bg-background shadow-2xl border border-border h-[420px] overflow-y-auto overlay-scroll">
                           <img src={project.image} alt={`${project.title} desktop`} className="block w-full h-auto" />
                         </div>
                       </div>
@@ -507,7 +502,7 @@ const Portfolio = () => {
                             <Tablet className="h-4 w-4 text-muted-foreground" />
                             <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Tablet</span>
                           </div>
-                          <div className="rounded-xl overflow-hidden border-[6px] border-[#1a1a1a] bg-[#1a1a1a] shadow-xl mx-auto max-w-md">
+                          <div className="rounded-xl border-[6px] border-[#1a1a1a] bg-background shadow-xl mx-auto max-w-md h-[360px] overflow-y-auto overlay-scroll">
                             <img src={project.image} alt={`${project.title} tablet`} className="block w-full h-auto" />
                           </div>
                         </div>
@@ -516,8 +511,8 @@ const Portfolio = () => {
                             <Smartphone className="h-4 w-4 text-muted-foreground" />
                             <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Mobile</span>
                           </div>
-                          <div className="rounded-2xl overflow-hidden border-[6px] border-[#1a1a1a] bg-[#1a1a1a] shadow-xl mx-auto max-w-[180px] aspect-[9/16]">
-                            <img src={project.image} alt={`${project.title} mobile`} className="block w-full h-full object-cover" />
+                          <div className="rounded-2xl border-[6px] border-[#1a1a1a] bg-background shadow-xl mx-auto w-[180px] h-[360px] overflow-y-auto overlay-scroll">
+                            <img src={project.image} alt={`${project.title} mobile`} className="block w-full h-auto" />
                           </div>
                         </div>
                       </div>
