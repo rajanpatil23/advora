@@ -389,7 +389,8 @@ const Portfolio = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: (index % 6) * 0.06 }}
-                  className={`${span} group relative isolate flex flex-col overflow-hidden rounded-[15px] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] dark:border-border dark:bg-card dark:from-card dark:to-card`}
+                  onClick={() => setSelectedProject(index)}
+                  className={`${span} group relative isolate flex flex-col overflow-hidden rounded-[15px] border border-[#E6EAF2] bg-gradient-to-b from-white to-[#FAFBFD] shadow-[0_20px_50px_-32px_rgba(15,23,42,0.22)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[0_30px_70px_-25px_rgba(15,23,42,0.32)] dark:border-border dark:bg-card dark:from-card dark:to-card cursor-pointer`}
                 >
                   {/* accent corner glow */}
                   <div
@@ -407,10 +408,6 @@ const Portfolio = () => {
                         decoding="async"
                         className="block h-full w-full object-contain"
                       />
-                      {/* category chip */}
-                      
-                      {/* results pill */}
-                      
                     </div>
                   </div>
 
@@ -427,15 +424,144 @@ const Portfolio = () => {
                         {project.category}
                       </span>
                     </div>
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:shadow-[0_10px_24px_-10px_rgba(37,99,235,0.6)] dark:border-border dark:bg-card">
+                    <button
+                      type="button"
+                      aria-label={`View ${project.title} details`}
+                      onClick={(e) => { e.stopPropagation(); setSelectedProject(index); }}
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#E1E6EF] bg-white text-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:shadow-[0_10px_24px_-10px_rgba(37,99,235,0.6)] dark:border-border dark:bg-card"
+                    >
                       <ArrowRight className="h-4 w-4" />
-                    </span>
+                    </button>
                   </div>
                 </motion.article>
               );
             })}
           </div>
         </section>
+
+        {/* Project Detail Modal */}
+        <AnimatePresence>
+          {selectedProject !== null && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-sm"
+              onClick={() => setSelectedProject(null)}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-2xl sm:rounded-3xl bg-background border border-border shadow-2xl"
+              >
+                <button
+                  type="button"
+                  aria-label="Close"
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 backdrop-blur border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+
+                {(() => {
+                  const project = projects[selectedProject];
+                  return (
+                    <div className="p-6 sm:p-10">
+                      {/* Header */}
+                      <div className="mb-8 pr-12">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider border border-primary/20">
+                          {project.category}
+                        </span>
+                        <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-serif font-semibold tracking-tight text-foreground">
+                          {project.title}
+                        </h2>
+                        <p className="mt-3 text-muted-foreground text-base sm:text-lg leading-relaxed max-w-3xl">
+                          {project.description}
+                        </p>
+                      </div>
+
+                      {/* Hero / Desktop screenshot */}
+                      <div className="mb-6 rounded-2xl overflow-hidden border border-border bg-gradient-to-br from-muted/40 to-muted/10 p-3 sm:p-5">
+                        <div className="flex items-center gap-2 mb-3 px-1">
+                          <Monitor className="h-4 w-4 text-muted-foreground" />
+                          <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Desktop View</span>
+                        </div>
+                        <div className="rounded-lg overflow-hidden bg-[#0a0a0a] shadow-2xl">
+                          <div className="flex items-center gap-1.5 px-3 py-2 bg-[#1a1a1a]">
+                            <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                          </div>
+                          <img src={project.image} alt={`${project.title} desktop`} className="block w-full h-auto" />
+                        </div>
+                      </div>
+
+                      {/* Tablet + Mobile screenshots */}
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+                        <div className="md:col-span-2 rounded-2xl overflow-hidden border border-border bg-gradient-to-br from-muted/40 to-muted/10 p-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <Tablet className="h-4 w-4 text-muted-foreground" />
+                            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Tablet</span>
+                          </div>
+                          <div className="rounded-xl overflow-hidden border-[6px] border-[#1a1a1a] bg-[#1a1a1a] shadow-xl mx-auto max-w-md">
+                            <img src={project.image} alt={`${project.title} tablet`} className="block w-full h-auto" />
+                          </div>
+                        </div>
+                        <div className="rounded-2xl overflow-hidden border border-border bg-gradient-to-br from-muted/40 to-muted/10 p-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <Smartphone className="h-4 w-4 text-muted-foreground" />
+                            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Mobile</span>
+                          </div>
+                          <div className="rounded-2xl overflow-hidden border-[6px] border-[#1a1a1a] bg-[#1a1a1a] shadow-xl mx-auto max-w-[180px] aspect-[9/16]">
+                            <img src={project.image} alt={`${project.title} mobile`} className="block w-full h-full object-cover" />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Tech & Results */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div className="rounded-2xl border border-border bg-card p-6">
+                          <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Tech Stack</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {project.tech.map((t) => (
+                              <span key={t} className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/20">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-6">
+                          <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Key Result</h3>
+                          <div className="flex items-start gap-3">
+                            <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                            <p className="text-lg font-semibold text-foreground leading-snug">{project.results}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-end">
+                        <Button variant="outline" onClick={() => setSelectedProject(null)} className="rounded-full">
+                          Close
+                        </Button>
+                        <Link to="/contact" onClick={() => setSelectedProject(null)}>
+                          <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 w-full sm:w-auto">
+                            Start a Similar Project
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
 
         {/* Case Study Highlight */}
         <section className="section-divider py-20 pt-24">
