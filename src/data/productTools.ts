@@ -58,7 +58,7 @@ export interface ProductTool {
 export const productTools: ProductTool[] = [
   {
     id: "invoice-suite",
-    route: "/products/tool-1",
+    route: "/products/invoice-suite",
     name: "Invoice Suite",
     eyebrow: "Billing and revenue operations",
     headlineSerif: "Invoice Suite",
@@ -191,8 +191,8 @@ export const productTools: ProductTool[] = [
     seo: {
       title: "Invoice Suite",
       description:
-        "Invoice Suite by Advora Digital helps startups and agencies manage invoices, payments, expenses, approvals, and revenue reporting.",
-      canonical: "/products/tool-1",
+        "Invoice Suite by Advora Digital is enterprise billing software for invoices, payments, expenses, approvals, and revenue reporting.",
+      canonical: "/products/invoice-suite",
     },
     cta: {
       title: "Ready to simplify billing operations?",
@@ -203,7 +203,7 @@ export const productTools: ProductTool[] = [
   },
   {
     id: "warehouse-management",
-    route: "/products/tool-2",
+    route: "/products/warehouse-management",
     name: "Warehouse Management",
     eyebrow: "Inventory and fulfillment control",
     headlineSerif: "Warehouse Management",
@@ -336,8 +336,8 @@ export const productTools: ProductTool[] = [
     seo: {
       title: "Warehouse Management",
       description:
-        "Warehouse Management by Advora Digital helps startups and agencies manage inventory, dispatches, suppliers, and warehouse utilization.",
-      canonical: "/products/tool-2",
+        "Warehouse Management by Advora Digital is enterprise software for inventory, dispatches, suppliers, and warehouse utilization.",
+      canonical: "/products/warehouse-management",
     },
     cta: {
       title: "Need cleaner inventory and dispatch visibility?",
@@ -348,7 +348,7 @@ export const productTools: ProductTool[] = [
   },
   {
     id: "service-desk",
-    route: "/products/tool-3",
+    route: "/products/service-desk",
     name: "Service Desk",
     eyebrow: "Support and client operations",
     headlineSerif: "Service Desk",
@@ -481,8 +481,8 @@ export const productTools: ProductTool[] = [
     seo: {
       title: "Service Desk",
       description:
-        "Service Desk by Advora Digital helps startups and agencies manage tickets, client support, workload, SLAs, and service operations.",
-      canonical: "/products/tool-3",
+        "Service Desk by Advora Digital is enterprise service software for tickets, support, workload, SLAs, and service operations.",
+      canonical: "/products/service-desk",
     },
     cta: {
       title: "Ready to organize support and client requests?",
@@ -493,7 +493,7 @@ export const productTools: ProductTool[] = [
   },
   {
     id: "claims-os",
-    route: "/products/tool-4",
+    route: "/products/claims-os",
     name: "Claims OS",
     eyebrow: "Claims, approvals, and reimbursements",
     headlineSerif: "Claims OS",
@@ -626,8 +626,8 @@ export const productTools: ProductTool[] = [
     seo: {
       title: "Claims OS",
       description:
-        "Claims OS by Advora Digital helps startups and agencies manage claims, reimbursements, approvals, documents, and audit trails.",
-      canonical: "/products/tool-4",
+        "Claims OS by Advora Digital is enterprise software for claims, reimbursements, approvals, documents, and audit trails.",
+      canonical: "/products/claims-os",
     },
     cta: {
       title: "Ready to clean up claims and approvals?",
