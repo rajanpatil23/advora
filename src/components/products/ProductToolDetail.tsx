@@ -140,13 +140,13 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     See how {tool.name} works
                   </span>
                   <span className="block font-bold text-primary">
-                    Before you build it.
+                    In your environment.
                   </span>
                 </h2>
                 <p className="text-lg text-white/70">
-                  The walkthrough is designed to help founders, agencies, and
-                  operations teams understand the main workflow, user roles, and
-                  customization points quickly.
+                  A guided walkthrough of the main workflow, user roles, and
+                  configuration points — so your team can evaluate the platform
+                  with confidence.
                 </p>
               </div>
 
