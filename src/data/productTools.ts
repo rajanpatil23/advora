@@ -19,6 +19,7 @@ export interface ProductTool {
   screenshot: string;
   demoImage: string;
   arcadeDemoUrl: string;
+  demoUrl: string;
   screenshotAlt: string;
   demoAlt: string;
   metrics: Array<{
@@ -70,6 +71,7 @@ export const productTools: ProductTool[] = [
     screenshot: invoiceScreenshot,
     demoImage: invoiceDemo,
     arcadeDemoUrl: "https://app.arcade.software/share/ZlL28DDMHgv02GRxghXR",
+    demoUrl: "https://invoicesuite-dev.advora.in",
     screenshotAlt: "Invoice Suite dashboard screenshot",
     demoAlt: "Invoice Suite virtual demo interface",
     metrics: [
@@ -215,6 +217,7 @@ export const productTools: ProductTool[] = [
     screenshot: warehouseScreenshot,
     demoImage: warehouseDemo,
     arcadeDemoUrl: "https://app.arcade.software/share/Uox7eArzEzTw0gbxQZeo",
+    demoUrl: "https://warehousemanagement-demo.advora.in",
     screenshotAlt: "Warehouse Management dashboard screenshot",
     demoAlt: "Warehouse Management virtual demo interface",
     metrics: [
@@ -360,6 +363,7 @@ export const productTools: ProductTool[] = [
     screenshot: serviceDeskScreenshot,
     demoImage: serviceDeskDemo,
     arcadeDemoUrl: "https://app.arcade.software/share/auD5xjdS5KPo3ZhfV3Bd",
+    demoUrl: "https://servicedesk-demo.advora.in",
     screenshotAlt: "Service Desk dashboard screenshot",
     demoAlt: "Service Desk virtual demo interface",
     metrics: [
@@ -505,6 +509,7 @@ export const productTools: ProductTool[] = [
     screenshot: claimsScreenshot,
     demoImage: claimsDemo,
     arcadeDemoUrl: "https://app.arcade.software/share/MbuEV4vwggnl2Qf8onys",
+    demoUrl: "https://claimsflow-demo.advora.in",
     screenshotAlt: "Claims OS dashboard screenshot",
     demoAlt: "Claims OS virtual demo interface",
     metrics: [
