@@ -105,10 +105,10 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                       asChild
                       className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium w-full sm:w-auto"
                     >
-                      <Link to="/contact">
-                        Get Custom Demo
+                      <a href={tool.demoUrl} target="_blank" rel="noopener noreferrer">
+                        Open Live Demo
                         <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
+                      </a>
                     </Button>
                     <Button
                       asChild
@@ -337,6 +337,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
           title={tool.cta.title}
           description={tool.cta.description}
           buttonText={tool.cta.buttonText}
+          buttonLink={tool.demoUrl}
         />
       </main>
 

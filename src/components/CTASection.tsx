@@ -37,14 +37,25 @@ export default function CTASection({
           <p className="text-base md:text-lg text-primary-foreground/80 leading-relaxed">
             {description}
           </p>
-          <Link to={buttonLink} className="inline-block">
-            <Button
-              className="bg-white text-primary hover:bg-white/85 rounded-full shadow-md mt-2 transition-all duration-300 hover:shadow-lg px-6 py-3 text-sm sm:px-8 sm:py-3 sm:text-base font-semibold"
-            >
-              {buttonText}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          </Link>
+          {/^https?:\/\//.test(buttonLink) ? (
+            <a href={buttonLink} target="_blank" rel="noopener noreferrer" className="inline-block">
+              <Button
+                className="bg-white text-primary hover:bg-white/85 rounded-full shadow-md mt-2 transition-all duration-300 hover:shadow-lg px-6 py-3 text-sm sm:px-8 sm:py-3 sm:text-base font-semibold"
+              >
+                {buttonText}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Button>
+            </a>
+          ) : (
+            <Link to={buttonLink} className="inline-block">
+              <Button
+                className="bg-white text-primary hover:bg-white/85 rounded-full shadow-md mt-2 transition-all duration-300 hover:shadow-lg px-6 py-3 text-sm sm:px-8 sm:py-3 sm:text-base font-semibold"
+              >
+                {buttonText}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
     </section>
