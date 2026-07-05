@@ -237,10 +237,10 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                 </span>
                 <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15]">
                   <span className="block font-serif italic font-normal">
-                    Built from a Foundation.
+                    Enterprise-Grade Platform.
                   </span>
                   <span className="block font-bold text-primary">
-                    Customized for Your Business.
+                    Configured for Your Business.
                   </span>
                 </h2>
                 <div className="mt-8 space-y-5">
@@ -292,14 +292,14 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
             <div className="mb-12 text-center">
               <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                 <Sparkles className="h-3.5 w-3.5" />
-                Startup and Agency Fit
+                Enterprise Fit
               </span>
               <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
                 <span className="block font-serif italic font-normal">
                   How {tool.name} Helps
                 </span>
                 <span className="block font-bold text-primary">
-                  Lean Teams Operate Better
+                  Teams Operate at Scale
                 </span>
               </h2>
             </div>
