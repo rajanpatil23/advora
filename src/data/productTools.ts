@@ -62,9 +62,9 @@ export const productTools: ProductTool[] = [
     name: "Invoice Suite",
     eyebrow: "Billing and revenue operations",
     headlineSerif: "Invoice Suite",
-    headlineStrong: "Billing That Moves Faster",
+    headlineStrong: "Enterprise Billing, Simplified",
     description:
-      "A focused billing workspace for startups, agencies, and service teams that need cleaner invoices, faster approvals, payment visibility, and fewer manual follow-ups.",
+      "Enterprise billing software for finance and revenue teams that need accurate invoicing, structured approvals, complete payment visibility, and reliable revenue reporting at scale.",
     demoSummary:
       "Walk through invoice creation, approval status, payment reminders, expenses, and revenue reporting from one operational dashboard.",
     screenshot: invoiceScreenshot,
@@ -133,24 +133,24 @@ export const productTools: ProductTool[] = [
     ],
     startupBenefits: [
       {
-        title: "Keeps founders close to cashflow",
+        title: "Real-time visibility into cashflow",
         description:
-          "Early teams can see what is collected, what is delayed, and which clients need attention before cash gets tight.",
+          "Finance leaders get an accurate view of collected, pending, and overdue revenue across every business unit.",
       },
       {
-        title: "Helps agencies manage retainers",
+        title: "Structured recurring billing",
         description:
-          "Recurring invoices, milestone billing, and client balances stay organized for service-heavy teams.",
+          "Retainers, subscriptions, milestone billing, and client ledgers stay organized across large customer bases.",
       },
       {
-        title: "Reduces finance admin",
+        title: "Reduces finance operations overhead",
         description:
-          "Templates, reminders, and status tracking reduce repetitive work for small operations teams.",
+          "Templates, automated reminders, and approval workflows cut repetitive work for finance and operations teams.",
       },
       {
-        title: "Improves client confidence",
+        title: "Consistent, professional client experience",
         description:
-          "Clean invoices and consistent communication make the billing experience feel professional from day one.",
+          "Branded invoices, clear communication, and reliable status updates strengthen enterprise customer relationships.",
       },
     ],
     modules: [
@@ -195,10 +195,10 @@ export const productTools: ProductTool[] = [
       canonical: "/products/invoice-suite",
     },
     cta: {
-      title: "Ready to simplify billing operations?",
+      title: "Ready to modernize billing operations?",
       description:
-        "We can tailor Invoice Suite around your clients, retainers, payment workflow, and reporting needs.",
-      buttonText: "Book an Invoice Suite Demo",
+        "We'll configure Invoice Suite around your clients, contracts, payment workflows, and financial reporting requirements.",
+      buttonText: "Request an Invoice Suite Demo",
     },
   },
   {
@@ -207,9 +207,9 @@ export const productTools: ProductTool[] = [
     name: "Warehouse Management",
     eyebrow: "Inventory and fulfillment control",
     headlineSerif: "Warehouse Management",
-    headlineStrong: "Inventory Without Guesswork",
+    headlineStrong: "Inventory Control at Scale",
     description:
-      "A warehouse operations console for teams that need stock visibility, shipment tracking, dispatch planning, supplier coordination, and fewer inventory surprises.",
+      "Enterprise warehouse software for operations teams that need real-time stock visibility, shipment tracking, dispatch planning, supplier coordination, and multi-warehouse control.",
     demoSummary:
       "Explore receiving, stock movement, category distribution, dispatch status, supplier records, and warehouse utilization in one virtual walkthrough.",
     screenshot: warehouseScreenshot,
@@ -278,24 +278,24 @@ export const productTools: ProductTool[] = [
     ],
     startupBenefits: [
       {
-        title: "Prevents stock confusion",
+        title: "Eliminates stock discrepancies",
         description:
-          "Growing teams can avoid selling items that are unavailable or losing track of inventory across channels.",
+          "Operations teams get a single source of truth across warehouses, channels, and fulfillment partners.",
       },
       {
-        title: "Supports ecommerce growth",
+        title: "Supports high-volume commerce",
         description:
-          "Orders, dispatches, returns, and supplier data stay organized as sales volume increases.",
+          "Orders, dispatches, returns, and supplier data stay accurate as SKU counts and order volume grow.",
       },
       {
-        title: "Helps agencies serving D2C brands",
+        title: "Multi-warehouse and multi-team ready",
         description:
-          "Operations partners can manage client stock reports, fulfillment status, and dispatch visibility in one place.",
+          "Manage multiple locations, zones, and business units with role-based views and permissions.",
       },
       {
-        title: "Makes handoffs clearer",
+        title: "Clear cross-team handoffs",
         description:
-          "Warehouse, operations, and customer support teams can see the same order and stock status.",
+          "Warehouse, operations, finance, and support teams work from the same order and inventory truth.",
       },
     ],
     modules: [
@@ -340,10 +340,10 @@ export const productTools: ProductTool[] = [
       canonical: "/products/warehouse-management",
     },
     cta: {
-      title: "Need cleaner inventory and dispatch visibility?",
+      title: "Need reliable inventory and dispatch control?",
       description:
-        "We can adapt Warehouse Management around your products, warehouses, suppliers, and fulfillment workflow.",
-      buttonText: "Book a Warehouse Demo",
+        "We'll configure Warehouse Management around your products, locations, suppliers, and fulfillment workflow.",
+      buttonText: "Request a Warehouse Demo",
     },
   },
   {
@@ -352,9 +352,9 @@ export const productTools: ProductTool[] = [
     name: "Service Desk",
     eyebrow: "Support and client operations",
     headlineSerif: "Service Desk",
-    headlineStrong: "Support That Stays Organized",
+    headlineStrong: "Enterprise Support Operations",
     description:
-      "A service operations hub for teams managing tickets, client requests, team workload, incidents, approvals, and support reporting from one shared workspace.",
+      "Enterprise service management software for support, IT, and client operations teams handling tickets, incidents, approvals, SLAs, and workload across the business.",
     demoSummary:
       "Move through ticket intake, team assignment, workload tracking, knowledge base records, SLA alerts, and customer mood signals.",
     screenshot: serviceDeskScreenshot,
@@ -423,24 +423,24 @@ export const productTools: ProductTool[] = [
     ],
     startupBenefits: [
       {
-        title: "Replaces inbox chaos",
+        title: "Unifies fragmented support channels",
         description:
-          "Small teams can stop losing support requests across email, chat, spreadsheets, and direct messages.",
+          "Consolidates requests across email, chat, portals, and internal tools into one governed workspace.",
       },
       {
-        title: "Improves client delivery for agencies",
+        title: "Enterprise-ready client operations",
         description:
-          "Agencies can centralize client issues, approvals, saved views, and recurring requests in one portal-like system.",
+          "Centralize customer issues, approvals, escalations, and recurring requests with role-based access and audit trails.",
       },
       {
-        title: "Keeps managers ahead of risks",
+        title: "Keeps leaders ahead of risk",
         description:
-          "Leads can quickly see what is late, overloaded, blocked, or likely to become a client problem.",
+          "Managers see what is late, overloaded, breached, or trending toward escalation in real time.",
       },
       {
-        title: "Scales support without hiring too early",
+        title: "Scales support without linear headcount",
         description:
-          "Structured queues, reusable replies, and reporting help lean teams serve more clients with fewer manual steps.",
+          "Structured queues, automation, and reporting let teams serve more customers with consistent quality.",
       },
     ],
     modules: [
@@ -485,10 +485,10 @@ export const productTools: ProductTool[] = [
       canonical: "/products/service-desk",
     },
     cta: {
-      title: "Ready to organize support and client requests?",
+      title: "Ready to modernize service operations?",
       description:
-        "We can tailor Service Desk around your clients, support channels, SLA rules, and delivery workflow.",
-      buttonText: "Book a Service Desk Demo",
+        "We'll configure Service Desk around your customers, channels, SLA policies, and delivery workflows.",
+      buttonText: "Request a Service Desk Demo",
     },
   },
   {
@@ -497,9 +497,9 @@ export const productTools: ProductTool[] = [
     name: "Claims OS",
     eyebrow: "Claims, approvals, and reimbursements",
     headlineSerif: "Claims OS",
-    headlineStrong: "Approvals Without Back-and-Forth",
+    headlineStrong: "Governed Claims and Approvals",
     description:
-      "A claims management system for teams handling reimbursements, travel claims, approvals, documents, policy checks, and audit-ready status tracking.",
+      "Enterprise claims management software for finance, HR, and operations teams handling reimbursements, travel, approvals, documents, policy compliance, and audit-ready records.",
     demoSummary:
       "Review claim intake, progress states, approval queues, document checks, claimant communication, and reimbursement readiness.",
     screenshot: claimsScreenshot,
@@ -568,24 +568,24 @@ export const productTools: ProductTool[] = [
     ],
     startupBenefits: [
       {
-        title: "Removes reimbursement confusion",
+        title: "Removes reimbursement friction",
         description:
-          "Teams can stop chasing receipts, approval screenshots, and finance updates across messages.",
+          "Employees, approvers, and finance work from one governed system instead of scattered emails and spreadsheets.",
       },
       {
-        title: "Useful for agency operations",
+        title: "Enterprise policy enforcement",
         description:
-          "Client visits, travel, contractor expenses, campaign costs, and project reimbursements stay attached to clear records.",
+          "Category limits, document requirements, and approval matrices are applied consistently across the organization.",
       },
       {
-        title: "Protects policy consistency",
+        title: "Consistent, explainable decisions",
         description:
-          "Approvers can review claims against defined rules instead of relying on memory or informal exceptions.",
+          "Approvers review claims against defined rules with a clear audit trail for every action.",
       },
       {
-        title: "Makes finance handoff easier",
+        title: "Streamlined finance handoff",
         description:
-          "Approved claims can be exported or prepared for payout with documents and decisions already organized.",
+          "Approved claims flow to payout with documents, notes, and decisions already organized for finance.",
       },
     ],
     modules: [
@@ -630,10 +630,10 @@ export const productTools: ProductTool[] = [
       canonical: "/products/claims-os",
     },
     cta: {
-      title: "Ready to clean up claims and approvals?",
+      title: "Ready to standardize claims and approvals?",
       description:
-        "We can tailor Claims OS around your reimbursement policy, approval rules, claimant roles, and finance workflow.",
-      buttonText: "Book a Claims OS Demo",
+        "We'll configure Claims OS around your reimbursement policy, approval matrix, claimant roles, and finance workflow.",
+      buttonText: "Request a Claims OS Demo",
     },
   },
 ];
