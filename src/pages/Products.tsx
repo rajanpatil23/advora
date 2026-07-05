@@ -150,7 +150,7 @@ export default function Products() {
   usePageSEO({
     title: "Products",
     description:
-      "Explore Advora Digital's four productized tools for sales, bookings, client portals, and commerce operations.",
+      "Advora Digital builds enterprise-grade software products for billing, warehouse, service, and claims operations.",
     canonical: "/products",
   });
 
@@ -181,17 +181,17 @@ export default function Products() {
                 >
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">
-                      Productized Tools
+                      Enterprise Software
                     </span>
                     <span className="block font-bold text-primary">
-                      Built to Sell.
+                      Engineered to Scale.
                     </span>
                   </h1>
 
                   <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed">
-                    Premium software tools created from Advora&apos;s agency
-                    workflows, packaged for businesses that need faster launch,
-                    smarter operations, and room to customise.
+                    Advora is a product company building enterprise-grade software
+                    for operations, finance, service, and revenue teams — with the
+                    reliability, security, and extensibility modern businesses expect.
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
@@ -245,19 +245,19 @@ export default function Products() {
           <div className="mb-12 text-center">
             <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
               <Sparkles className="h-3.5 w-3.5" />
-              Productized Tools
+              Product Suite
             </span>
             <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
               <span className="block font-serif italic font-normal">
-                Four Tool Previews
+                Four Enterprise Products
               </span>
               <span className="block font-bold text-primary">
-                Built for Real Operations
+                Built for Serious Operations
               </span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              A quick look at the four products currently being built and
-              packaged by Advora.
+              Purpose-built platforms from Advora, engineered for reliability at
+              scale and configurable to your business.
             </p>
           </div>
 
