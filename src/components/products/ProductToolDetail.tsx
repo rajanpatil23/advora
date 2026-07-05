@@ -113,7 +113,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                       variant="outline"
                       className="w-full sm:w-auto rounded-full px-6 py-5 sm:px-8 sm:py-6 font-medium border-foreground/20 text-foreground hover:bg-foreground hover:text-background"
                     >
-                      <a href="#virtual-demo">View Virtual Demo</a>
+                      <Link to="/contact">Contact Us</Link>
                     </Button>
                   </div>
                 </div>
