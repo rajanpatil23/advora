@@ -68,17 +68,15 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   initial={{ opacity: 0, x: -30, scale: 0.98 }}
                   animate={{ opacity: 1, x: 0, scale: 1 }}
                   transition={{ duration: 0.65, delay: 0.1 }}
-                  className="rounded-xl sm:rounded-2xl overflow-hidden"
+                  className="rounded-xl sm:rounded-2xl overflow-hidden h-full flex items-center justify-center"
                 >
-                  <div className="aspect-[4/3]">
-                    <img
-                      src={heroIllustrationByToolId[tool.id] ?? tool.screenshot}
-                      alt={`${tool.name} hero illustration`}
-                      fetchPriority="high"
-                      decoding="async"
-                      className="h-full w-full object-contain scale-125"
-                    />
-                  </div>
+                  <img
+                    src={heroIllustrationByToolId[tool.id] ?? tool.screenshot}
+                    alt={`${tool.name} hero illustration`}
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-full h-auto object-contain scale-110"
+                  />
                 </motion.div>
 
                 <div className="space-y-4 sm:space-y-6">
