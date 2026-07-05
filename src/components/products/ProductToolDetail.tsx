@@ -75,17 +75,17 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     alt={`${tool.name} hero illustration`}
                     fetchPriority="high"
                     decoding="async"
-                    className="w-full h-auto object-contain scale-110"
+                    className="w-full h-auto object-contain scale-125 lg:scale-[1.35]"
                   />
                 </motion.div>
 
-                <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-3 sm:space-y-4">
                   <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary border border-primary/20">
                     <Sparkles className="w-3.5 h-3.5" />
                     {tool.eyebrow}
                   </span>
 
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">
                       {tool.headlineSerif}
                     </span>
@@ -94,7 +94,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                     </span>
                   </h1>
 
-                  <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed">
+                  <p className="text-muted-foreground text-sm sm:text-base md:text-lg leading-relaxed">
                     {tool.description}
                   </p>
 
