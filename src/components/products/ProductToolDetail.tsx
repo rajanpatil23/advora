@@ -281,35 +281,6 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                   ))}
                 </div>
 
-                <div className="mt-8 border-t border-white/10 pt-6">
-                  <div className="mb-5 flex items-center gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/50 text-primary">
-                      <Workflow className="h-4 w-4" />
-                    </span>
-                    <p className="text-sm font-semibold text-white">Rollout workflow</p>
-                  </div>
-                  <ol className="space-y-4">
-                    {[
-                      { label: "Discovery & scoping", meta: "Week 1" },
-                      { label: "Configuration & data model", meta: "Week 2–3" },
-                      { label: "Integration & UAT", meta: "Week 4" },
-                      { label: "Go-live & enablement", meta: "Week 5+" },
-                    ].map((step, index) => (
-                      <li key={step.label} className="flex items-center gap-4">
-                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary/60 text-[11px] font-bold text-primary">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <div className="flex flex-1 items-center justify-between gap-3">
-                          <p className="text-sm font-medium text-white/85">{step.label}</p>
-                          <span className="text-[11px] font-medium uppercase tracking-wider text-primary/80">
-                            {step.meta}
-                          </span>
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-
                 <div className="mt-auto grid grid-cols-3 gap-3 border-t border-white/10 pt-6">
                   <div>
                     <p className="text-lg font-bold text-white">99.9%</p>
