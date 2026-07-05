@@ -227,7 +227,7 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
 
         <section className="section-divider bg-[#02070d] py-12 text-white sm:py-24">
           <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-2">
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-stretch">
               <div>
                 <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary">
                   <Sparkles className="h-3.5 w-3.5" />
@@ -256,88 +256,72 @@ export default function ProductToolDetail({ tool }: ProductToolDetailProps) {
                 </div>
               </div>
 
-              <div className="space-y-5">
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8">
-                  <div className="mb-7 flex items-center gap-3">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/50 text-primary">
-                      <Plug className="h-5 w-5" />
-                    </span>
-                    <div>
-                      <h3 className="text-xl font-semibold">Common integrations</h3>
-                      <p className="mt-1 text-sm text-white/55">
-                        Connect the tool to your current stack.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {tool.integrations.map((integration) => (
-                      <div
-                        key={integration}
-                        className="flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-medium"
-                      >
-                        <ClipboardCheck className="h-4 w-4 shrink-0 text-primary" />
-                        {integration}
-                      </div>
-                    ))}
+              <div className="flex h-full flex-col rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+                <div className="mb-7 flex items-center gap-3">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/50 text-primary">
+                    <Plug className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-semibold">Common integrations</h3>
+                    <p className="mt-1 text-sm text-white/55">
+                      Connect the tool to your current stack.
+                    </p>
                   </div>
                 </div>
 
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 sm:p-8">
-                  <div className="mb-6 flex items-center gap-3">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/50 text-primary">
-                      <Workflow className="h-5 w-5" />
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {tool.integrations.map((integration) => (
+                    <div
+                      key={integration}
+                      className="flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-medium"
+                    >
+                      <ClipboardCheck className="h-4 w-4 shrink-0 text-primary" />
+                      {integration}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 border-t border-white/10 pt-6">
+                  <div className="mb-5 flex items-center gap-3">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/50 text-primary">
+                      <Workflow className="h-4 w-4" />
                     </span>
-                    <div>
-                      <h3 className="text-xl font-semibold">Rollout workflow</h3>
-                      <p className="mt-1 text-sm text-white/55">
-                        A predictable path from kickoff to production.
-                      </p>
-                    </div>
+                    <p className="text-sm font-semibold text-white">Rollout workflow</p>
                   </div>
-
-                  <div className="relative">
-                    <span
-                      aria-hidden
-                      className="absolute left-[15px] top-2 bottom-2 w-px bg-gradient-to-b from-primary/60 via-primary/25 to-transparent"
-                    />
-                    <ol className="space-y-5">
-                      {[
-                        { label: "Discovery & scoping", meta: "Week 1" },
-                        { label: "Configuration & data model", meta: "Week 2–3" },
-                        { label: "Integration & UAT", meta: "Week 4" },
-                        { label: "Go-live & enablement", meta: "Week 5+" },
-                      ].map((step, index) => (
-                        <li key={step.label} className="relative flex items-start gap-4 pl-1">
-                          <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary/60 bg-[#02070d] text-xs font-bold text-primary">
-                            {String(index + 1).padStart(2, "0")}
+                  <ol className="space-y-4">
+                    {[
+                      { label: "Discovery & scoping", meta: "Week 1" },
+                      { label: "Configuration & data model", meta: "Week 2–3" },
+                      { label: "Integration & UAT", meta: "Week 4" },
+                      { label: "Go-live & enablement", meta: "Week 5+" },
+                    ].map((step, index) => (
+                      <li key={step.label} className="flex items-center gap-4">
+                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary/60 text-[11px] font-bold text-primary">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <div className="flex flex-1 items-center justify-between gap-3">
+                          <p className="text-sm font-medium text-white/85">{step.label}</p>
+                          <span className="text-[11px] font-medium uppercase tracking-wider text-primary/80">
+                            {step.meta}
                           </span>
-                          <div className="flex-1 pt-1">
-                            <div className="flex items-center justify-between gap-3">
-                              <p className="text-sm font-semibold text-white">{step.label}</p>
-                              <span className="text-[11px] font-medium uppercase tracking-wider text-primary/80">
-                                {step.meta}
-                              </span>
-                            </div>
-                          </div>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
 
-                  <div className="mt-7 grid grid-cols-3 gap-3 border-t border-white/10 pt-5">
-                    <div>
-                      <p className="text-lg font-bold text-white">99.9%</p>
-                      <p className="mt-0.5 text-[11px] uppercase tracking-wider text-white/50">Uptime SLA</p>
-                    </div>
-                    <div>
-                      <p className="text-lg font-bold text-white">SOC 2</p>
-                      <p className="mt-0.5 text-[11px] uppercase tracking-wider text-white/50">Compliant</p>
-                    </div>
-                    <div>
-                      <p className="text-lg font-bold text-white">24/7</p>
-                      <p className="mt-0.5 text-[11px] uppercase tracking-wider text-white/50">Support</p>
-                    </div>
+                <div className="mt-auto grid grid-cols-3 gap-3 border-t border-white/10 pt-6">
+                  <div>
+                    <p className="text-lg font-bold text-white">99.9%</p>
+                    <p className="mt-0.5 text-[11px] uppercase tracking-wider text-white/50">Uptime SLA</p>
+                  </div>
+                  <div>
+                    <p className="text-lg font-bold text-white">SOC 2</p>
+                    <p className="mt-0.5 text-[11px] uppercase tracking-wider text-white/50">Compliant</p>
+                  </div>
+                  <div>
+                    <p className="text-lg font-bold text-white">24/7</p>
+                    <p className="mt-0.5 text-[11px] uppercase tracking-wider text-white/50">Support</p>
                   </div>
                 </div>
               </div>
