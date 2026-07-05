@@ -96,33 +96,33 @@ const productFaqs = {
   general: [
     {
       q: "Are these ready-made SaaS products or custom software?",
-      a: "They are Advora-built product foundations. You get a faster starting point than custom software, with room to customise workflows, branding, integrations, and reports.",
+      a: "They are enterprise-grade software products built by Advora. You get a proven platform out of the box, with room to configure workflows, branding, integrations, and reporting to your business.",
     },
     {
-      q: "Are these suitable for early-stage startups?",
-      a: "Yes. We can launch a lean version first, then scale modules as your team, users, and operations grow.",
+      q: "Are these suitable for growing companies and enterprises?",
+      a: "Yes. Each product is designed to run reliably at scale — from mid-sized operations to enterprise deployments with role-based access, audit trails, and integrations.",
     },
     {
-      q: "What if I need a tool that is not listed here?",
-      a: "We can adapt the closest tool base or build a new productized tool if your workflow needs a different system.",
+      q: "What if I need capabilities beyond the standard product?",
+      a: "Our engineering team can extend any of our products with additional modules, custom workflows, and dedicated integrations built to your specification.",
     },
   ],
   customization: [
     {
-      q: "Can I customise a tool for my specific business needs?",
-      a: "Yes. Each product can be tailored around your processes, user roles, data structure, automations, and customer-facing experience.",
+      q: "Can the product be configured for our specific business needs?",
+      a: "Yes. Each product supports configuration of workflows, user roles, data models, automations, permissions, and customer-facing experience.",
     },
   ],
   integrations: [
     {
-      q: "Can these tools integrate with what I already use?",
-      a: "Yes. We commonly integrate CRMs, payment gateways, WhatsApp, email platforms, analytics tools, calendars, cloud storage, and custom APIs.",
+      q: "Do the products integrate with our existing systems?",
+      a: "Yes. We integrate with common ERPs, CRMs, payment gateways, communication platforms, analytics tools, cloud storage, SSO, and custom APIs.",
     },
   ],
   support: [
     {
-      q: "Do you offer dedicated support after deployment?",
-      a: "Yes. We can support onboarding, fixes, monitoring, feature improvements, integrations, and new releases after launch.",
+      q: "Do you offer enterprise support after deployment?",
+      a: "Yes. We provide onboarding, SLAs, monitoring, feature enhancements, integrations, and ongoing releases for every customer.",
     },
   ],
 };
@@ -150,7 +150,7 @@ export default function Products() {
   usePageSEO({
     title: "Products",
     description:
-      "Explore Advora Digital's four productized tools for sales, bookings, client portals, and commerce operations.",
+      "Advora Digital builds enterprise-grade software products for billing, warehouse, service, and claims operations.",
     canonical: "/products",
   });
 
@@ -181,17 +181,17 @@ export default function Products() {
                 >
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
                     <span className="block font-serif italic font-normal">
-                      Productized Tools
+                      Enterprise Software
                     </span>
                     <span className="block font-bold text-primary">
-                      Built to Sell.
+                      Engineered to Scale.
                     </span>
                   </h1>
 
                   <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed">
-                    Premium software tools created from Advora&apos;s agency
-                    workflows, packaged for businesses that need faster launch,
-                    smarter operations, and room to customise.
+                    Advora is a product company building enterprise-grade software
+                    for operations, finance, service, and revenue teams — with the
+                    reliability, security, and extensibility modern businesses expect.
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
@@ -245,19 +245,19 @@ export default function Products() {
           <div className="mb-12 text-center">
             <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
               <Sparkles className="h-3.5 w-3.5" />
-              Productized Tools
+              Product Suite
             </span>
             <h2 className="text-[1.75rem] sm:text-3xl md:text-5xl tracking-tight leading-[1.15] mb-4">
               <span className="block font-serif italic font-normal">
-                Four Tool Previews
+                Four Enterprise Products
               </span>
               <span className="block font-bold text-primary">
-                Built for Real Operations
+                Built for Serious Operations
               </span>
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              A quick look at the four products currently being built and
-              packaged by Advora.
+              Purpose-built platforms from Advora, engineered for reliability at
+              scale and configurable to your business.
             </p>
           </div>
 
@@ -497,13 +497,13 @@ export default function Products() {
         <PremiumFAQ
           categories={productFaqCategories}
           faqs={productFaqs}
-          description="Everything you need to know about choosing, customising, and launching an Advora productized tool."
+          description="Everything you need to know about deploying, configuring, and scaling Advora's enterprise products."
         />
 
         <CTASection
-          title="Find the right productized tool for your business"
-          description="Tell us what you want to sell, automate, or launch. We'll recommend the right Advora tool base and customise it fast."
-          buttonText="Book a Free Discovery Call"
+          title="Find the right Advora product for your business"
+          description="Tell us about your operations and scale. We'll recommend the right Advora product and configure it for your environment."
+          buttonText="Book an Enterprise Demo"
         />
       </main>
 

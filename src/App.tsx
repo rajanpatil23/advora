@@ -67,10 +67,10 @@ const App = () => (
             <Route path="/services/sales-revenue" element={<SalesRevenue />} />
             <Route path="/services/strategy-scaling" element={<StrategyScaling />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/products/tool-1" element={<Tool1 />} />
-            <Route path="/products/tool-2" element={<Tool2 />} />
-            <Route path="/products/tool-3" element={<Tool3 />} />
-            <Route path="/products/tool-4" element={<Tool4 />} />
+            <Route path="/products/invoice-suite" element={<Tool1 />} />
+            <Route path="/products/warehouse-management" element={<Tool2 />} />
+            <Route path="/products/service-desk" element={<Tool3 />} />
+            <Route path="/products/claims-os" element={<Tool4 />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
             {/* Blog routes */}
